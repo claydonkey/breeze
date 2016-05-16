@@ -21,13 +21,14 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     promptEnterKey();
- //   applySchur();
+      applySchur();
+/*
+    val H = householder(DenseMatrix((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0)), DenseVector(1, 2, 3).mapValues(Complex(_, 0)))
+    val HD = hessenbergDecomposition(H)
+    val matH = HD.MatrixQ
+    val test = householder.householderSequence(DenseMatrix((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(_.toDouble), DenseVector(1, 2, 3).mapValues(_.toDouble), 1)
 
-    val H = householder(DenseMatrix((1,2,3,4),(5,6,7,8),(9,10,11,12),(13,14,15,16)).mapValues(Complex(_,0)))
-   
- hessenbergDecomposition
-
-
+    println("test\n" + test.mapValues(x => x - (x % 0.0001)))*/
   }
 }
 
@@ -119,9 +120,10 @@ object jacobiRotation {
  *    e    [  bott   ]
  *    e    [   bott  ]
  */
-class householder(val matrixH: DenseMatrix[Complex]) {
+class householder(val matrixH: DenseMatrix[Complex], val tau: DenseVector[Complex]) {
+
+  def this(matrixH: DenseMatrix[Complex]) = this(matrixH, DenseVector.zeros[Complex](matrixH.cols - 1))
   val size = matrixH.cols - 1
-  val tau = DenseVector.zeros[Complex](size)
   val beta = Array.ofDim[Double](size)
   val essential = Array.ofDim[DenseVector[Complex]](size)
 
@@ -208,7 +210,53 @@ class householder(val matrixH: DenseMatrix[Complex]) {
 
 object householder {
 
+  def apply(m_matrix: DenseMatrix[Complex], tau: DenseVector[Complex]): householder = new householder(m_matrix, tau)
   def apply(m_matrix: DenseMatrix[Complex]): householder = new householder(m_matrix)
+
+  def householderSequence(hMatrix: DenseMatrix[Double], hCoeffs: DenseVector[Double], order: Int) = {
+    //HouseholderSequence shifted 1 with size -1
+    /*
+     *  4 x 4 example
+     *    x    x    x     x
+     *   H    H    H    x
+     *   H    H    H    x
+     *   H    H    H    x
+     */
+
+    if ((hMatrix.rows - order) != hCoeffs.length)
+      throw new MatrixNotSquareException // change to correct exception
+
+    val matHS = hMatrix(order to (hMatrix.cols - 1), 0 to (hMatrix.rows - order - 1))
+
+    val I = DenseMatrix.eye[Double](matHS.cols)
+    val hhMv = (upperTriangular(matHS.t) *:* -(I - 1.0)) +:+ I
+    var sum = I
+    var cnt = 0
+
+    for (cnt <- 0 to matHS.cols - 1) {
+      val hHvect = hhMv(cnt, ::).t
+      //    val adj = det(hHvect.toDenseMatrix) * inv(hHvect.toDenseMatrix)  //  adjoint of vector is vector itself??
+      val adj = hHvect.toDenseMatrix
+      val newa = -(hCoeffs(cnt) * hHvect * adj - I)
+      sum = sum * newa
+
+    }
+    cnt = 0
+
+    println("sum\n" + sum.mapValues(x => x - (x % 0.0001)))
+    //  println("sum\n" + sum.mapValues(x => x - (x % 0.0001)))
+    if (order != 0) {
+      val wrapper = DenseMatrix.zeros[Double](hMatrix.cols, hMatrix.cols)
+      println("wrapper\n" + wrapper.mapValues(x => x - (x % 0.0001)))
+      wrapper(order to wrapper.cols - 1, order to wrapper.cols - 1) := sum
+      for (cnt <- 0 to order - 1) {
+        wrapper(cnt, cnt) = 1.0;
+
+      }
+      wrapper
+    } else
+      sum
+  }
 }
 
 class schur(val hess: hessenbergDecomposition) {
@@ -249,12 +297,12 @@ class schur(val hess: hessenbergDecomposition) {
     val NormT = sum(matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1).mapValues(abs(_)))
     val T = matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1) / Complex(NormT, 0)
     /*
-     (-0.464689,0)  (0.421814,0)
-     (-0.120907,0)  (0.141053,0)
-     T
-     (-0.404618,0)  (0.367286,0)
-     (-0.105277,0)  (0.122819,0)
-     */
+       (-0.464689,0)  (0.421814,0)
+       (-0.120907,0)  (0.141053,0)
+       T
+       (-0.404618,0)  (0.367286,0)
+       (-0.105277,0)  (0.122819,0)
+       */
 
     //  println(s"T\n $T\n")
     val b = T(0, 1) * T(1, 0)
@@ -313,9 +361,9 @@ class schur(val hess: hessenbergDecomposition) {
           il = il - 1
         }
         /* perform the QR step using Givens rotations. The first rotation
-	 *creates a bulge; the (il+2,il) element becomes nonzero. This
-	 *bulge is chased down to the bottom of the active submatrix.
-	 */
+	   *creates a bulge; the (il+2,il) element becomes nonzero. This
+	   *bulge is chased down to the bottom of the active submatrix.
+	   */
         val shift = computeShift(iu, iter)
         val rot = jacobiRotation.makeGivens(matT(il, il) - shift, matT(il + 1, il))
 
@@ -327,27 +375,27 @@ class schur(val hess: hessenbergDecomposition) {
         matT(0 to 1, il to matT.cols - 1) := jacobiRotation.applyRotationinPlane(matT(il, ::).t, matT(il + 1, ::).t, rot.adjoint)
         matT(il to matT.rows - 2, 0 to 1) := jacobiRotation.applyRotationinPlane(matT(0 to matT.cols - 2 - il, il), matT(0 to matT.cols - 2 - il, il + 1), rot.transpose).t
 
- //       println(matT.mapValues(x => x.real - (x.real % 0.0001)))
+        //       println(matT.mapValues(x => x.real - (x.real % 0.0001)))
 
-	val matUC =  matU.mapValues(Complex(_,0.0))
+        val matUC = matU.mapValues(Complex(_, 0.0))
         val temp = jacobiRotation.applyRotationinPlane(matUC(0 to matUC.cols - 1 - il, il), matUC(0 to matUC.cols - 1 - il, il + 1), rot.transpose).t
- //       println("TEMP\n" + temp.mapValues(x => x.real - (x.real % 0.0001)))
+        //       println("TEMP\n" + temp.mapValues(x => x.real - (x.real % 0.0001)))
         // m_matT.topRows((std::min)(il + 2, iu) + 1).applyOnTheRight(il, il + 1, rot);
         /*
-	 if (computeU) m_matU.applyOnTheRight(il, il + 1, rot);
+	   if (computeU) m_matU.applyOnTheRight(il, il + 1, rot);
 
-	 for (Index i = il + 1; i < iu; i++) {
-	 rot.makeGivens(m_matT.coeffRef(i, i - 1), m_matT.coeffRef(i + 1, i - 1), &m_matT.coeffRef(i, i - 1));
-	 m_matT.coeffRef(i + 1, i - 1) = ComplexScalar(0);
-	 m_matT.rightCols(m_matT.cols() - i).applyOnTheLeft(i, i + 1, rot.adjoint());
-	 m_matT.topRows((std::min)(i + 2, iu) + 1).applyOnTheRight(i, i + 1, rot);
-	 if (computeU) m_matU.applyOnTheRight(i, i + 1, rot);
-	 }*/
+	   for (Index i = il + 1; i < iu; i++) {
+	   rot.makeGivens(m_matT.coeffRef(i, i - 1), m_matT.coeffRef(i + 1, i - 1), &m_matT.coeffRef(i, i - 1));
+	   m_matT.coeffRef(i + 1, i - 1) = ComplexScalar(0);
+	   m_matT.rightCols(m_matT.cols() - i).applyOnTheLeft(i, i + 1, rot.adjoint());
+	   m_matT.topRows((std::min)(i + 2, iu) + 1).applyOnTheRight(i, i + 1, rot);
+	   if (computeU) m_matU.applyOnTheRight(i, i + 1, rot);
+	   }*/
+
       }
-
     }
-  }
 }
+  }
 
 object schur {
 
@@ -375,57 +423,25 @@ object schur {
    */
 }
 class hessenbergDecomposition(val H: householder) {
-
   val hCoeffs = H.tau
   val matH = H.matrixH
 
-  def MatrixQ() =
-    {
-      //HouseholderSequence shifted 1 with size -1
-      /*
-     *  4 x 4 example
-     *    x    x    x     x
-     *   H    H    H    x
-     *   H    H    H    x
-     *   H    H    H    x
-     */
+  def reduceToHessenberg() = {
+    val icnt = 0
+    for (icnt <- 0 to matH.rows - 2)
+      H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
+    H
+  }
 
-      val matHS = matH(0 to (matH.cols - 2), 1 to (matH.rows - 1)).mapValues(_.real)
-      val hCoeffsR = hCoeffs.mapValues(_.real)
-      val I = DenseMatrix.eye[Double](matHS.cols)
-      val hhMv = (upperTriangular(matHS.t) *:* -(I - 1.0)) +:+ I
-      var sum = I
-      var cnt = 0
-        println("hCoeffs\n" + hCoeffsR.mapValues(x => x - (x % 0.0001)))
-	     println("hhMv\n" + hhMv.mapValues(x => x - (x % 0.0001)))
-      for (cnt <- 0 to matHS.cols - 1) {
-        val hHvect = hhMv(cnt, ::).t
-    //    val adj = det(hHvect.toDenseMatrix) * inv(hHvect.toDenseMatrix)  //  adjoint of vector is vector itself??
-        val adj = hHvect.toDenseMatrix
-        val newa = -(hCoeffsR(cnt) * hHvect * adj - I)
-        sum = sum * newa
-      }
+  def MatrixQ() = householder.householderSequence(matH.mapValues(_.real), hCoeffs.mapValues(_.real), 1)
 
-              println("sum\n" + sum.mapValues(x => x - (x % 0.0001)))
-
-      val wrapper = DenseMatrix.zeros[Double](matHS.cols + 1, matHS.cols + 1)
-      wrapper(0, 0) = 1.0;
-      wrapper(1 to wrapper.cols - 1, 1 to wrapper.cols - 1) := sum
-      wrapper
-    }
   /*  4 x 4 example
-   *   x    x    x     x
-   *   x    x    x    x
-   *   0    x     x    x
-   *   0    0     x    x
-   */
-  def MatrixH() =
-    {
-
-           println("matH\n" + matH.mapValues(x => x.real - (x.real % 0.0001)))
-      val N = matH.rows
-      DenseMatrix.tabulate(N, N)((i, j) => if (j >= i - 1) matH(i, j) else Complex(0, 0))
-    }
+     *   x    x    x     x
+     *   x    x    x    x
+     *   0    x     x    x
+     *   0    0     x    x
+     */
+  def MatrixH() = DenseMatrix.tabulate(matH.rows, matH.rows)((i, j) => if (j >= i - 1) matH(i, j) else Complex(0, 0))
 }
 
 /**
@@ -446,6 +462,8 @@ class hessenbergDecomposition(val H: householder) {
  */
 
 object hessenbergDecomposition {
+
+  def apply(H: householder) = new hessenbergDecomposition(H)
   def apply(M: DenseMatrix[Complex]) =
     {
       //    if (M.rows < 2)
@@ -460,5 +478,5 @@ object hessenbergDecomposition {
     for (icnt <- 0 to matA.rows - 2)
       H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
     H
-  }
 }
+  }
