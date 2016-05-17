@@ -21,14 +21,14 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     promptEnterKey();
-      applySchur();
-/*
-    val H = householder(DenseMatrix((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0)), DenseVector(1, 2, 3).mapValues(Complex(_, 0)))
-    val HD = hessenbergDecomposition(H)
-    val matH = HD.MatrixQ
-    val test = householder.householderSequence(DenseMatrix((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(_.toDouble), DenseVector(1, 2, 3).mapValues(_.toDouble), 1)
+    applySchur();
+    /*
+     val H = householder(DenseMatrix((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0)), DenseVector(1, 2, 3).mapValues(Complex(_, 0)))
+     val HD = hessenbergDecomposition(H)
+     val matH = HD.MatrixQ
+     val test = householder.householderSequence(DenseMatrix((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(_.toDouble), DenseVector(1, 2, 3).mapValues(_.toDouble), 1)
 
-    println("test\n" + test.mapValues(x => x - (x % 0.0001)))*/
+     println("test\n" + test.mapValues(x => x - (x % 0.0001)))*/
   }
 }
 
@@ -40,19 +40,73 @@ object Helper {
 
 import Helper._
 
-class jacobiRotation(val m_c: Complex, val m_s: Complex) {
+class jacobiRotation(val m_c: Complex, val m_s: Complex, var r: Complex) {
+
+  def this(m_c: Complex, m_s: Complex) = this(m_c, m_s, Complex(0.0, 0.0))
+
   def transpose() = jacobiRotation(m_c, -conj(m_s))
   def adjoint() = jacobiRotation(conj(m_c), -m_s)
   def applyRotationinPlane(_x: DenseVector[Complex], _y: DenseVector[Complex]) = {
     jacobiRotation.applyRotationinPlane(_x, _y, this)
   }
+
+  /*This function implements the continuous Givens rotation
+   *generation algorithm found in Anderson (2000),
+   *Discontinuous Plane Rotations and the Symmetric Eigenvalue Problem.
+   *LAPACK Working Note 150, University of Tennessee, UT-CS-00-454, December 4, 2000. */
+  def makeGivens(p: Complex, q: Complex) = {
+
+    (p, q) match {
+      case (Complex(0.0, 0.0), _) =>
+        val m_c = if (p.real < 0) Complex(-1, 0) else Complex(1, 0)
+        val m_s = Complex(0, 0)
+        r = m_c * p;
+        new jacobiRotation(m_c, m_s, r)
+      case (_, Complex(0.0, 0)) =>
+        val m_c = Complex(0, 0)
+        val m_s = -q / abs(q)
+        r = Complex(abs(q), 0)
+        new jacobiRotation(m_c, m_s, r)
+      case _ =>
+        var p1 = norm1(p)
+        var q1 = norm1(q)
+        if (p1 >= q1) {
+          val ps = p / p1
+          val p2 = abs2(ps)
+          val qs = q / p1
+          val q2 = abs2(qs)
+
+          var u = breeze.numerics.pow(Complex(1.0, 0.0) + (q2 / p2), 0.5)
+          if (p.real < 0)
+            u = -u;
+          val m_c = 1 / u
+          val m_s = -qs * conj(ps) * (m_c / p2)
+          r = p * u;
+          new jacobiRotation(m_c, m_s, r)
+        } else {
+          var ps = p / q1
+          val p2 = abs2(ps)
+          val qs = q / q1
+          val q2 = abs2(qs);
+
+          var u = q1 * breeze.numerics.pow((p2 + q2), 0.5)
+          if (p.real < 0)
+            u = -u
+          p1 = abs(p)
+          ps = p / p1
+          val m_c = p1 / u
+          val m_s = -conj(ps) * (q / u)
+          r = ps * u;
+          new jacobiRotation(Complex(m_c, 0.0), m_s, r)
+        }
+    }
+  }
 }
 
 object jacobiRotation {
   import Helper._
-  def apply(t: (Complex, Complex)) = { new jacobiRotation(t._1, t._2) }
-  def apply(m_c: Complex, m_s: Complex) = { new jacobiRotation(m_c, m_s) }
 
+  def apply(m_c: Complex, m_s: Complex) = { new jacobiRotation(m_c, m_s) }
   def applyRotationinPlane(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jacobiRotation) = {
 
     println(_x.mapValues(x => x.real - (x.real % 0.0001)))
@@ -67,17 +121,18 @@ object jacobiRotation {
    *generation algorithm found in Anderson (2000),
    *Discontinuous Plane Rotations and the Symmetric Eigenvalue Problem.
    *LAPACK Working Note 150, University of Tennessee, UT-CS-00-454, December 4, 2000. */
-  def makeGivens(p: Complex, q: Complex) = {
-
+  def makeGivens(p: Complex, q: Complex, r1: Complex = null) = {
+    var r: Complex = r1
     (p, q) match {
       case (Complex(0.0, 0.0), _) =>
         val m_c = if (p.real < 0) Complex(-1, 0) else Complex(1, 0)
         val m_s = Complex(0, 0)
-        //if(r) *r = m_c * p;
+        if (r != null) r = m_c * p;
         new jacobiRotation(m_c, m_s)
       case (_, Complex(0.0, 0)) =>
         val m_c = Complex(0, 0)
         val m_s = -q / abs(q)
+        if (r != null) r = Complex(abs(q), 0)
         new jacobiRotation(m_c, m_s)
       case _ =>
         var p1 = norm1(p)
@@ -93,6 +148,7 @@ object jacobiRotation {
             u = -u;
           val m_c = 1 / u
           val m_s = -qs * conj(ps) * (m_c / p2)
+          if (r != null) r = p * u;
           new jacobiRotation(m_c, m_s)
         } else {
           var ps = p / q1
@@ -107,6 +163,7 @@ object jacobiRotation {
           ps = p / p1
           val m_c = p1 / u
           val m_s = -conj(ps) * (q / u)
+          if (r != null) r = ps * u;
           new jacobiRotation(Complex(m_c, 0.0), m_s)
         }
     }
@@ -243,11 +300,11 @@ object householder {
     }
     cnt = 0
 
-    println("sum\n" + sum.mapValues(x => x - (x % 0.0001)))
+    //  println("sum\n" + sum.mapValues(x => x - (x % 0.0001)))
     //  println("sum\n" + sum.mapValues(x => x - (x % 0.0001)))
     if (order != 0) {
       val wrapper = DenseMatrix.zeros[Double](hMatrix.cols, hMatrix.cols)
-      println("wrapper\n" + wrapper.mapValues(x => x - (x % 0.0001)))
+      //   println("wrapper\n" + wrapper.mapValues(x => x - (x % 0.0001)))
       wrapper(order to wrapper.cols - 1, order to wrapper.cols - 1) := sum
       for (cnt <- 0 to order - 1) {
         wrapper(cnt, cnt) = 1.0;
@@ -297,12 +354,12 @@ class schur(val hess: hessenbergDecomposition) {
     val NormT = sum(matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1).mapValues(abs(_)))
     val T = matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1) / Complex(NormT, 0)
     /*
-       (-0.464689,0)  (0.421814,0)
-       (-0.120907,0)  (0.141053,0)
-       T
-       (-0.404618,0)  (0.367286,0)
-       (-0.105277,0)  (0.122819,0)
-       */
+     (-0.464689,0)  (0.421814,0)
+     (-0.120907,0)  (0.141053,0)
+     T
+     (-0.404618,0)  (0.367286,0)
+     (-0.105277,0)  (0.122819,0)
+     */
 
     //  println(s"T\n $T\n")
     val b = T(0, 1) * T(1, 0)
@@ -361,41 +418,49 @@ class schur(val hess: hessenbergDecomposition) {
           il = il - 1
         }
         /* perform the QR step using Givens rotations. The first rotation
-	   *creates a bulge; the (il+2,il) element becomes nonzero. This
-	   *bulge is chased down to the bottom of the active submatrix.
-	   */
+	 *creates a bulge; the (il+2,il) element becomes nonzero. This
+	 *bulge is chased down to the bottom of the active submatrix.
+	 */
         val shift = computeShift(iu, iter)
-        val rot = jacobiRotation.makeGivens(matT(il, il) - shift, matT(il + 1, il))
-
-        val m_ca = rot.adjoint().m_c
-        val m_sa = rot.adjoint().m_s
-        val m_c = rot.m_c
-        val m_s = rot.m_s
+        var rot = jacobiRotation.makeGivens(matT(il, il) - shift, matT(il + 1, il))
 
         matT(0 to 1, il to matT.cols - 1) := jacobiRotation.applyRotationinPlane(matT(il, ::).t, matT(il + 1, ::).t, rot.adjoint)
         matT(il to matT.rows - 2, 0 to 1) := jacobiRotation.applyRotationinPlane(matT(0 to matT.cols - 2 - il, il), matT(0 to matT.cols - 2 - il, il + 1), rot.transpose).t
-
-        //       println(matT.mapValues(x => x.real - (x.real % 0.0001)))
-
         val matUC = matU.mapValues(Complex(_, 0.0))
-        val temp = jacobiRotation.applyRotationinPlane(matUC(0 to matUC.cols - 1 - il, il), matUC(0 to matUC.cols - 1 - il, il + 1), rot.transpose).t
-        //       println("TEMP\n" + temp.mapValues(x => x.real - (x.real % 0.0001)))
-        // m_matT.topRows((std::min)(il + 2, iu) + 1).applyOnTheRight(il, il + 1, rot);
-        /*
-	   if (computeU) m_matU.applyOnTheRight(il, il + 1, rot);
+        matUC(il to matUC.cols - 1, 0 to 1) := jacobiRotation.applyRotationinPlane(matUC(0 to matUC.cols - 1 - il, il), matUC(0 to matUC.cols - 1 - il, il + 1), rot.transpose).t
 
-	   for (Index i = il + 1; i < iu; i++) {
-	   rot.makeGivens(m_matT.coeffRef(i, i - 1), m_matT.coeffRef(i + 1, i - 1), &m_matT.coeffRef(i, i - 1));
-	   m_matT.coeffRef(i + 1, i - 1) = ComplexScalar(0);
-	   m_matT.rightCols(m_matT.cols() - i).applyOnTheLeft(i, i + 1, rot.adjoint());
-	   m_matT.topRows((std::min)(i + 2, iu) + 1).applyOnTheRight(i, i + 1, rot);
-	   if (computeU) m_matU.applyOnTheRight(i, i + 1, rot);
-	   }*/
+        println(matT.mapValues(x => x.real - (x.real % 0.0001)))
+        println("matUC\n" + matUC.mapValues(x => x.real - (x.real % 0.0001)))
+
+        var idx: Int = 0
+        for (idx <- ((il + 1) to iu - 1)) {
+
+          rot = rot.makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
+          matT(idx, idx - 1) = rot.r
+          println("rot.r\n" + rot.r)
+          matT(idx + 1, idx - 1) = Complex(0.0, 0.0)
+          println(s"$idx\n")
+
+          val temp = jacobiRotation.applyRotationinPlane(matT(idx, idx to matT.cols - 1).t, matT(idx + 1, idx to matT.cols - 1).t, rot.adjoint)
+          println("1 temp\n" + temp.mapValues(x => x.real - (x.real % 0.0001)))
+          matT(idx to idx + 1, idx to matT.cols - 1) := temp
+          println("1 matT\n" + matT.mapValues(x => x.real - (x.real % 0.0001)))
+
+          val temp2 = jacobiRotation.applyRotationinPlane(matT(0 to matT.cols - 1, idx), matT(0 to matT.cols - 1, idx + 1), rot.transpose).t
+          println("2 temp\n" + temp2.mapValues(x => x.real - (x.real % 0.0001)))
+          matT(0 to matT.rows - 1, idx to idx + 1) := temp2 //CHECK FOR 3 needing to be equal to cell size..
+          println("2 matT\n" + matT.mapValues(x => x.real - (x.real % 0.0001)))
+
+          val temp3 = jacobiRotation.applyRotationinPlane(matUC(0 to matUC.cols - 1 , idx), matUC(0 to matUC.cols - 1 , idx +1), rot.transpose).t
+          println("3 temp\n" + temp3.mapValues(x => x.real - (x.real % 0.0001)))
+          matUC(0 to matUC.rows - 1, idx to idx+ 1) := temp3
+          println("matUC\n" + matUC.mapValues(x => x.real - (x.real % 0.0001)))
+        }
 
       }
     }
-}
   }
+}
 
 object schur {
 
@@ -436,11 +501,11 @@ class hessenbergDecomposition(val H: householder) {
   def MatrixQ() = householder.householderSequence(matH.mapValues(_.real), hCoeffs.mapValues(_.real), 1)
 
   /*  4 x 4 example
-     *   x    x    x     x
-     *   x    x    x    x
-     *   0    x     x    x
-     *   0    0     x    x
-     */
+   *   x    x    x     x
+   *   x    x    x    x
+   *   0    x     x    x
+   *   0    0     x    x
+   */
   def MatrixH() = DenseMatrix.tabulate(matH.rows, matH.rows)((i, j) => if (j >= i - 1) matH(i, j) else Complex(0, 0))
 }
 
@@ -478,5 +543,5 @@ object hessenbergDecomposition {
     for (icnt <- 0 to matA.rows - 2)
       H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
     H
-}
   }
+}
