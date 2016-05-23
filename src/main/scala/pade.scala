@@ -26,7 +26,7 @@ object padePower {
     val M = upperTriangular(DenseMatrix.eye[Complex](IminusT.rows)) + r
     val T1 = -1.0 * m_p
     val T = IminusT.mapValues(_.real) * T1 // BIG PROBLEMMMO
-    debugPrint(s"IminusT:\n$IminusT\nT:\n$T\nT1:\n$T1\nM:\n$M\n")
+    debugPrint(s"IminusT:\n$IminusT\nT:\n$T\nT1:\n$T1\nM:\n$M\n" ,"BEFORE fullpivhouseholderQR",1)
 
     val IminusR = IminusT.mapValues(_.real)
     debugPrint(s"IminusR:\n$IminusR\n")

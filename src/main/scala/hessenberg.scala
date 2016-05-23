@@ -5,7 +5,14 @@ import breeze.numerics._
 import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
-
+ //PHP^(H)=A,
+ /*
+A Hessenberg decomposition is a matrix decomposition of a matrix A into a unitary matrix P and a Hessenberg matrix H such that
+ PHP^(H)=A,
+where P^(H) denotes the conjugate transpose.
+Hessenberg decomposition is implemented in the Wolfram Language as HessenbergDecomposition[m].
+Hessenberg decomposition is the first step in Schur decomposition. Hessenberg decomposition on an n×n matrix requires 14n^3/3 arithmetic operations.
+*/
 class hessenbergDecomposition(val H: householder) {
   val hCoeffs = H.coeffs
   val matH = H.matrixH
@@ -24,7 +31,7 @@ class hessenbergDecomposition(val H: householder) {
      *   0    0     x    x
      *   0    0     x    x
      */
-  def MatrixQ() = householder.householderSequence(matH.mapValues(_.real), hCoeffs.mapValues(_.real), 1)
+  def MatrixP() = householder.householderSequence(matH.mapValues(_.real), hCoeffs.mapValues(_.real), 1)
 
   /*  4 x 4 example
      *   x    x    x     x

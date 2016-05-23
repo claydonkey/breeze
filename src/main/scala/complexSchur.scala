@@ -16,22 +16,21 @@ import Helper._
    * on the number of iterations; as a rough guide, it may be taken
    * to be \f$25n^3\f$ complex flops, or \f$10n^3\f$ complex flops
    * if \a computeU is false.*/
-class complexSchur(val hess: hessenbergDecomposition) {
+class complexSchur(val M: DenseMatrix[Complex]) {
+
+  val hess = hessenbergDecomposition(M)
 
   val matT = hess.MatrixH
- private  val matU = hess.MatrixQ
-  val matUC = matU.mapValues(Complex(_, 0.0))
+  //private val matP=
+  val matQ = hess.MatrixP.mapValues(Complex(_, 0.0))
   val m_maxIterationsPerRow = 30
   val maxIters = m_maxIterationsPerRow * hess.matH.rows
-  // reduceToTriangularForm()
+  reduceToTriangularForm()
   /**
    * If matT(i+1,i) is neglegible in floating point arithmetic
    * compared to matT(i,i) and matT(j,j), then set it to zero and
    * return true, else return false.
    */
-  val EPSILON: Double = 2.22045e-016
-
-  def isMuchSmallerThan(x: Double, y: Double) = { abs(x) <= abs(y) * EPSILON }
 
   def subdiagonalEntryIsNeglegible(i: Int) =
     {
@@ -40,7 +39,7 @@ class complexSchur(val hess: hessenbergDecomposition) {
       if (isMuchSmallerThan(sd, d)) {
         val t = matT(i + 1, i)
         val M = matT.mapValues(_.real)
-        debugPrint(s"SMALLER   i = $i matT($i + 1, $i) :  $t")
+        debugPrint(s"SMALLER   i = $i matT($i + 1, $i) :  $t", "", 4)
         matT(i + 1, i) = Complex(0, 0)
 
         true
@@ -87,15 +86,6 @@ class complexSchur(val hess: hessenbergDecomposition) {
     // Rows 0,...,il-1 are decoupled from the rest because matT(il,il-1) is zero.
     // Rows il,...,iu is the part we are working on (the active submatrix).
     // Rows iu+1,...,end are already brought in triangular form.
-    //
-    //
-    //
-    //
-
-    debugPrint("reduceToTriangularForm" , "")
-
-    debugPrint( matT,"Start MatT")
-    debugPrint(matU, "Start MatU")
 
     var matnum = 0
     var matnum2 = 0
@@ -131,52 +121,44 @@ class complexSchur(val hess: hessenbergDecomposition) {
           il = il - 1
         }
         /* perform the QR step using Givens rotations. The first rotation
-	   *creates a bulge; the (il+2,il) element becomes nonzero. This
-	   *bulge is chased down to the bottom of the active submatrix.
-	   */
-        //       debugPrint("Prior or with Zeroing:\n\n" + matT.mapValues(x => x.real - (x.real % 0.0001)))
+*creates a bulge; the (il+2,il) element becomes nonzero. This
+*bulge is chased down to the bottom of the active submatrix.
+*/
         val shift = computeShift(iu, iter)
         var rot = jacobiRotation.makeGivens(matT(il, il) - shift, matT(il + 1, il))
 
         val A = jacobiRotation.applyRotationinPlane(matT(il, il to matT.cols - 1).t, matT(il + 1, il to matT.cols - 1).t, rot.adjoint)
-        //      debugPrint("J1\n" + J1.mapValues(x => x.real - (x.real % 0.0001)))
         matT(il to il + 1, il to matT.cols - 1) := A
-        debugPrint(matT, "A MatT")
-
+        debugPrint(matT, "A MatT", 4)
+//topr
         val B = jacobiRotation.applyRotationinPlane(matT(0 to matT.cols - 2 - il, il), matT(0 to matT.cols - 2 - il, il + 1), rot.transpose).t
-        //    debugPrint("J2\n" + J2.mapValues(x => x.real - (x.real % 0.0001)))
         matT(il to matT.rows - 2, 0 to 1) := B
-        debugPrint(matT, "B MatT")
-
-        val AmatUC = jacobiRotation.applyRotationinPlane(matUC(0 to matUC.cols - 1 - il, il), matUC(0 to matUC.cols - 1 - il, il + 1), rot.transpose).t
-        // debugPrint("matUc J3\n" + J3.mapValues(x => x.real - (x.real % 0.0001)))
-
-        matUC(il to matUC.cols - 1, 0 to 1) := AmatUC
-        //    debugPrint("matUC\n" + matUC.mapValues(x => x.real - (x.real % 0.0001)))
+        debugPrint(matT, "B MatT", 4)
+        debugPrint(il, "il ", 4)
+        debugPrint(iu, "iu ", 4)
+        val AmatQ = jacobiRotation.applyRotationinPlane(matQ(0 to matQ.cols - 1 - il, il), matQ(0 to matQ.cols - 1 - il, il + 1), rot.transpose).t
+        debugPrint(matQ, "A MatQ", 3)
+        matQ(il to matQ.cols - 1, 0 to 1) := AmatQ
 
         var idx: Int = 0
         for (idx <- ((il + 1) to iu - 1)) {
 
           rot = rot.makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
           matT(idx, idx - 1) = rot.r
-          debugPrint(s"rot.r  into $idx,$idx -1\n" + rot.r + "\n")
+          debugPrint(rot.r, "rot.r  into $idx,$idx -1\n", 3)
           matT(idx + 1, idx - 1) = Complex(0.0, 0.0)
-          //      debugPrint(s"$idx\n")
 
           val J1 = jacobiRotation.applyRotationinPlane(matT(idx, idx to matT.cols - 1).t, matT(idx + 1, idx to matT.cols - 1).t, rot.adjoint)
-          //      debugPrint("J4\n" + J4.mapValues(x => x.real - (x.real % 0.0001)))
           matT(idx to idx + 1, idx to matT.cols - 1) := J1
-          debugPrint( matT,"1 MatT")
+          debugPrint(matT, "1 MatT", 4)
 
           val J2 = jacobiRotation.applyRotationinPlane(matT(0 to matT.cols - 1, idx), matT(0 to matT.cols - 1, idx + 1), rot.transpose).t
-          //     debugPrint("J5\n" + J5.mapValues(x => x.real - (x.real % 0.0001)))
           matT(0 to matT.rows - 1, idx to idx + 1) := J2 //CHECK FOR 3 needing to be equal to cell size..
-          debugPrint(matT,"2 MatT")
+          debugPrint(matT, "2 MatT", 4)
 
-          val J3 = jacobiRotation.applyRotationinPlane(matUC(0 to matUC.cols - 1, idx), matUC(0 to matUC.cols - 1, idx + 1), rot.transpose).t
-          //     debugPrint("J6\n" + J6.mapValues(x => x.real - (x.real % 0.0001)))
-          matUC(0 to matUC.rows - 1, idx to idx + 1) := J3
-          debugPrint(matU,"1 MatU")
+          val J3 = jacobiRotation.applyRotationinPlane(matQ(0 to matQ.cols - 1, idx), matQ(0 to matQ.cols - 1, idx + 1), rot.transpose).t
+          matQ(0 to matQ.rows - 1, idx to idx + 1) := J3
+          debugPrint(matQ, "1 MatQ", 3)
         }
 
       }
@@ -187,11 +169,10 @@ class complexSchur(val hess: hessenbergDecomposition) {
 object complexSchur {
 
   def apply(M: DenseMatrix[Complex]): complexSchur = {
-
-    val S = new complexSchur(hessenbergDecomposition(M.copy))
-    S.reduceToTriangularForm
     if (M.rows != M.cols)
       throw new MatrixNotSquareException
+
+    val S = new complexSchur(M.copy)
 
     if (M.cols == 1) {
       S //   return (DenseMatrix.eye[Complex](1), DenseMatrix.eye[Complex](1))

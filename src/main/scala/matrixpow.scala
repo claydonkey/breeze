@@ -53,19 +53,19 @@ object matrixPow {
       debugPrint(s"T:\n$T", "", 2)
       val mySchur = complexSchur(M) //side effects hmmm
       val m_T = mySchur.matT
-      val m_U = mySchur.matUC
-      val matH = mySchur.hess.matH
-      val MatrixH = mySchur.hess.MatrixH
-      val MatrixQ = mySchur.hess.MatrixQ
+      val m_U = mySchur.matQ
 
-      debugPrint(s"matH:\n$matH\n", "", 1)
+      val MatrixH = mySchur.hess.MatrixH
+      val MatrixP = mySchur.hess.MatrixP
+
+
       debugPrint(s"MatrixH:\n$MatrixH\n", "", 1)
-      debugPrint(s"MatrixQ:\n$MatrixQ\n", "", 1)
+      debugPrint(s"MatrixQ:\n$MatrixP\n", "", 1)
       debugPrint(s"M:\n$M\n", "", 1)
       debugPrint(mySchur.hess.hCoeffs, "mySchur.hess.hCoeffs", 1)
 
-      debugPrint(s"m_T:\n$m_T\n", "", 2)
-      debugPrint(s"m_U:\n$m_U\n", "", 2)
+      debugPrint(s"m_T:\n$m_T\n", "", 1)
+      debugPrint(s"m_U:\n$m_U\n", "", 1)
       debugPrint(s"M:\n$M\n", "", 2)
       val frac_power = pow % 1.0
 

@@ -19,10 +19,10 @@ object GlobalConsts {
   }
   var matnum1 = MutableInt(0)
   var matnum2 = MutableInt(0)
-
+  val showComplex = false
   val formatter = new DecimalFormat("#0.000000")
-  val printEnabled = Array(false, true, false)
-
+  val printEnabled = Array(false, true, false, false, true)
+  val EPSILON: Double = 2.22045e-016
 }
 
 object Helper {
@@ -31,6 +31,9 @@ object Helper {
   def abs2(n: Complex) = { (n.real * n.real) + (n.imag * n.imag) }
   def conj(n: Complex) = { Complex(n.real, -n.imag) }
   def norm1(n: Complex): Double = { abs(n.real) + abs(n.imag) }
+  def biggest(M: DenseMatrix[Complex]) = norm1(sum(M(::, *)).t.reduceLeft((x, y) => if (norm1(x) > norm1(y)) x else y))
+
+  def isMuchSmallerThan(x: Double, y: Double) = { abs(x) <= abs(y) * EPSILON }
 
   def printcount() = {
 
@@ -52,12 +55,14 @@ object Helper {
       }
 
       case b if b =:= typeOf[DenseVector[Complex]] => if (printEnabled(loglevel)) {
-        println(s"$name\n\n" + M.asInstanceOf[DenseVector[Complex]].mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
+        if (showComplex) println(s"$name\n\n" + M.asInstanceOf[DenseVector[Complex]].mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
+        else println(s"$name\n\n" + M.asInstanceOf[DenseVector[Complex]].mapValues(x => "( " + formatter.format(x.real) + " )"))
         printcount()
       }
 
       case b if b =:= typeOf[DenseMatrix[Complex]] => if (printEnabled(loglevel)) {
-        println(s"$name\n\n" + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
+        if (showComplex) println(s"$name\n\n" + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
+        else println(s"$name\n\n" + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + " )"))
         printcount()
       }
       case b if b =:= typeOf[String] =>
@@ -68,7 +73,7 @@ object Helper {
         }
       case _ => if (printEnabled(loglevel)) {
 
-         println(s"$name " + M)
+        println(s"$name " + M)
         printcount()
 
       }

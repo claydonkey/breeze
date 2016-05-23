@@ -16,16 +16,17 @@ object Main {
     val M = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0))
     val mySchur = complexSchur(M)
     val matT = mySchur.matT
-   val matUC = mySchur.matUC
+   val matQ = mySchur.matQ
 
-   debugPrint( matT, "matT",1 )
+   debugPrint( matT, "mySchur.matT",1 )
 
- debugPrint( matUC, "matUC" ,1)
+ debugPrint( matQ, "mySchur.matQ" ,1)
   }
 
   def main(args: Array[String]): Unit = {
     promptEnterKey();
-    matrixPow.fract(3.43, DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0)))
+       applySchur() ;
+    //matrixPow.fract(3.43, DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0)))
 
 
 
