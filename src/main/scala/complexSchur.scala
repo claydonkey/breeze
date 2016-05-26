@@ -1,5 +1,4 @@
 import breeze.linalg._
-import scala.io._
 import java.text.DecimalFormat
 import scala.Console._
 import breeze.numerics._
@@ -7,15 +6,16 @@ import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
+import jacobiRotation._
 /* The Schur decomposition is computed by first reducing the
-   * matrix to Hessenberg form using the class
-   * HessenbergDecomposition. The Hessenberg matrix is then reduced
-   * to triangular form by performing QR iterations with a single
-   * shift. The cost of computing the Schur decomposition depends
-   * on the number of iterations; as a rough guide, it may be taken
-   * on the number of iterations; as a rough guide, it may be taken
-   * to be \f$25n^3\f$ complex flops, or \f$10n^3\f$ complex flops
-   * if \a computeU is false.*/
+ * matrix to Hessenberg form using the class
+ * HessenbergDecomposition. The Hessenberg matrix is then reduced
+ * to triangular form by performing QR iterations with a single
+ * shift. The cost of computing the Schur decomposition depends
+ * on the number of iterations; as a rough guide, it may be taken
+ * on the number of iterations; as a rough guide, it may be taken
+ * to be \f$25n^3\f$ complex flops, or \f$10n^3\f$ complex flops
+ * if \a computeU is false.*/
 class complexSchur(val M: DenseMatrix[Complex]) {
 
   val hess = hessenbergDecomposition(M)
@@ -39,7 +39,7 @@ class complexSchur(val M: DenseMatrix[Complex]) {
       if (isMuchSmallerThan(sd, d)) {
         val t = matT(i + 1, i)
         val M = matT.mapValues(_.real)
-        debugPrint(s"SMALLER   i = $i matT($i + 1, $i) :  $t", "", 4)
+        debugPrint(s"SMALLER   i = $i matT($i + 1, $i) :  $t", "", 2)
         matT(i + 1, i) = Complex(0, 0)
 
         true
@@ -55,15 +55,21 @@ class complexSchur(val M: DenseMatrix[Complex]) {
     }
     // compute the shift as one of the eigenvalues of t, the 2x2
     // diagonal block on the bottom of the active submatrix
-    val NormT = sum(matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1).mapValues(abs(_)))
-    val T = matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1) / Complex(NormT, 0)
 
-    //  debugPrint(s"T\n $T\n")
-    val b = T(0, 1) * T(1, 0)
-    val c = T(0, 0) - T(1, 1)
+    var t = matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1) // Complex(NormT, 0)
+    val normt = Complex(sum(t.mapValues(abs(_))), 0)
+
+    debugPrint(matT, "SHIFT FROM", 3)
+    debugPrint(t, "SHIFT t", 3)
+    debugPrint(normt, "SHIFT normt", 3)
+
+    t = t / normt
+
+    val b = t(0, 1) * t(1, 0)
+    val c = t(0, 0) - t(1, 1)
     val disc = breeze.numerics.pow((c * c + 4.0 * b), 0.5)
-    val det = T(0, 0) * T(1, 1) - b
-    val trace = T(0, 0) + T(1, 1)
+    val det = t(0, 0) * t(1, 1) - b
+    val trace = t(0, 0) + t(1, 1)
     var eival1 = (trace + disc) / 2.0
     var eival2 = (trace - disc) / 2.0;
 
@@ -71,12 +77,13 @@ class complexSchur(val M: DenseMatrix[Complex]) {
       eival2 = det / eival1;
     else
       eival1 = det / eival2;
-    //  debugPrint(s"eival  $eival1 \n $eival2 \n")
+    debugPrint(eival1, "eival1", 3)
+    debugPrint(eival2, "eival2", 3)
     // choose the eigenvalue closest to the bottom entry of the diagonal
-    if (norm1(eival1 - T(1, 1)) < norm1(eival2 - T(1, 1)))
-      NormT * eival1;
+    if (norm1(eival1 - t(1, 1)) < norm1(eival2 - t(1, 1)))
+      normt * eival1;
     else
-      NormT * eival2;
+      normt * eival2;
 
   }
 
@@ -89,6 +96,7 @@ class complexSchur(val M: DenseMatrix[Complex]) {
 
     var matnum = 0
     var matnum2 = 0
+    var newrot = false
 
     var iu = matT.cols - 1
     val maxIters = m_maxIterationsPerRow * matT.rows
@@ -121,50 +129,48 @@ class complexSchur(val M: DenseMatrix[Complex]) {
           il = il - 1
         }
         /* perform the QR step using Givens rotations. The first rotation
-*creates a bulge; the (il+2,il) element becomes nonzero. This
-*bulge is chased down to the bottom of the active submatrix.
-*/
+	 *creates a bulge; the (il+2,il) element becomes nonzero. This
+	 *bulge is chased down to the bottom of the active submatrix.
+	 */
+
+        debugPrint(il, "il ", 3)
+        debugPrint(iu, "iu ", 3)
+
         val shift = computeShift(iu, iter)
-        var rot = jacobiRotation.makeGivens(matT(il, il) - shift, matT(il + 1, il))
+        debugPrint(shift, "A shift", 3)
 
-        val A = jacobiRotation.applyRotationinPlane(matT(il, il to matT.cols - 1).t, matT(il + 1, il to matT.cols - 1).t, rot.adjoint)
-        matT(il to il + 1, il to matT.cols - 1) := A
-        debugPrint(matT, "A MatT", 4)
-//topr
-        val B = jacobiRotation.applyRotationinPlane(matT(0 to matT.cols - 2 - il, il), matT(0 to matT.cols - 2 - il, il + 1), rot.transpose).t
-        matT(il to matT.rows - 2, 0 to 1) := B
-        debugPrint(matT, "B MatT", 4)
-        debugPrint(il, "il ", 4)
-        debugPrint(iu, "iu ", 4)
-        val AmatQ = jacobiRotation.applyRotationinPlane(matQ(0 to matQ.cols - 1 - il, il), matQ(0 to matQ.cols - 1 - il, il + 1), rot.transpose).t
-        debugPrint(matQ, "A MatQ", 3)
-        matQ(il to matQ.cols - 1, 0 to 1) := AmatQ
+        val jR1 = makeGivens(matT(il, il) - shift, matT(il + 1, il))
 
-        var idx: Int = 0
+        matT(il to il + 1, ::) := jR1.applyOnTheLeft(matT(il, ::), matT(il + 1, ::))
+        debugPrint(matT, "A MatT", 2)
+        matT(0 to matT.cols - il - 2, il to il + 1) := jR1.applyOnTheRight(matT(0 to matT.cols - il - 2, il), matT(0 to matT.cols - il - 2, il + 1))
+        debugPrint(matT, "B MatT", 2)
+        matQ(::, il to il + 1) := jR1.applyOnTheRight(matQ(::, il), matQ(::, il + 1))
+        debugPrint(matQ, "AQ", 4)
+
+        val idx: Int = 0
+
         for (idx <- ((il + 1) to iu - 1)) {
 
-          rot = rot.makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
-          matT(idx, idx - 1) = rot.r
-          debugPrint(rot.r, "rot.r  into $idx,$idx -1\n", 3)
+          var jR2 = makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
+          matT(idx, idx - 1) = jR2.rot
           matT(idx + 1, idx - 1) = Complex(0.0, 0.0)
+          matT(idx to idx + 1, idx to matT.cols - 1) := jR2.applyOnTheLeft(matT(idx, idx to matT.cols - 1), matT(idx + 1, idx to matT.cols - 1))
 
-          val J1 = jacobiRotation.applyRotationinPlane(matT(idx, idx to matT.cols - 1).t, matT(idx + 1, idx to matT.cols - 1).t, rot.adjoint)
-          matT(idx to idx + 1, idx to matT.cols - 1) := J1
-          debugPrint(matT, "1 MatT", 4)
+          debugPrint(matT, "1 MatT", 2)
+          debugPrint(idx, "idx", 3)
 
-          val J2 = jacobiRotation.applyRotationinPlane(matT(0 to matT.cols - 1, idx), matT(0 to matT.cols - 1, idx + 1), rot.transpose).t
-          matT(0 to matT.rows - 1, idx to idx + 1) := J2 //CHECK FOR 3 needing to be equal to cell size..
-          debugPrint(matT, "2 MatT", 4)
-
-          val J3 = jacobiRotation.applyRotationinPlane(matQ(0 to matQ.cols - 1, idx), matQ(0 to matQ.cols - 1, idx + 1), rot.transpose).t
-          matQ(0 to matQ.rows - 1, idx to idx + 1) := J3
-          debugPrint(matQ, "1 MatQ", 3)
+          matT(::, idx to idx + 1) := jR2.applyOnTheRight(matT(::, idx), matT(::, idx + 1))
+          //CHECK FOR 3 needing to be equal to cell size..
+          debugPrint(matT, "2 MatT", 2)
+          matQ(::, idx to idx + 1) := jR2.applyOnTheRight(matQ(::, idx), matQ(::, idx + 1))
+          debugPrint(matQ, "1 MatQ", 4)
         }
 
       }
     }
-}
   }
+}
 
 object complexSchur {
 
