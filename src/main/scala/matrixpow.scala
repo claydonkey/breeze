@@ -6,6 +6,8 @@ import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
+import Schur._
+
 object matrixPow {
 
   implicit def enrichDenseMatrix(M: DenseMatrix[Complex]) =
@@ -35,66 +37,109 @@ object matrixPow {
     val IminusT = DenseMatrix.eye[Complex](T.rows) - T
     val normIminusT = norm1(sum(IminusT(::, *)).t.reduceLeft((x, y) => if (norm1(x) > norm1(y)) x else y))
     numberOfSquareRoots = numSquareRoots
-    debugPrint(s"normIminusT:\n$normIminusT\nIminusT:\n$IminusT\n", "", 2)
+    //debugPrint(normIminusT, "normIminusT", 2)
+    //debugPrint(IminusT, "IminusT", 2)
     if (normIminusT < maxNormForPade) {
       val rdeg1 = padePower.degree(normIminusT)
       val rdeg2 = padePower.degree(normIminusT / 2)
-      if (rdeg1 - rdeg2 <= 1.0) return T
+      if (rdeg1 - rdeg2 <= 1.0) return IminusT
 
       return getIMinusT(upperTriangular(sqrtTriangular(T)), numSquareRoots + 1, rdeg1, rdeg2)
     }
     return getIMinusT(upperTriangular(sqrtTriangular(T)), numSquareRoots + 1, deg1, deg2)
 
   }
+  // atan(z) = (i/2) log((i + z)/(i - z))
+  def atan2h(x: Complex, y: Complex): Complex = {
+    val z = x / y
+    if ((y == 0) || (abs2(z) > pow(GlobalConsts.EPSILON, 0.5)))
+      (0.5) * log((y + x) / (y - x))
+    else
+      z + z * z * z / 3
+  }
+  val M_PI = 3.14159265358979323846
+  def computeSuperDiag(curr: Complex, prev: Complex, p: Double) = {
+
+    import breeze.numerics._
+    val logCurr: Complex = log(curr)
+    val logPrev: Complex = log(prev)
+    val unwindingNumber = ceil(((logCurr - logPrev).imag - M_PI) / (2 * M_PI))
+    val w = atan2h(curr - prev, curr + prev) + Complex(0.0, M_PI * unwindingNumber)
+    (2.0 * exp(Complex(0.5, 0.0) * p * (logCurr + logPrev)) * scala.math.sinh(p * w.real) / (curr - prev))
+
+  }
+
+  def compute2x2(res: DenseMatrix[Complex], p: Double, m_A: DenseMatrix[Complex]) =
+    {
+      debugPrint(res, "  Result zero", 6)
+       debugPrint(p, "  Result zero", 6)
+        debugPrint(m_A, "  Result zero", 6)
+      res(0, 0) = pow(m_A(0, 0), p)
+      debugPrint(res(0, 0), "  Result zero", 6)
+      var i = 0
+      for (i <- 1 to m_A.cols - 1) {
+        res(i, i) = pow(m_A(i, i), p);
+        debugPrint(res(i, i), "  Result zero", 6)
+        if (m_A(i - 1, i - 1) == m_A(i, i))
+          res(i - 1, i) = p * pow(m_A(i, i), p - 1)
+        else if (2 * abs(m_A(i - 1, i - 1)) < abs(m_A(i, i)) || 2 * abs(m_A(i, i)) < abs(m_A(i - 1, i - 1)))
+          res(i - 1, i) = (res(i, i) - res(i - 1, i - 1)) / (m_A(i, i) - m_A(i - 1, i - 1));
+        else
+          res(i - 1, i) = computeSuperDiag(m_A(i, i), m_A(i - 1, i - 1), p);
+
+        debugPrint(res(i - 1, i), "  Result zero", 6)
+        res(i - 1, i) *= m_A(i - 1, i);
+      }
+      res
+    }
+
   def fract(pow: Double = 3.43, M: DenseMatrix[Complex] = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0))): DenseMatrix[Complex] =
     {
-      debugPrint(s"M:\n$M\n", "", 1)
+      debugPrint(M, "M", 2)
       val T = upperTriangular(M)
-      debugPrint(s"T:\n$T", "", 2)
-      val mySchur = complexSchur(M) //side effects hmmm
+
+      val mySchur = complexSchur(M.copy) //side effects hmmm
       val m_T = mySchur.matT
       val m_U = mySchur.matQ
 
       val MatrixH = mySchur.hess.MatrixH
       val MatrixP = mySchur.hess.MatrixP
 
-
-      debugPrint(s"MatrixH:\n$MatrixH\n", "", 1)
-      debugPrint(s"MatrixQ:\n$MatrixP\n", "", 1)
-      debugPrint(s"M:\n$M\n", "", 1)
-      debugPrint(mySchur.hess.hCoeffs, "mySchur.hess.hCoeffs", 1)
-
-      debugPrint(s"m_T:\n$m_T\n", "", 1)
-      debugPrint(s"m_U:\n$m_U\n", "", 1)
-      debugPrint(s"M:\n$M\n", "", 2)
-      val frac_power = pow % 1.0
-
-      debugPrint(s"T:\n$T", "", 1)
+     debugPrint(m_T, "m_T", 2)
+     debugPrint(m_U, "m_U", 2)
+     debugPrint(MatrixH, "MatrixH", 2)
+     debugPrint(MatrixP, "MatrixP", 2)
+     debugPrint(M, "M", 2)
+     debugPrint(mySchur.hess.hCoeffs, "mySchur.hess.hCoeffs", 2)
+     debugPrint(m_T, "m_T", 2)
+     debugPrint(m_U, "m_U", 2)
+     debugPrint(M, "M", 2)
+     debugPrint(T, "T", 2)
 
       numberOfSquareRoots = 0
-
+      val frac_power = pow % 1.0
       val IT = getIMinusT(T)
-      debugPrint(numberOfSquareRoots, "number of Square Roots", 1)
-      debugPrint(s"IT:\n$IT", "", 1)
-      val r = padePower(IT, frac_power)
+      debugPrint(numberOfSquareRoots, "number of Square Roots", 2)
+      debugPrint(IT, "IT", 2)
+      debugPrint(frac_power, "frac_power", 2)
 
-      debugPrint(s"M:\n$M\n", "", 1)
-      r
-      /*
-	     float frac_power = fmod(power, 1.0f);
-	 pade(degree, IminusT, frac_power, res);
-	 for (; numberOfSquareRoots; --numberOfSquareRoots) {
-	 compute2x2(res, std::ldexp(frac_power, -numberOfSquareRoots), m_T);
-	 res = res.triangularView<Upper>();
-	 }
-	 compute2x2(res, frac_power, m_T);
-	 revertSchur(m_tmp, res, m_U);
-	 int ipower = floor(power);
-	 computeIntPower(res, ipower, M);
-	 res = m_tmp * res;
+      var res = padePower(IT, frac_power)
 
-	 */
+      debugPrint(res, "Starting Result", 2)
 
+      var i = numberOfSquareRoots
+
+      for (i <- numberOfSquareRoots to 0 by -1) {
+        res = upperTriangular(compute2x2(res, frac_power * scala.math.pow(2, -numberOfSquareRoots), m_T))
+        debugPrint(res, "  Result zero", 2)
+      }
+      debugPrint(res, "res", 2)
+      val m_tmp = res.revertSchur(m_U.mapValues(_.real))
+      val ipower = floor(frac_power)
+      //   res =  computeIntPower( ipower, M)
+      //res = Complex(m_tmp,0.0) * res
+
+      res
     }
-}
 
+}

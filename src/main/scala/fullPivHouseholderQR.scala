@@ -7,45 +7,47 @@ import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
 import GlobalConsts._
+import Householder._
 
-class fullPivHouseholderQR(val QR :DenseMatrix[Complex]) {
-  val  rows = QR.rows
-  val  cols = QR.cols
-  val  size = math.min(rows,cols);
-  val hCoeffs=   DenseVector.zeros[Complex](size) //tau coeffs
+object HouseholderQR
+{
+implicit class PivHouseholderQR(val QR: DenseMatrix[Complex]) {
+  val rows = QR.rows
+  val cols = QR.cols
+  val size = math.min(rows, cols);
+  val hCoeffs = DenseVector.zeros[Complex](size) //tau coeffs
   val rows_transpositions = Array[Int](size)
-  val cols_transpositions  = Array[Int](size)
+  val cols_transpositions = Array[Int](size)
 
-  def compute()={
-    breakable
-    {
-      var k =0
-      for ( k  <-  0 to  size- 1)
-      {
-	var row_of_biggest_in_corner , col_of_biggest_in_corner = 0
-	val biggest_in_corner : Double= Helper.biggest(QR(QR.rows -1 - k to QR.rows -1, QR.cols -1- k  to QR.cols -1))
-	val m_precision = EPSILON
-	row_of_biggest_in_corner += k
-	col_of_biggest_in_corner += k
-	  var biggest  = 0.0
+      def  solve() = {
+      this}
 
-	if(k==0)
-	    biggest = biggest_in_corner
+  def  fullPivHouseholderQR() = {
+    breakable {
+      var k = 0
+      for (k <- 0 to size - 1) {
+        var row_of_biggest_in_corner, col_of_biggest_in_corner = 0
+        val biggest_in_corner: Double = Helper.biggest(QR(QR.rows - 1 - k to QR.rows - 1, QR.cols - 1 - k to QR.cols - 1))
+        val m_precision = EPSILON
+        row_of_biggest_in_corner += k
+        col_of_biggest_in_corner += k
+        var biggest = 0.0
 
-	// if the corner is negligible, then we have less than full rank, and we can finish early
-	if(isMuchSmallerThan(biggest_in_corner, biggest))
-	{
-	  var  m_nonzero_pivots = k
-	  var i = 0
-	  for(  i <- k to  size -1)
-	  {
-	    rows_transpositions(i) = i
-	    cols_transpositions(i) = i
-	    hCoeffs(i) =Complex(0.0,0.0)
-	  }
-	  break
-	}
-/*
+        if (k == 0)
+          biggest = biggest_in_corner
+
+        // if the corner is negligible, then we have less than full rank, and we can finish early
+        if (isMuchSmallerThan(biggest_in_corner, biggest)) {
+          var m_nonzero_pivots = k
+          var i = 0
+          for (i <- k to size - 1) {
+            rows_transpositions(i) = i
+            cols_transpositions(i) = i
+            hCoeffs(i) = Complex(0.0, 0.0)
+          }
+          break
+        }
+        /*
 	rows_transpositions(k) = row_of_biggest_in_corner
 	cols_transpositions(k) = col_of_biggest_in_corner
 	if(k != row_of_biggest_in_corner) {
@@ -77,20 +79,23 @@ class fullPivHouseholderQR(val QR :DenseMatrix[Complex]) {
       m_det_pq = (number_of_transpositions%2) ? -1 : 1;
       m_isInitialized = true;
 */
+    QR.applyHouseholder(1).applyHouseholderBottom(1)
 
+      }
     }
-
+this
   }
+
 }
 object fullPivHouseholderQR {
 
-  def apply(M :DenseMatrix[Complex]) =
-  {
-    new fullPivHouseholderQR(M.copy).compute()
-  }
-  def   solve(Rhs :  DenseMatrix[Complex]) =
-  {
+  //def apply(M: DenseMatrix[Complex]) =
+   // {
+     // new fullPivHouseholderQR(M.copy)
+   // }
+  def solve(Rhs: DenseMatrix[Complex]) =
+    {
 
-  }
+    }
 }
 }

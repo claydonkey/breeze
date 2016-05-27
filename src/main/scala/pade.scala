@@ -6,6 +6,7 @@ import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
+import HouseholderQR._
 
 object padePower {
 
@@ -21,18 +22,13 @@ object padePower {
 
     val _degree = degree(m_p)
     val i = _degree << 1
-    val r = IminusT.map(_ * (m_p - _degree.toDouble) / ((i - 1) << 1))
+    val res = IminusT.map(_ * (m_p - _degree.toDouble) / ((i - 1) << 1))
     val index = 0
-    val M = upperTriangular(DenseMatrix.eye[Complex](IminusT.rows)) + r
-    val T1 = -1.0 * m_p
-    val T = IminusT.mapValues(_.real) * T1 // BIG PROBLEMMMO
-    debugPrint(s"IminusT:\n$IminusT\nT:\n$T\nT1:\n$T1\nM:\n$M\n" ,"BEFORE fullpivhouseholderQR",1)
+    val M :DenseMatrix[Complex]= DenseMatrix.tabulate[Complex](res.rows, res.cols)((x, y) => if (x == y) Complex(1.0, 0) else res(x, y))
+    val T1 = -1.0 * Complex(m_p, 0)
+    val T = IminusT * T1
+   (M.mapValues(_.real) \ T.mapValues(_.real)).mapValues(Complex(_, 0.0)):+ DenseMatrix.eye[Complex](IminusT.rows)   // BIG PROBLEMMMO
 
-    val IminusR = IminusT.mapValues(_.real)
-    debugPrint(s"IminusR:\n$IminusR\n")
-    // else IminusT.map(_ * (m_p - (t >> 1)) / ((t - 1) << 1))
-    val res = T \ M.mapValues(_.real) // BIG PROBLEMMMO
-    res + DenseMatrix.eye[Double](IminusT.rows)
-    res.mapValues(Complex(_, 0.0))
+
   }
 }

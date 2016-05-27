@@ -6,6 +6,10 @@ import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
 
+
+
+object Householder
+{
 /*
    *  4 x 4 example
    *    x    x    x    x
@@ -13,16 +17,15 @@ import scala.util.control.Breaks._
    *    e    [  bott   ]
    *    e    [   bott  ]
    */
-class householder(val matrixH: DenseMatrix[Complex]){
+ implicit class householder(val matrixH: DenseMatrix[Complex]) {
 
   val size = matrixH.cols - 1
   val beta = Array.ofDim[Double](size)
-   val coeffs=   DenseVector.zeros[Complex](size) //tau coeffs
+  val coeffs = DenseVector.zeros[Complex](size) //tau coeffs
   val essential = Array.ofDim[DenseVector[Complex]](size)
 
   //implicit def enrichArray[T](xs: Array[T]) = new RichArray[T]
-    implicit def enrichDenseMatrix(i: DenseMatrix[Complex]) = new householder(i)
-
+  implicit def enrichDenseMatrix(i: DenseMatrix[Complex]) = new householder(i)
 
   def applyHouseholder(cnt: Int) =
     {
@@ -105,12 +108,11 @@ class householder(val matrixH: DenseMatrix[Complex]){
    *    e    x    x    x
    */
 
-object householder {
+ object householder {
 
+  //def apply(m_matrix: DenseMatrix[Complex]): householder = new householder(m_matrix)
 
-  def apply(m_matrix: DenseMatrix[Complex]): householder = new householder(m_matrix)
-
-  def householderSequence(hMatrix: DenseMatrix[Double], hCoeffs: DenseVector[Double], order: Int)  :DenseMatrix[Double]= {
+  def householderSequence(hMatrix: DenseMatrix[Double], hCoeffs: DenseVector[Double], order: Int): DenseMatrix[Double] = {
     //HouseholderSequence shifted 1 with size -1
     /*  4 x 4 example of the form
      *  1    0    0     0   ^  ------- order (wrapper)
@@ -151,3 +153,4 @@ object householder {
       sum
 }
   }
+}

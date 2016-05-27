@@ -7,6 +7,7 @@ import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
 import jacobiRotation._
+import Hessenberg._
 /* The Schur decomposition is computed by first reducing the
  * matrix to Hessenberg form using the class
  * HessenbergDecomposition. The Hessenberg matrix is then reduced
@@ -16,9 +17,16 @@ import jacobiRotation._
  * on the number of iterations; as a rough guide, it may be taken
  * to be \f$25n^3\f$ complex flops, or \f$10n^3\f$ complex flops
  * if \a computeU is false.*/
-class complexSchur(val M: DenseMatrix[Complex]) {
 
-  val hess = hessenbergDecomposition(M)
+object Schur
+{
+
+implicit class complexSchur(val M: DenseMatrix[Complex]) {
+ if (M.rows != M.cols)
+      throw new MatrixNotSquareException
+
+    //val S = new complexSchur(M.copy)
+  val hess = M.reduceToHessenberg()
 
   val matT = hess.MatrixH
   //private val matP=
@@ -39,13 +47,22 @@ class complexSchur(val M: DenseMatrix[Complex]) {
       if (isMuchSmallerThan(sd, d)) {
         val t = matT(i + 1, i)
         val M = matT.mapValues(_.real)
-        debugPrint(s"SMALLER   i = $i matT($i + 1, $i) :  $t", "", 2)
         matT(i + 1, i) = Complex(0, 0)
 
         true
       } else
         false
     }
+  /*def revertSchur( T: DenseMatrix[Complex]) {
+    M * (upperTriangular(T) * adj(M))
+  }
+*/
+    def revertSchur( T: DenseMatrix[Double]) {
+     M.mapValues(_.real) * upperTriangular(T) * Helper.adj(M.mapValues(_.real) )
+     M
+  }
+
+
 
   /** Compute the shift in the current QR iteration. */
   def computeShift(iu: Int, iter: Int) = {
@@ -58,10 +75,6 @@ class complexSchur(val M: DenseMatrix[Complex]) {
 
     var t = matT((iu - 1) to matT.cols - 1, (iu - 1) to matT.cols - 1) // Complex(NormT, 0)
     val normt = Complex(sum(t.mapValues(abs(_))), 0)
-
-    debugPrint(matT, "SHIFT FROM", 3)
-    debugPrint(t, "SHIFT t", 3)
-    debugPrint(normt, "SHIFT normt", 3)
 
     t = t / normt
 
@@ -77,8 +90,7 @@ class complexSchur(val M: DenseMatrix[Complex]) {
       eival2 = det / eival1;
     else
       eival1 = det / eival2;
-    debugPrint(eival1, "eival1", 3)
-    debugPrint(eival2, "eival2", 3)
+
     // choose the eigenvalue closest to the bottom entry of the diagonal
     if (norm1(eival1 - t(1, 1)) < norm1(eival2 - t(1, 1)))
       normt * eival1;
@@ -103,6 +115,9 @@ class complexSchur(val M: DenseMatrix[Complex]) {
     var il = 0
     var iter = 0 // number of iterations we are working on the (iu,iu) element
     var totalIter = 0 // number of iterations for whole matrix
+
+    debugPrint(matT, "Start MatT", 4)
+
     breakable {
       while (true) {
         // find iu, the bottom row of the active submatrix
@@ -139,32 +154,33 @@ class complexSchur(val M: DenseMatrix[Complex]) {
         val shift = computeShift(iu, iter)
         debugPrint(shift, "A shift", 3)
 
-        val jR1 = makeGivens(matT(il, il) - shift, matT(il + 1, il))
+        val rot = makeGivens(matT(il, il) - shift, matT(il + 1, il))
 
-        matT(il to il + 1, ::) := jR1.applyOnTheLeft(matT(il, ::), matT(il + 1, ::))
-        debugPrint(matT, "A MatT", 2)
-        matT(0 to matT.cols - il - 2, il to il + 1) := jR1.applyOnTheRight(matT(0 to matT.cols - il - 2, il), matT(0 to matT.cols - il - 2, il + 1))
-        debugPrint(matT, "B MatT", 2)
-        matQ(::, il to il + 1) := jR1.applyOnTheRight(matQ(::, il), matQ(::, il + 1))
-        debugPrint(matQ, "AQ", 4)
+        rot.applyOnTheLeft(matT(il, ::), matT(il + 1, ::))
+        debugPrint(matT, "A MatT", 4)
+        rot.applyOnTheRight(matT(0 to matT.cols - il - 2, il), matT(0 to matT.cols - il - 2, il + 1))
+        debugPrint(matT, "B MatT", 4)
+        rot.applyOnTheRight(matQ(::, il), matQ(::, il + 1))
+        debugPrint(matQ, "AQ", 0)
 
         val idx: Int = 0
 
         for (idx <- ((il + 1) to iu - 1)) {
 
-          var jR2 = makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
-          matT(idx, idx - 1) = jR2.rot
+          val rot2 = makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
+          matT(idx, idx - 1) = rot2.rot
           matT(idx + 1, idx - 1) = Complex(0.0, 0.0)
-          matT(idx to idx + 1, idx to matT.cols - 1) := jR2.applyOnTheLeft(matT(idx, idx to matT.cols - 1), matT(idx + 1, idx to matT.cols - 1))
+          rot2.applyOnTheLeft(matT(idx, idx to matT.cols - 1), matT(idx + 1, idx to matT.cols - 1))
 
-          debugPrint(matT, "1 MatT", 2)
+          debugPrint(matT, "1 MatT", 4)
           debugPrint(idx, "idx", 3)
 
-          matT(::, idx to idx + 1) := jR2.applyOnTheRight(matT(::, idx), matT(::, idx + 1))
+          rot2.applyOnTheRight(matT(::, idx), matT(::, idx + 1))
           //CHECK FOR 3 needing to be equal to cell size..
-          debugPrint(matT, "2 MatT", 2)
-          matQ(::, idx to idx + 1) := jR2.applyOnTheRight(matQ(::, idx), matQ(::, idx + 1))
-          debugPrint(matQ, "1 MatQ", 4)
+          debugPrint(matT, "2 MatT", 4)
+          rot2.applyOnTheRight(matQ(::, idx), matQ(::, idx + 1))
+          debugPrint(matQ, "1 MatQ", 0)
+
         }
 
       }
@@ -173,12 +189,9 @@ class complexSchur(val M: DenseMatrix[Complex]) {
 }
 
 object complexSchur {
-
+/*
   def apply(M: DenseMatrix[Complex]): complexSchur = {
-    if (M.rows != M.cols)
-      throw new MatrixNotSquareException
 
-    val S = new complexSchur(M.copy)
 
     if (M.cols == 1) {
       S //   return (DenseMatrix.eye[Complex](1), DenseMatrix.eye[Complex](1))
@@ -187,7 +200,7 @@ object complexSchur {
     S
     //  (M, M)
   }
-
+*/
   /**
    *  Hessenberg decomposition of given matrix.
    *
@@ -196,4 +209,6 @@ object complexSchur {
    * (see, e.g., Algorithm 7.4.2 in Golub \& Van Loan, <i>%Matrix
    * Computations</i>).
    */
+}
+
 }
