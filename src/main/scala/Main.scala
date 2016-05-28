@@ -34,8 +34,8 @@ object Main {
 
   def main(args: Array[String]): Unit = {
   //promptEnterKey();
-    applySchur();
-   // matrixPow.fract(3.43, DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0)))
+    //applySchur();
+  matrixPow.fract(3.43, DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0)))
 
     if (bw !=None) {
       bw.get.close()

@@ -4,7 +4,7 @@
 		module="householder-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160518201001"
+		publication="20160528005406"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

@@ -71,27 +71,43 @@ object matrixPow {
 
   def compute2x2(res: DenseMatrix[Complex], p: Double, m_A: DenseMatrix[Complex]) =
     {
-      debugPrint(res, "  Result zero", 6)
-       debugPrint(p, "  Result zero", 6)
-        debugPrint(m_A, "  Result zero", 6)
+      debugPrint(res, "  Result zero", 2)
+      debugPrint(p, "  Result zero", 2)
+      debugPrint(m_A, "  Result zero", 2)
       res(0, 0) = pow(m_A(0, 0), p)
-      debugPrint(res(0, 0), "  Result zero", 6)
+      debugPrint(res(0, 0), "  Result zero", 2)
       var i = 0
       for (i <- 1 to m_A.cols - 1) {
         res(i, i) = pow(m_A(i, i), p);
-        debugPrint(res(i, i), "  Result zero", 6)
-        if (m_A(i - 1, i - 1) == m_A(i, i))
+        debugPrint(res(i, i), "  Result zero loop", 2)
+        if (m_A(i - 1, i - 1) == m_A(i, i)) {
           res(i - 1, i) = p * pow(m_A(i, i), p - 1)
-        else if (2 * abs(m_A(i - 1, i - 1)) < abs(m_A(i, i)) || 2 * abs(m_A(i, i)) < abs(m_A(i - 1, i - 1)))
-          res(i - 1, i) = (res(i, i) - res(i - 1, i - 1)) / (m_A(i, i) - m_A(i - 1, i - 1));
-        else
-          res(i - 1, i) = computeSuperDiag(m_A(i, i), m_A(i - 1, i - 1), p);
-
-        debugPrint(res(i - 1, i), "  Result zero", 6)
-        res(i - 1, i) *= m_A(i - 1, i);
+          debugPrint(res(i - 1, i), "  Result 1", 2)
+        } else if (2 * abs(m_A(i - 1, i - 1)) < abs(m_A(i, i)) || 2 * abs(m_A(i, i)) < abs(m_A(i - 1, i - 1))) {
+          res(i - 1, i) = (res(i, i) - res(i - 1, i - 1)) / (m_A(i, i) - m_A(i - 1, i - 1))
+          debugPrint(res(i - 1, i), "  Result 2", 2)
+        } else {
+          res(i - 1, i) = computeSuperDiag(m_A(i, i), m_A(i - 1, i - 1), p)
+          debugPrint(res(i - 1, i), "  Result 3", 2)
+        }
+        res(i - 1, i) *= m_A(i - 1, i)
       }
       res
     }
+
+  def computeIntPower(p: Double, in: DenseMatrix[Double]) = {
+    var pp = abs(p);
+    val m_tmp = if (p < 0.0) { inv(in) } else { in }
+
+    var res = DenseMatrix.eye[Double](in.cols)
+    while (pp >= 1) {
+      if (pp % 2 >= 1)
+        res = m_tmp * res;
+      m_tmp *= m_tmp;
+      pp = pp / 2
+    }
+    res
+  }
 
   def fract(pow: Double = 3.43, M: DenseMatrix[Complex] = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0))): DenseMatrix[Complex] =
     {
@@ -105,16 +121,15 @@ object matrixPow {
       val MatrixH = mySchur.hess.MatrixH
       val MatrixP = mySchur.hess.MatrixP
 
-     debugPrint(m_T, "m_T", 2)
-     debugPrint(m_U, "m_U", 2)
-     debugPrint(MatrixH, "MatrixH", 2)
-     debugPrint(MatrixP, "MatrixP", 2)
-     debugPrint(M, "M", 2)
-     debugPrint(mySchur.hess.hCoeffs, "mySchur.hess.hCoeffs", 2)
-     debugPrint(m_T, "m_T", 2)
-     debugPrint(m_U, "m_U", 2)
-     debugPrint(M, "M", 2)
-     debugPrint(T, "T", 2)
+      debugPrint(m_T, "m_T", 2)
+      debugPrint(m_U, "m_U", 2)
+      debugPrint(MatrixH, "MatrixH", 2)
+      debugPrint(MatrixP, "MatrixP", 2)
+
+      debugPrint(mySchur.hess.hCoeffs, "mySchur.hess.hCoeffs", 2)
+
+      debugPrint(M, "M", 2)
+      debugPrint(T, "T", 2)
 
       numberOfSquareRoots = 0
       val frac_power = pow % 1.0
@@ -130,16 +145,19 @@ object matrixPow {
       var i = numberOfSquareRoots
 
       for (i <- numberOfSquareRoots to 0 by -1) {
-        res = upperTriangular(compute2x2(res, frac_power * scala.math.pow(2, -numberOfSquareRoots), m_T))
+        res = upperTriangular(compute2x2(res, frac_power * scala.math.pow(2, -i), m_T))
         debugPrint(res, "  Result zero", 2)
       }
       debugPrint(res, "res", 2)
-      val m_tmp = res.revertSchur(m_U.mapValues(_.real))
-      val ipower = floor(frac_power)
-      //   res =  computeIntPower( ipower, M)
-      //res = Complex(m_tmp,0.0) * res
 
+      val m_tmp =(res.revertSchur(m_U.mapValues(_.real))).mapValues(Complex(_, 0.0))
+      debugPrint(m_tmp, "m_tmp", 2)
+      val ipower = floor(frac_power)
+      res = computeIntPower(ipower, M.mapValues(_.real)).mapValues(Complex(_, 0.0))
+      res = m_tmp * res
+      debugPrint(res, "RESULT", 2)
       res
+
     }
 
 }

@@ -24,15 +24,15 @@ object GlobalConsts {
   var matnum2 = MutableInt(0)
   val showComplex = false
   val formatter = new DecimalFormat("#0.000000")
-  val printEnabled = Array(false, false, true, false, false, false, true)
+  val printEnabled = Array(false, false, true, false, false, false, false)
   val EPSILON: Double = 2.22045e-016
-  val currentPrintType = printType.GRAPHCOMPLEX3
+  val currentPrintType = printType.GRAPH3
 }
 
 object Helper {
 
   import GlobalConsts._
-  def adj(M: DenseMatrix[Double]):DenseMatrix[Double] = {  det(M) * inv(M) } //  adjoint of vector is vector itself??
+  def adj(M: DenseMatrix[Double]): DenseMatrix[Double] = { det(M) * inv(M) } //  adjoint of vector is vector itself??
   //def adj(M: DenseMatrix[Complex]) = { inv(M) * det(M) }  //  adjoint of vector is vector itself??
   def abs2(n: Complex): Double = { (n.real * n.real) + (n.imag * n.imag) }
   def conj(n: Complex) = { Complex(n.real, -n.imag) }
@@ -86,7 +86,6 @@ object Helper {
           case printType.REAL => println(printcount2(name) + M.asInstanceOf[DenseVector[Double]].mapValues(x => "( " + formatter.format(x) + " )"))
           case _ => println(printcount2(name) + M.asInstanceOf[DenseVector[Double]].mapValues(x => "( " + formatter.format(x) + " )"))
 
-
         }
       }
 
@@ -102,21 +101,18 @@ object Helper {
 
       case b if b =:= typeOf[DenseMatrix[Complex]] => if (printEnabled(loglevel)) {
         currentPrintType match {
-          case printType.GRAPH =>
-
-            println(s"$name\n\n" + M.asInstanceOf[DenseMatrix[Complex]].mapValues {
-              var i = 0; (x) =>
-                i += 1;
-                i + " " + formatter.format(x.real) + ", "
-            })
-
           case printType.GRAPH2 => Main.bw.get.write(("" + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.real) }).filter(_ >= ' ') + "\n")
-          case printType.GRAPHCOMPLEX2 => Main.bw.get.write(("" + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.real) + adder(x.imag) + formatter.format(x.imag) + "i" }).filter(_ >= ' ') + "\n")
           case printType.GRAPH3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => "( " + formatter.format(x.real) + " )" } + "\n")
           case printType.GRAPHCOMPLEX3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )" } + "\n")
           case printType.REAL => println(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + " )"))
-          case printType.COMPLEX2 => println((printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.real) + adder(x.imag) + formatter.format(x.imag) + "i" }))
-          case _ => println(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + " )"))
+          case _ => println(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
+        }
+      }
+
+      case b if b =:= typeOf[Array[Double]] => if (printEnabled(loglevel)) {
+        currentPrintType match {
+          case _ => Main.bw.get.write(printcount2(name) + M.asInstanceOf[Array[Double]].deep.mkString("\n") + "\n")
+
 
         }
 

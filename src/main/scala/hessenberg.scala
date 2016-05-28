@@ -18,15 +18,15 @@ Hessenberg decomposition is the first step in Schur decomposition. Hessenberg de
 */
 
   implicit class hessenbergDecomposition(M: DenseMatrix[Complex]) {
-val H = hessenbergDecomposition.reduceToHessenberg2(M.copy)
+val House= hessenbergDecomposition.reduceToHessenberg(M)
 
-    val hCoeffs = H.coeffs
-    val matH = H.matrixH
+    val hCoeffs = House.coeffs
+    val matH = House.matrixH
 
-    def reduceToHessenberg() = {
-      val icnt = 0
-      for (icnt <- 0 to matH.rows - 2)
-        H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
+    def getHessenberg() = {
+  //    val icnt = 0
+    //  for (icnt <- 0 to matH.rows - 2)
+     //   H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
     this
     }
 
@@ -76,14 +76,15 @@ val H = hessenbergDecomposition.reduceToHessenberg2(M.copy)
 
     }
 */
-    def reduceToHessenberg2(M: DenseMatrix[Complex]) = {
 
-      //  val H: householder = householder(M.copy)
+    def reduceToHessenberg(M: DenseMatrix[Complex]) = {
+
+      val H: householder = householder(M.copy)
       val M2 = M.copy
       val icnt = 0
       for (icnt <- 0 to M.rows - 2)
-        M2.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
-      M2
+        H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
+      H
 
     }
   }
