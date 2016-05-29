@@ -55,5 +55,7 @@ object Dependencies {
   var basic: Seq[ModuleID] = Seq( "org.scalanlp" %% "breeze" % "0.13-SNAPSHOT" changing () withJavadoc (),
     "org.scalanlp" %% "breeze-natives" % "0.13-SNAPSHOT",
     "org.scalanlp" %% "breeze-viz" % "0.13-SNAPSHOT",
-    "com.quantifind" %% "wisp" % "0.0.4")
+    "com.quantifind" %% "wisp" % "0.0.4",
+  "org.spire-math" %% "spire" % "0.11.0"
+  )
 }

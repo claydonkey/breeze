@@ -4,7 +4,7 @@
 		module="householder_2.11"
 		revision="0.1.0"
 		status="integration"
-		publication="20160528005416"
+		publication="20160529141917"
 	>
 		<description>
 		householder
@@ -41,5 +41,6 @@
 		<dependency org="org.scalanlp" name="breeze-natives_2.11" rev="0.13-SNAPSHOT" conf="compile->default(compile)"/>
 		<dependency org="org.scalanlp" name="breeze-viz_2.11" rev="0.13-SNAPSHOT" conf="compile->default(compile)"/>
 		<dependency org="com.quantifind" name="wisp_2.11" rev="0.0.4" conf="compile->default(compile)"/>
+		<dependency org="org.spire-math" name="spire_2.11" rev="0.11.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

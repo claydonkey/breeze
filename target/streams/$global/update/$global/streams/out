@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.scala-lang#scala-library;2.11.8 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.8 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@475b1216[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@17fcaa68[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.8[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.8[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.8 in sbt-chain[0m
@@ -221,6 +221,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.typelevel#machinist_2.11;0.4.1->org.scala-lang#scala-reflect;2.11.7 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spire-math#spire_2.11;0.11.0->org.typelevel#machinist_2.11;0.4.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spire-math#spire_2.11;0.11.0->org.typelevel#machinist_2.11;0.4.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalanlp#breeze_2.11;0.13-SNAPSHOT->org.spire-math#spire_2.11;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalanlp#breeze_2.11;0.13-SNAPSHOT->org.spire-math#spire_2.11;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalanlp#breeze_2.11;0.13-SNAPSHOT->org.spire-math#spire_2.11;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalanlp#breeze_2.11;0.13-SNAPSHOT->org.spire-math#spire_2.11;0.11.0 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalanlp#breeze_2.11;0.13-SNAPSHOT->org.slf4j#slf4j-api;1.7.5 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.7.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.5 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
@@ -332,7 +336,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-osx-x86_64;1.1!netlib-native_ref-osx-x86_64.pom(pom.original) (59ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-osx-x86_64;1.1!netlib-native_ref-osx-x86_64.pom(pom.original) (52ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_ref;1.1[0m
@@ -358,7 +362,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_ref-java;1.1!native_ref-java.pom(pom.original) (55ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_ref-java;1.1!native_ref-java.pom(pom.original) (38ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_ref;1.1[0m
@@ -397,7 +401,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-linux-x86_64;1.1!netlib-native_ref-linux-x86_64.pom(pom.original) (55ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-linux-x86_64;1.1!netlib-native_ref-linux-x86_64.pom(pom.original) (37ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref-xbuilds;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref-xbuilds;1.1 {}[0m
 [0m[[0mdebug[0m] [0m		tried C:\Users\anthony\.ivy2\local\com.github.fommil.netlib\native_ref-xbuilds\1.1\ivys\ivy.xml[0m
@@ -412,7 +416,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_ref-xbuilds/1.1/native_ref-xbuilds-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_ref-xbuilds/1.1/native_ref-xbuilds-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_ref-xbuilds/1.1/native_ref-xbuilds-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_ref-xbuilds;1.1!native_ref-xbuilds.pom(pom.original) (51ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_ref-xbuilds;1.1!native_ref-xbuilds.pom(pom.original) (35ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_ref;1.1[0m
@@ -460,7 +464,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-linux-i686;1.1!netlib-native_ref-linux-i686.pom(pom.original) (48ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-linux-i686;1.1!netlib-native_ref-linux-i686.pom(pom.original) (37ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref-xbuilds;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref-xbuilds;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_ref-xbuilds;1.1[0m
@@ -490,7 +494,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-win-x86_64;1.1!netlib-native_ref-win-x86_64.pom(pom.original) (53ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-win-x86_64;1.1!netlib-native_ref-win-x86_64.pom(pom.original) (41ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_ref;1.1[0m
@@ -520,7 +524,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-win-i686;1.1!netlib-native_ref-win-i686.pom(pom.original) (54ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-win-i686;1.1!netlib-native_ref-win-i686.pom(pom.original) (36ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_ref;1.1[0m
@@ -550,7 +554,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-linux-armhf;1.1!netlib-native_ref-linux-armhf.pom(pom.original) (53ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_ref-linux-armhf;1.1!netlib-native_ref-linux-armhf.pom(pom.original) (37ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_ref-xbuilds;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_ref-xbuilds;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_ref-xbuilds;1.1[0m
@@ -580,7 +584,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-osx-x86_64;1.1!netlib-native_system-osx-x86_64.pom(pom.original) (55ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-osx-x86_64;1.1!netlib-native_system-osx-x86_64.pom(pom.original) (37ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_system;1.1[0m
@@ -606,7 +610,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_system-java;1.1!native_system-java.pom(pom.original) (44ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_system-java;1.1!native_system-java.pom(pom.original) (36ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_system;1.1[0m
@@ -638,7 +642,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-linux-x86_64;1.1!netlib-native_system-linux-x86_64.pom(pom.original) (50ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-linux-x86_64;1.1!netlib-native_system-linux-x86_64.pom(pom.original) (36ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system-xbuilds;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system-xbuilds;1.1 {}[0m
 [0m[[0mdebug[0m] [0m		tried C:\Users\anthony\.ivy2\local\com.github.fommil.netlib\native_system-xbuilds\1.1\ivys\ivy.xml[0m
@@ -653,7 +657,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_system-xbuilds/1.1/native_system-xbuilds-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_system-xbuilds/1.1/native_system-xbuilds-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/native_system-xbuilds/1.1/native_system-xbuilds-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_system-xbuilds;1.1!native_system-xbuilds.pom(pom.original) (45ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#native_system-xbuilds;1.1!native_system-xbuilds.pom(pom.original) (35ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_system;1.1[0m
@@ -701,7 +705,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-linux-i686;1.1!netlib-native_system-linux-i686.pom(pom.original) (40ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-linux-i686;1.1!netlib-native_system-linux-i686.pom(pom.original) (36ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system-xbuilds;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system-xbuilds;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_system-xbuilds;1.1[0m
@@ -731,7 +735,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-linux-armhf;1.1!netlib-native_system-linux-armhf.pom(pom.original) (44ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-linux-armhf;1.1!netlib-native_system-linux-armhf.pom(pom.original) (78ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system-xbuilds;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system-xbuilds;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_system-xbuilds;1.1[0m
@@ -761,7 +765,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-win-x86_64;1.1!netlib-native_system-win-x86_64.pom(pom.original) (53ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-win-x86_64;1.1!netlib-native_system-win-x86_64.pom(pom.original) (37ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_system;1.1[0m
@@ -791,7 +795,7 @@
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1.pom[0m
 [0m[[0mdebug[0m] [0m	maven-proxy-releases: downloading http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://localhost:8081/nexus/content/repositories/central/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-win-i686;1.1!netlib-native_system-win-i686.pom(pom.original) (50ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.fommil.netlib#netlib-native_system-win-i686;1.1!netlib-native_system-win-i686.pom(pom.original) (36ms)[0m
 [0m[[0minfo[0m] [0mResolving com.github.fommil.netlib#native_system;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.fommil.netlib#native_system;1.1 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.fommil.netlib#native_system;1.1[0m
@@ -1420,6 +1424,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->com.quantifind#wisp_2.11;0.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [compile][0m
@@ -2018,6 +2026,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->com.quantifind#wisp_2.11;0.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [runtime][0m
@@ -2617,6 +2629,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->com.quantifind#wisp_2.11;0.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
@@ -3219,6 +3235,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->com.quantifind#wisp_2.11;0.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
@@ -3820,6 +3840,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->com.quantifind#wisp_2.11;0.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [test-internal][0m
@@ -4421,6 +4445,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.quantifind#wisp_2.11;0.0.4->commons-io#commons-io;2.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->com.quantifind#wisp_2.11;0.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies claydonkey.com#householder_2.11;0.1.0->org.spire-math#spire_2.11;0.11.0 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for claydonkey.com#householder_2.11;0.1.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
@@ -4525,13 +4553,13 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalanlp#breeze-natives_2.11;0.13-SNAPSHOT!breeze-natives_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalanlp#breeze-viz_2.11;0.13-SNAPSHOT!breeze-viz_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.quantifind#wisp_2.11;0.0.4!wisp_2.11.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.spire-math#spire_2.11;0.11.0!spire_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalanlp#breeze-macros_2.11;0.13-SNAPSHOT!breeze-macros_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.fommil.netlib#core;1.1.2!core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sourceforge.f2j#arpack_combined_all;0.1!arpack_combined_all.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sourceforge.f2j#arpack_combined_all;0.1!arpack_combined_all.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.opencsv#opencsv;2.3!opencsv.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.rwl#jtransforms;2.4.0!jtransforms.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.spire-math#spire_2.11;0.11.0!spire_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.5!slf4j-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.chuusai#shapeless_2.11;2.2.5!shapeless_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.7!scala-reflect.jar[0m
@@ -4595,7 +4623,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5230ms :: artifacts dl 53ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 35305ms :: artifacts dl 41ms[0m
 [0m[[0mdebug[0m] [0m	report for claydonkey.com#householder_2.11;0.1.0 compile produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\target\resolution-cache\reports\claydonkey.com-householder_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for claydonkey.com#householder_2.11;0.1.0 runtime produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\target\resolution-cache\reports\claydonkey.com-householder_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for claydonkey.com#householder_2.11;0.1.0 test produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\target\resolution-cache\reports\claydonkey.com-householder_2.11-test.xml[0m
@@ -4609,5 +4637,5 @@
 [0m[[0mdebug[0m] [0m	report for claydonkey.com#householder_2.11;0.1.0 docs produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\target\resolution-cache\reports\claydonkey.com-householder_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for claydonkey.com#householder_2.11;0.1.0 pom produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\target\resolution-cache\reports\claydonkey.com-householder_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for claydonkey.com#householder_2.11;0.1.0 scala-tool produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\target\resolution-cache\reports\claydonkey.com-householder_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (5230ms resolve - 53ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (35305ms resolve - 41ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

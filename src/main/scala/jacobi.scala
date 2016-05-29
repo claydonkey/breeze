@@ -51,14 +51,8 @@ class jacobiRotation(val m_c: Complex, val m_s: Complex, val rot: Complex) {
       val yi = y(i)
       x(i) = c * xi + conj(s) * yi
       y(i) = -s * xi + conj(c) * yi
-
     }
-    // DenseMatrix.vertcat((DenseVector.tabulate(_x.size)(i => j.m_c * _x(i) +  conj(j.m_s) * _y(i))).toDenseMatrix, (DenseVector.tabulate(_x.size)(i => -j.m_s * _x(i) +  conj (j.m_c) * _y(i))).toDenseMatrix)
 
-    //val t = DenseMatrix.vertcat(x.toDenseMatrix, y.toDenseMatrix)
-
-
-    //t
   }
 
 }

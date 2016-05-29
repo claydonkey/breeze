@@ -23,24 +23,28 @@ object GlobalConsts {
   var matnum1 = MutableInt(0)
   var matnum2 = MutableInt(0)
   val showComplex = false
-  val formatter = new DecimalFormat("#0.000000")
-  val printEnabled = Array(false, false, true, false, false, false, false)
+  val formatter = new DecimalFormat("#0.00000")
+  val printEnabled = Array(false, true, false, false, false, false, false)
   val EPSILON: Double = 2.22045e-016
-  val currentPrintType = printType.GRAPH3
+  val currentPrintType = printType.GRAPHCOMPLEX3
 }
 
 object Helper {
 
   import GlobalConsts._
-  def adj(M: DenseMatrix[Double]): DenseMatrix[Double] = { det(M) * inv(M) } //  adjoint of vector is vector itself??
+  def adj(M: DenseMatrix[Complex]): DenseMatrix[Complex] = { (det(M.mapValues(_.real)) * inv(M.mapValues(_.real))).mapValues(Complex(_, 0.0)) } //  adjoint of vector is vector itself??
   //def adj(M: DenseMatrix[Complex]) = { inv(M) * det(M) }  //  adjoint of vector is vector itself??
   def abs2(n: Complex): Double = { (n.real * n.real) + (n.imag * n.imag) }
   def conj(n: Complex) = { Complex(n.real, -n.imag) }
   def norm1(n: Complex): Double = { abs(n.real) + abs(n.imag) }
   def biggest(M: DenseMatrix[Complex]) = norm1(sum(M(::, *)).t.reduceLeft((x, y) => if (norm1(x) > norm1(y)) x else y))
-
+  val M_PI = 3.14159265358979323846
+  def sinh2(c: Complex) = { Complex(sinh(c.real) * cos(c.imag), cosh(c.real) * sin(c.imag)) }
   def isMuchSmallerThan(x: Double, y: Double) = { abs(x) <= abs(y) * EPSILON }
-
+  implicit def Y3[A1, A2, A3, B](f: (( A1, A2, A3) => B) => ((A1, A2, A3) => B)): (A1, A2, A3) => B = f(Y3(f))(_, _, _)
+  type fType[A] = (Int,  DenseMatrix[Complex]) => A
+  def Y[A, B](f: (A => B) => (A => B)): A => B = f(Y(f))(_)
+  //implicit def Y1[Int, DenseMatrix[Complex] ,  DenseMatrix[Complex]](f: (fType[DenseMatrix[Complex]]) => ((Int, DenseMatrix[Complex]) => A)): (Int, DenseMatrix[Complex]) => A = f(Y1(f))(_, _)
   def printcount() = {
 
     function(matnum1)
@@ -112,7 +116,6 @@ object Helper {
       case b if b =:= typeOf[Array[Double]] => if (printEnabled(loglevel)) {
         currentPrintType match {
           case _ => Main.bw.get.write(printcount2(name) + M.asInstanceOf[Array[Double]].deep.mkString("\n") + "\n")
-
 
         }
 

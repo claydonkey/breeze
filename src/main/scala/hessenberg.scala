@@ -23,12 +23,7 @@ val House= hessenbergDecomposition.reduceToHessenberg(M)
     val hCoeffs = House.coeffs
     val matH = House.matrixH
 
-    def getHessenberg() = {
-  //    val icnt = 0
-    //  for (icnt <- 0 to matH.rows - 2)
-     //   H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
-    this
-    }
+    def getHessenberg() =    this
 
     /*  4 x 4 example of the form
      *  1    0    0     0   ^  ------- order
@@ -65,17 +60,6 @@ val House= hessenbergDecomposition.reduceToHessenberg(M)
    */
 
   object hessenbergDecomposition {
-
-    // def apply(H: householder) = new hessenbergDecomposition(H)
-    /* def apply(M: DenseMatrix[Complex]) =
-    {
-
-      //    if (M.rows < 2)
-      //       return Nil
-      new hessenbergDecomposition(reduceToHessenberg(M.copy))
-
-    }
-*/
 
     def reduceToHessenberg(M: DenseMatrix[Complex]) = {
 

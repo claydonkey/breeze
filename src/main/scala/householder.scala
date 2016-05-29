@@ -35,7 +35,6 @@ object Householder {
           case (0, 0) =>
             beta(cnt) = c0.real
             coeffs(cnt) = Complex(0, 0)
-
           case _ =>
             val c0norm = scala.math.pow(c0.real, 2) + scala.math.pow(c0.imag, 2)
             beta(cnt) = if (c0.real >= 0) -Math.sqrt(c0norm + eNorm) else Math.sqrt(c0norm + eNorm)
@@ -98,7 +97,7 @@ object Householder {
         r0 -= (tmp.toDenseMatrix * coeffs(cnt)).toDenseVector
         bottom -= (essential(cnt).toDenseMatrix.t * tmp.toDenseMatrix) * coeffs(cnt)
         val matH2 = matrixH.mapValues(_.real)
-           debugPrint(matrixH, "applyHouseholderBottom matrixH", 6)
+        debugPrint(matrixH, "applyHouseholderBottom matrixH", 6)
         debugPrint(matH2, "applyHouseholderBottom matH2", 6)
         this
       }

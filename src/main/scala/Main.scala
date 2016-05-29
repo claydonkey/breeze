@@ -14,6 +14,8 @@ import GlobalConsts._
 import Householder._
 import Hessenberg._
 import Schur._
+import matrixPow._
+
 
 object Main {
   def promptEnterKey(): Option[Unit] = if (Console.in.read > 10) None else promptEnterKey
@@ -23,25 +25,25 @@ object Main {
     val formatter = new DecimalFormat("#0.0000")
     val Mat = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0))
 
-    val mySchur = complexSchur(Mat)
-    val matT = mySchur.matT
-    val matQ = mySchur.matQ
+    val (matU, matQ,temp,_,_) = Mat.getSchur()
 
-    debugPrint(matT, "mySchur.matT", 6)
+
+    debugPrint(matU, "mySchur.matU", 6)
 
     debugPrint(matQ, "mySchur.matQ", 6)
   }
 
   def main(args: Array[String]): Unit = {
-  //promptEnterKey();
+    //promptEnterKey();
     //applySchur();
-  matrixPow.fract(3.43, DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0)))
+    //fract(3.43, DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0)))
 
-    if (bw !=None) {
+    DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0)) mPow 3.43
+
+    if (bw != None) {
       bw.get.close()
     }
   }
-
 
 }
 
