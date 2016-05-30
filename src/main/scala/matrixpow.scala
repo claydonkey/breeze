@@ -35,20 +35,14 @@ object matrixPow {
   def getIMinusT(T: DenseMatrix[Complex], numSquareRoots: Int = 0, deg1: Double = 10.0, deg2: Double = 0.0): (DenseMatrix[Complex], Int) = {
     val IminusT = DenseMatrix.eye[Complex](T.rows) - T
     val normIminusT = norm1(sum(IminusT(::, *)).t.reduceLeft((x, y) => if (norm1(x) > norm1(y)) x else y))
+    debugPrint(IminusT, "IminusT", 4)
+    debugPrint(normIminusT, "normIminusT", 4)
     if (normIminusT < maxNormForPade) {
       val rdeg1 = padePower.degree(normIminusT)
       val rdeg2 = padePower.degree(normIminusT / 2)
       if (rdeg1 - rdeg2 <= 1.0) return (IminusT, numSquareRoots) else getIMinusT(upperTriangular(sqrtTriangular(T)), numSquareRoots + 1, rdeg1, rdeg2)
     }
     getIMinusT(upperTriangular(sqrtTriangular(T)), numSquareRoots + 1, deg1, deg2)
-  }
-  // atan(z) = (i/2) log((i + z)/(i - z))
-  def atan2h(x: Complex, y: Complex): Complex = {
-    val z = x / y
-    if ((y == 0) || (abs2(z) > pow(GlobalConsts.EPSILON, 0.5)))
-      (0.5) * log((y + x) / (y - x))
-    else
-      z + z * z * z / 3
   }
 
   def computeSuperDiag(curr: Complex, prev: Complex, p: Double): Complex = {
@@ -67,26 +61,39 @@ object matrixPow {
     res
   }
 
-  def compute2x2(res: DenseMatrix[Complex], p: Double, m_A: DenseMatrix[Complex]) =
+  def compute2x2(r: DenseMatrix[Complex], p: Double, m_A: DenseMatrix[Complex]) =
     {
-      debugPrint(res, "  Result res", 2)
-      debugPrint(p, "  Result p", 2)
-      debugPrint(m_A, "  Result m_A", 2)
-      res(0, 0) = breeze.numerics.pow(m_A(0, 0), p)
-      debugPrint(res(0, 0), "  Result res(0,0)", 2)
+      import breeze.numerics._
+      val res = r
+      debugPrint(res, "  Result res",  1)
+      debugPrint(p, "  Result p", 1)
+      debugPrint(m_A, "  Result m_A",  1)
+      res(0, 0) = pow(m_A(0, 0), p)
+      debugPrint(res(0, 0), "  Result res(0,0)",  1)
       var i = 1
       for (i <- 1 to m_A.cols - 1) {
-        res(i, i) = breeze.numerics.pow(m_A(i, i), p);
-        debugPrint(res(i, i), "  Result  loop 1", 2)
+        debugPrint(p, "  p",  1)
+        debugPrint(res(i, i), "  res(i, i) ",  1)
+        debugPrint(m_A(i, i), "  m_A.coeff(i, i)",  1)
+
+        res(i, i) = pow(m_A(i, i), p)
+
+        debugPrint(res(i, i), "  Result  loop 1", 1)
         if (m_A(i - 1, i - 1) == m_A(i, i)) {
-          res(i - 1, i) = p * breeze.numerics.pow(m_A(i, i), p - 1)
-          debugPrint(res(i - 1, i), "  Result 1", 2)
+          res(i - 1, i) = p * pow(m_A(i, i), p - 1)
+          debugPrint(res(i - 1, i), "  Result 1",  1)
         } else if (2 * abs(m_A(i - 1, i - 1)) < abs(m_A(i, i)) || 2 * abs(m_A(i, i)) < abs(m_A(i - 1, i - 1))) {
+
+          debugPrint(res(i - 1, i), "  res(i - 1, i)",  1)
+          debugPrint(res(i - 1, i - 1), "  res(i - 1, i-1)", 1)
+          debugPrint(m_A(i, i), "  m_A(i, i)",  1)
+          debugPrint(m_A(i - 1, i - 1), "  m_A(i-1, i-1)",  1)
           res(i - 1, i) = (res(i, i) - res(i - 1, i - 1)) / (m_A(i, i) - m_A(i - 1, i - 1))
-          debugPrint(res(i - 1, i), "  Result 2", 2)
+
+          debugPrint(res(i - 1, i), "  Result 2",  1)
         } else {
           res(i - 1, i) = computeSuperDiag(m_A(i, i), m_A(i - 1, i - 1), p)
-          debugPrint(res(i - 1, i), "  Result 3", 2)
+          debugPrint(res(i - 1, i), "  Result 3", 1)
         }
         res(i - 1, i) *= m_A(i - 1, i)
       }
@@ -121,10 +128,10 @@ object matrixPow {
       debugPrint(M, "M", 1)
       val T = upperTriangular(M)
 
-      val (m_T, m_U, m_P, m_H, hCoeffs) = M getSchur
-
-      debugPrint(m_T, "m_T", 1)
+      val (m_T, m_U, m_P, m_H, hCoeffs) = M.copy.getSchur()
       debugPrint(m_U, "m_U", 1)
+      debugPrint(m_T, "m_T", 1)
+
       debugPrint(m_H, "MatrixH", 1)
       debugPrint(m_P, "MatrixP", 1)
 
@@ -139,12 +146,10 @@ object matrixPow {
       debugPrint(noOfSqRts, "  noOfSqRts", 1)
       debugPrint(iminusT, "iminusT", 1)
       debugPrint(frac_power, "frac_power", 1)
-
-
+      debugPrint(padePower(iminusT, frac_power), "padePower", 1)
 
       /*
-       *      //var res = padePower(iminusT, frac_power)
-       *
+
              def sum2x2(noOfSqRts: Int, value: DenseMatrix[Complex], m_T: DenseMatrix[Complex]): DenseMatrix[Complex] = {
         if (noOfSqRts == 0) upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T))
         else
@@ -157,9 +162,9 @@ object matrixPow {
 	apply(noOfSqRts - 1, upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T)), m_T)
     }.apply(noOfSqRts, padePower(iminusT, frac_power), m_T)
     debugPrint(res, "Starting Result", 2)
-*/
 
-      /* if tail recursion is a problem
+      /* if tail recursion is a problem */
+      var res = padePower(iminusT, frac_power)
       var i = 0
 
       for (i <- noOfSqRts to 0 by -1) {
@@ -172,8 +177,8 @@ object matrixPow {
         else
           f(noOfSqRts - 1, upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T)), m_T))(noOfSqRts, padePower(iminusT, frac_power), m_T)
 
-      debugPrint(res, "res", 1)
-
+      debugPrint(res, "T", 1)
+      debugPrint(m_U, "m_U", 1)
       val m_tmp = (res.revertSchur(m_U))
       debugPrint(m_tmp, "revertSchur", 1)
       val ipower = floor(frac_power)

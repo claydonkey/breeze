@@ -15,7 +15,7 @@ object Householder {
    *    e    [  bott   ]
    *    e    [   bott  ]
    */
-  implicit class householder(val matrixH: DenseMatrix[Complex]) {
+  implicit class IMPL_householder(val matrixH: DenseMatrix[Complex]) {
 
     val size = matrixH.cols - 1
     val beta = Array.ofDim[Double](size)
@@ -23,7 +23,7 @@ object Householder {
     val essential = Array.ofDim[DenseVector[Complex]](size)
 
     //implicit def enrichArray[T](xs: Array[T]) = new RichArray[T]
-    implicit def enrichDenseMatrix(i: DenseMatrix[Complex]) = new householder(i)
+    implicit def enrichDenseMatrix(i: DenseMatrix[Complex]) = new IMPL_householder(i)
 
     def applyHouseholder(cnt: Int) =
       {
@@ -85,7 +85,7 @@ object Householder {
      *    e     Bottom
      *    e     Bottom
      */
-    def applyHouseholderBottom(cnt: Int): householder = {
+    def applyHouseholderBottom(cnt: Int): IMPL_householder = {
 
       if (matrixH.cols == 1) {
         matrixH *= 1 - coeffs(cnt)

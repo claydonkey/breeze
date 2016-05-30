@@ -24,7 +24,7 @@ object padePower {
     val i = _degree << 1
     val res = IminusT.map(_ * (m_p - _degree.toDouble) / ((i - 1) << 1))
     val index = 0
-    val M :DenseMatrix[Complex]= DenseMatrix.tabulate[Complex](res.rows, res.cols)((x, y) => if (x == y) Complex(1.0, 0) else res(x, y))
+    val M :DenseMatrix[Complex]= DenseMatrix.tabulate[Complex](res.rows, res.cols){(x, y) => if (x == y) Complex(1.0, 0) else res(x, y)}
     val T1 = -1.0 * Complex(m_p, 0)
     val T = IminusT * T1
    (M.mapValues(_.real) \ T.mapValues(_.real)).mapValues(Complex(_, 0.0)):+ DenseMatrix.eye[Complex](IminusT.rows)   // BIG PROBLEMMMO

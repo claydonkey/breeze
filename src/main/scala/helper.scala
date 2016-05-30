@@ -14,7 +14,7 @@ object GlobalConsts {
   }
   object printType extends Enumeration {
     type printType = Value
-    val COMPLEX, COMPLEX2, REAL, GRAPH, GRAPH2, GRAPH3, GRAPHCOMPLEX2, GRAPHCOMPLEX3 = Value
+    val COMPLEX, COMPLEX2, REAL, GRAPH, GRAPH2, GRAPH3, GRAPHCOMPLEX2, GRAPHCOMPLEX3, GRAPHCOMPLEXONLY, GRAPHCOMPLEXONLY2 = Value
   }
   def function(s: MutableInt): Boolean = {
     s.inc() // parentheses here to denote that method has side effects
@@ -23,10 +23,11 @@ object GlobalConsts {
   var matnum1 = MutableInt(0)
   var matnum2 = MutableInt(0)
   val showComplex = false
-  val formatter = new DecimalFormat("#0.00000")
-  val printEnabled = Array(false, true, false, false, false, false, false)
+  //val formatter = new DecimalFormat("#0.###E0")
+  val formatter = new DecimalFormat("#0.##########")
+  val printEnabled = Array(true, false, false, false, false, false, false)
   val EPSILON: Double = 2.22045e-016
-  val currentPrintType = printType.GRAPHCOMPLEX3
+  val currentPrintType = printType.GRAPHCOMPLEXONLY2
 }
 
 object Helper {
@@ -41,9 +42,10 @@ object Helper {
   val M_PI = 3.14159265358979323846
   def sinh2(c: Complex) = { Complex(sinh(c.real) * cos(c.imag), cosh(c.real) * sin(c.imag)) }
   def isMuchSmallerThan(x: Double, y: Double) = { abs(x) <= abs(y) * EPSILON }
-  implicit def Y3[A1, A2, A3, B](f: (( A1, A2, A3) => B) => ((A1, A2, A3) => B)): (A1, A2, A3) => B = f(Y3(f))(_, _, _)
-  type fType[A] = (Int,  DenseMatrix[Complex]) => A
+  implicit def Y3[A1, A2, A3, B](f: ((A1, A2, A3) => B) => ((A1, A2, A3) => B)): (A1, A2, A3) => B = f(Y3(f))(_, _, _)
+  type fType[A] = (Int, DenseMatrix[Complex]) => A
   def Y[A, B](f: (A => B) => (A => B)): A => B = f(Y(f))(_)
+  def atan2h(x: Complex, y: Complex): Complex = { val z = x / y; if ((y == 0) || (abs2(z) > pow(GlobalConsts.EPSILON, 0.5))) (0.5) * log((y + x) / (y - x)) else z + z * z * z / 3 }
   //implicit def Y1[Int, DenseMatrix[Complex] ,  DenseMatrix[Complex]](f: (fType[DenseMatrix[Complex]]) => ((Int, DenseMatrix[Complex]) => A)): (Int, DenseMatrix[Complex]) => A = f(Y1(f))(_, _)
   def printcount() = {
 
@@ -67,10 +69,10 @@ object Helper {
 
           case printType.GRAPH =>
 
-            println(s"$name\n\n" + M.asInstanceOf[DenseMatrix[Complex]].mapValues {
+            println(s"$name\n\n" + M.asInstanceOf[DenseMatrix[Double]].mapValues {
               var i = 0; (x) =>
                 i += 1;
-                i + " " + formatter.format(x.real) + ", "
+                i + " " + formatter.format(x) + ", "
             })
 
           case printType.GRAPH2 => Main.bw.get.write(("" + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => formatter.format(x) }).filter(_ >= ' ') + "\n")
@@ -78,6 +80,7 @@ object Helper {
           case printType.GRAPH3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => "( " + formatter.format(x) + " )" } + "\n")
           case printType.GRAPHCOMPLEX3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => "( " + formatter.format(x) + " )" } + "\n")
           case printType.REAL => println(printcount2(name) + M.asInstanceOf[DenseMatrix[Double]].mapValues(x => "( " + formatter.format(x) + " )"))
+
           case printType.COMPLEX2 => println((printcount2(name) + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => formatter.format(x) }))
           case _ => println(printcount2(name) + M.asInstanceOf[DenseMatrix[Double]].mapValues(x => "( " + formatter.format(x) + " )"))
         }
@@ -98,6 +101,7 @@ object Helper {
           case printType.GRAPH2 => Main.bw.get.write(("" + M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => formatter.format(x.real) }).filter(_ >= ' ') + "\n")
           case printType.GRAPH3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => "( " + formatter.format(x.real) + " )" } + "\n")
           case printType.GRAPHCOMPLEX3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )" } + "\n")
+          case printType.GRAPHCOMPLEXONLY => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => "( " + formatter.format(x.imag) + " )" } + "\n")
           case printType.REAL => println(printcount2(name) + M.asInstanceOf[DenseVector[Complex]].mapValues(x => "( " + formatter.format(x.real) + " )"))
           case _ => println(printcount2(name) + M.asInstanceOf[DenseVector[Complex]].mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
         }
@@ -108,6 +112,8 @@ object Helper {
           case printType.GRAPH2 => Main.bw.get.write(("" + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.real) }).filter(_ >= ' ') + "\n")
           case printType.GRAPH3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => "( " + formatter.format(x.real) + " )" } + "\n")
           case printType.GRAPHCOMPLEX3 => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )" } + "\n")
+          case printType.GRAPHCOMPLEXONLY => Main.bw.get.write(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => "( " + formatter.format(x.imag) + " )" } + "\n")
+          case printType.GRAPHCOMPLEXONLY2 => Main.bw.get.write(("" + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.imag) }).filter(_ >= ' ') + "\n")
           case printType.REAL => println(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + " )"))
           case _ => println(printcount2(name) + M.asInstanceOf[DenseMatrix[Complex]].mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
         }

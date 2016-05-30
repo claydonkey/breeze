@@ -17,7 +17,7 @@ Hessenberg decomposition is implemented in the Wolfram Language as HessenbergDec
 Hessenberg decomposition is the first step in Schur decomposition. Hessenberg decomposition on an n×n matrix requires 14n^3/3 arithmetic operations.
 */
 
-  implicit class hessenbergDecomposition(M: DenseMatrix[Complex]) {
+  implicit class IMPL_hessenbergDecomposition(M: DenseMatrix[Complex]) {
 val House= hessenbergDecomposition.reduceToHessenberg(M)
 
     val hCoeffs = House.coeffs
@@ -63,7 +63,7 @@ val House= hessenbergDecomposition.reduceToHessenberg(M)
 
     def reduceToHessenberg(M: DenseMatrix[Complex]) = {
 
-      val H: householder = householder(M.copy)
+      val H: IMPL_householder = IMPL_householder(M.copy)
       val M2 = M.copy
       val icnt = 0
       for (icnt <- 0 to M.rows - 2)
