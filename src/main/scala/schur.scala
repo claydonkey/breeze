@@ -6,7 +6,7 @@ import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
-import jacobiRotation._
+import jacobi._
 import Hessenberg._
 /* The Schur decomposition is computed by first reducing the
  * matrix to Hessenberg form using the class
@@ -37,13 +37,12 @@ object Schur {
     val m_maxIterationsPerRow = 30
     val maxIters = m_maxIterationsPerRow * hess.matH.rows
 
-     reduceToTriangularForm()
+    reduceToTriangularForm()
     /**
      * If matT(i+1,i) is neglegible in floating point arithmetic
      * compared to matT(i,i) and matT(j,j), then set it to zero and
      * return true, else return false.
      */
-
 
     def getSchur() =
       {
@@ -126,7 +125,7 @@ object Schur {
       var totalIter = 0 // number of iterations for whole matrix
 
       debugPrint(matU, "Start MatU", 1)
-
+      debugPrint(matQ, "Start MatQ", 1)
       breakable {
         while (true) {
           // find iu, the bottom row of the active submatrix
@@ -153,7 +152,7 @@ object Schur {
             il = il - 1
           }
           /* perform the QR step using Givens rotations. The first rotation
-	  *creates a bulge; the (il+2,il) element becomes nonzero. This
+	   *creates a bulge; the (il+2,il) element becomes nonzero. This
 	   *bulge is chased down to the bottom of the active submatrix.
 	   */
 
@@ -162,15 +161,16 @@ object Schur {
 
           val shift = computeShift(iu, iter)
           debugPrint(shift, "A shift", 3)
+          val rot = makeGivens(matU(il, il) - shift, matU(il + 1, il))
+          //matU(il to il + 1, ::)
+          matU(il to il + 1, ::) rotateoL (rot)
+          debugPrint(matU, "MatT A", 0)
+          matU(0 to matU.cols - il - 2, il to il + 1) rotateoR (rot)
 
-         implicit  val rot = makeGivens(matU(il, il) - shift, matU(il + 1, il))
-
-          rot.applyOnTheLeft(matU(il, ::), matU(il + 1, ::))
-          debugPrint(matU, "A MatT",0)
-          rot.applyOnTheRight(matU(0 to matU.cols - il - 2, il), matU(0 to matU.cols - il - 2, il + 1))
-          debugPrint(matU, "B MatT", 0)
-          rot.applyOnTheRight(matQ(::, il), matQ(::, il + 1))
-          debugPrint(matQ, "A matQ", 4)
+          debugPrint(matU, "MatT B", 0)
+          matQ(0 to (min(il + 2, iu) + 1), il to il + 1) rotateoR (rot)
+          if (il + 2 > iu) debugPrint(iu, "lesser", 0);
+          debugPrint(matQ, "MatQ A", 0)
 
           val idx: Int = 0
 
@@ -179,16 +179,15 @@ object Schur {
             val rot2 = makeGivens(matU(idx, idx - 1), matU(idx + 1, idx - 1))
             matU(idx, idx - 1) = rot2.rot
             matU(idx + 1, idx - 1) = Complex(0.0, 0.0)
-            rot2.applyOnTheLeft(matU(idx, idx to matU.cols - 1), matU(idx + 1, idx to matU.cols - 1))
-
-            debugPrint(matU, "1 MatT", 0)
+            matU(idx to idx + 1, idx to matU.cols - 1) rotateoL (rot2)
+            debugPrint(matU, "MatT 1", 0)
             debugPrint(idx, "idx", 3)
-
-            rot2.applyOnTheRight(matU(::, idx), matU(::, idx + 1))
+            if (idx + 2 > iu) debugPrint(iu, "lesser", 0);
+            matU(0 to (min(idx + 2, iu)), idx to idx + 1) rotateoR (rot2)
             //CHECK FOR 3 needing to be equal to cell size..
-            debugPrint(matU, "2 MatT", 0)
-            rot2.applyOnTheRight(matQ(::, idx), matQ(::, idx + 1))
-            debugPrint(matQ, "1 MatQ", 4)
+            debugPrint(matU, "MatT 2", 0)
+            matQ(::, idx to idx + 1) rotateoR (rot2)
+            debugPrint(matQ, "MatQ 1", 0)
 
           }
 

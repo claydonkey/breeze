@@ -20,7 +20,7 @@ import matrixPow._
 object Main {
   def promptEnterKey(): Option[Unit] = if (Console.in.read > 10) None else promptEnterKey
   val file = new File("schur.dat")
-  val bw: Option[BufferedWriter] = if (currentPrintType.id >= printType.GRAPH.id) { Some(new BufferedWriter(new FileWriter(file))) } else { None }
+  val bw: Option[BufferedWriter] = if (fileOutput == true) { Some(new BufferedWriter(new FileWriter(file))) } else { None }
   def applySchur() = {
     val formatter = new DecimalFormat("#0.0000")
     val Mat = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0))

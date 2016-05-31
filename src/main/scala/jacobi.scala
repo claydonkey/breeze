@@ -15,58 +15,69 @@ import Helper._
  * You can apply the respective counter-clockwise rotation to a column vector \c v by
  * applying its adjoint on the left: \f$ v = J^* v \f$
  */
-class jacobiRotation(val m_c: Complex, val m_s: Complex, val rot: Complex) {
+class jRotation(val m_c: Complex, val m_s: Complex, val rot: Complex) {}
+object jacobi {
+  implicit class IMPL_Jacobi(val M: DenseMatrix[Complex]) {
 
-  def this() = this(Complex(0.0, 0.0), Complex(0.0, 0.0), Complex(0.0, 0.0))
-  def this(m_c: Complex, m_s: Complex) = this(m_c, m_s, Complex(0.0, 0.0))
+    def rotateoL(jrot: jRotation) = jacobi.applyRotationinPlane(M(0, ::).t, M(1, ::).t, new jRotation(conj(jrot.m_c), -(jrot.m_s), jrot.rot))
+    def rotateoR(jrot: jRotation) = jacobi.applyRotationinPlane(M(::, 0), M(::, 1), new jRotation((jrot.m_c), -conj(jrot.m_s), jrot.rot))
 
-  /** Returns the transposed transformation */
-  def transpose() = new jacobiRotation((m_c), -conj(m_s), rot)
+    //Need to fix these...
+    def rotateL(jrot: jRotation) =  jacobi.getRotationLeft(M(0, ::).t, M(1, ::).t, new jRotation(conj(jrot.m_c), -(jrot.m_s), jrot.rot))
+    def rotateR(jrot: jRotation) = jacobi.getRotationRight(M(::, 0), M(::, 1), new jRotation((jrot.m_c), -conj(jrot.m_s), jrot.rot))
 
-  /** Returns the adjoint transformation */
-  def adjoint() = new jacobiRotation(conj(m_c), -(m_s), rot)
-  def applyOnTheLeft(_x: Transpose[DenseVector[Complex]], _y: Transpose[DenseVector[Complex]], j: jacobiRotation) =    applyRotationinPlane(_x.t, _y.t, j.adjoint())
-  def applyOnTheRight(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jacobiRotation) =  applyRotationinPlane(_x, _y, j.transpose()).t
+  }
 
-  def applyOnTheLeft(_x: Transpose[DenseVector[Complex]], _y: Transpose[DenseVector[Complex]]) =    applyRotationinPlane(_x.t, _y.t,adjoint())
-  def applyOnTheRight(_x: DenseVector[Complex], _y: DenseVector[Complex]) =  applyRotationinPlane(_x, _y, transpose()).t
+  import Helper._
 
+  def getRotationLeft(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jRotation) = {
+    val x1 = DenseVector.tabulate[Complex](_x.length) { (i) => j.m_c * _x(i) + conj(j.m_s) * _y(i) }
+    val y1 = DenseVector.tabulate[Complex](_y.length) { (i) => -j.m_s * _x(i) + conj(j.m_c) * _y(i) }
+    DenseMatrix.vertcat(x1.t, y1.t)
+  }
 
-  def applyRotationinPlane(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jacobiRotation) = {
+  def getRotationRight(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jRotation) = {
+    val x1 = DenseVector.tabulate[Complex](_x.length) { (i) => j.m_c * _x(i) + conj(j.m_s) * _y(i) }
+    val y1 = DenseVector.tabulate[Complex](_y.length) { (i) => -j.m_s * _x(i) + conj(j.m_c) * _y(i) }
+    DenseVector.horzcat(x1, y1)
+  }
 
-    assert(_x.length == _y.length)
+  def applyRotationinPlane(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jRotation) = {
 
     if (j.m_c == 1 && j.m_s == 0)
       DenseMatrix.zeros[Complex](_x.size, 2)
 
-    val x = _x
-    val y = _y
+    val x1 = DenseVector.tabulate[Complex](_x.length) { (i) => j.m_c * _x(i) + conj(j.m_s) * _y(i) }
+    val y1 = DenseVector.tabulate[Complex](_y.length) { (i) => -j.m_s * _x(i) + conj(j.m_c) * _y(i) }
 
-    val c = j.m_c
-    val s = j.m_s
+    val res = DenseMatrix.vertcat(x1.t, y1.t)
+
+    val res1 = DenseVector.horzcat(x1, y1)
+
+    //debugPrint(res, "res", 0)
+    //debugPrint(res1, "res1", 0)
+
     val i = 0
 
-    for (i <- 0 to x.length - 1) {
-      val xi = x(i)
-      val yi = y(i)
-      x(i) = c * xi + conj(s) * yi
-      y(i) = -s * xi + conj(c) * yi
-
+    for (i <- 0 to _x.length - 1) {
+      val xi = _x(i)
+      val yi = _y(i)
+      _x(i) = j.m_c * xi + conj(j.m_s) * yi
+      _y(i) = -j.m_s * xi + conj(j.m_c) * yi
     }
-    // DenseMatrix.vertcat((DenseVector.tabulate(_x.size)(i => j.m_c * _x(i) +  conj(j.m_s) * _y(i))).toDenseMatrix, (DenseVector.tabulate(_x.size)(i => -j.m_s * _x(i) +  conj (j.m_c) * _y(i))).toDenseMatrix)
 
-    //val t = DenseMatrix.vertcat(x.toDenseMatrix, y.toDenseMatrix)
-
-
-    //t
   }
 
-}
+  /*
+  def applyRotationinPlane(_xy: DenseMatrix[Complex], j: jacobiRotation) = {
 
-object jacobiRotation {
-  import Helper._
+    if (j.m_c == 1 && j.m_s == 0)
+      DenseMatrix.zeros[Complex](_xy.rows, _xy.cols)
+    debugPrint(_xy, " _xy", 1)
 
-  def apply(m_c: Complex, m_s: Complex) = { new jacobiRotation(m_c, m_s) }
+    DenseMatrix.tabulate[Complex](_xy.rows, _xy.cols) { case (0, y) => j.m_c * _xy(0, y) + conj(j.m_s) * _xy(1, y) case (1, y) => -j.m_s * _xy(0, y) + conj(j.m_c) * _xy(1, y) }
+  }
+*/
 
   /*This function implements the continuous Givens rotation
    *generation algorithm found in Anderson (2000),
@@ -80,13 +91,13 @@ object jacobiRotation {
         val m_s = Complex(0.0, 0.0)
         val r = m_c * p;
 
-        new jacobiRotation(m_c, m_s, r)
+        new jRotation(m_c, m_s, r)
       case (Complex(0.0, 0.0), _) =>
         val m_c = Complex(0.0, 0.0)
         val m_s = -q / abs(q)
         val r = Complex(abs(q), 0.0)
 
-        new jacobiRotation(m_c, m_s, r)
+        new jRotation(m_c, m_s, r)
       case _ =>
         val p1 = norm1(p)
         val q1 = norm1(q)
@@ -104,10 +115,10 @@ object jacobiRotation {
           val m_s = -qs * conj(ps) * (m_c / p2)
           val r = p * u
 
-          new jacobiRotation(m_c, m_s, r)
+          new jRotation(m_c, m_s, r)
         } else {
-          var ps = p / q1
-          val p2 = abs2(ps)
+
+          val p2 = abs2(p / q1)
           val qs = q / q1
           val q2 = abs2(qs);
 
@@ -117,12 +128,13 @@ object jacobiRotation {
             u = -u
 
           val p1 = abs(p)
-          ps = p / p1
-          val m_c = Complex(p1 / u,0.0)
-          val m_s = -conj(ps) * (q / u)
-          val r = ps * u
-          new jacobiRotation(m_c, m_s, r)
+         val  ps2 = p / p1
+          val m_c = Complex(p1 / u, 0.0)
+          val m_s = -conj(ps2) * (q / u)
+          val r = ps2 * u
+          new jRotation(m_c, m_s, r)
         }
     }
   }
+
 }

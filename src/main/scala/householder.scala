@@ -6,6 +6,7 @@ import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
+import scala.annotation.tailrec
 
 object Householder {
   /*
@@ -22,8 +23,6 @@ object Householder {
     val coeffs = DenseVector.zeros[Complex](size) //tau coeffs
     val essential = Array.ofDim[DenseVector[Complex]](size)
 
-    //implicit def enrichArray[T](xs: Array[T]) = new RichArray[T]
-    implicit def enrichDenseMatrix(i: DenseMatrix[Complex]) = new IMPL_householder(i)
 
     def applyHouseholder(cnt: Int) =
       {
@@ -44,11 +43,13 @@ object Householder {
         matrixH((cnt + 1), cnt) = Complex(beta(cnt), 0)
         matrixH((cnt + 2) to matrixH.rows - 1, cnt) := essential(cnt)
         val matH2 = matrixH.mapValues(_.real)
+
         debugPrint(essential, "applyHouseholder essential", 6)
         debugPrint(beta, "applyHouseholder beta", 6)
         debugPrint(coeffs, "applyHouseholder coeffs", 6)
         debugPrint(matrixH, "applyHouseholder matrixH", 6)
         debugPrint(matH2, "applyHouseholder matH2", 6)
+
         this
 
       }
@@ -119,11 +120,11 @@ object Householder {
     def householderSequence(hMatrix: DenseMatrix[Double], hCoeffs: DenseVector[Double], order: Int): DenseMatrix[Double] = {
       //HouseholderSequence shifted 1 with size -1
       /*  4 x 4 example of the form
-     *  1    0    0     0   ^  ------- order (wrapper)
-     *   0    1    0    0   v
-     *   0    0     x    x
-     *   0    0     x    x
-     */
+       *  1    0    0     0   ^  ------- order (wrapper)
+       *   0    1    0    0   v
+       *   0    0     x    x
+       *   0    0     x    x
+       */
 
       if ((hMatrix.rows - order) != hCoeffs.length)
         throw new MatrixNotSquareException // change to correct exception
@@ -132,29 +133,23 @@ object Householder {
 
       val I = DenseMatrix.eye[Double](matHS.cols)
       val hhMv = (upperTriangular(matHS.t) *:* -(I - 1.0)) +:+ I
-      var sum = I
       var cnt = 0
 
-      for (cnt <- 0 to matHS.cols - 1) {
-        val hHvect = hhMv(cnt, ::).t
-        //    val adj = det(hHvect.toDenseMatrix) * inv(hHvect.toDenseMatrix)  //  adjoint of vector is vector itself??
-        val adj = hHvect.toDenseMatrix
-        val newa = -(hCoeffs(cnt) * hHvect * adj - I)
-        sum = sum * newa
-
-      }
-      cnt = 0
+      val sum2 = (new ((Int, Int, DenseMatrix[Double]) => DenseMatrix[Double]) {
+        @tailrec def apply(from: Int, to: Int, s: DenseMatrix[Double]): DenseMatrix[Double] = {
+          if (from == to) return s; apply(from + 1, to, s * -(hCoeffs(from) * hhMv(from, ::).t * hhMv(from, ::).t.toDenseMatrix - I))
+        }
+      })(0, matHS.cols - 1, I)
 
       if (order != 0) {
         val wrapper = DenseMatrix.zeros[Double](hMatrix.cols, hMatrix.cols)
-        wrapper(order to wrapper.cols - 1, order to wrapper.cols - 1) := sum
+        wrapper(order to wrapper.cols - 1, order to wrapper.cols - 1) := sum2
         for (cnt <- 0 to order - 1) {
           wrapper(cnt, cnt) = 1.0;
-
         }
         wrapper
       } else
-        sum
+        sum2
     }
   }
 }

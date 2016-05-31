@@ -1,18 +1,9 @@
 project householder
-compile
 run
-project householder
-compile
-project householder
-compile
 project householder
-compile
-project householder
-compile
-project householder
-compile
+run
 project householder
-compile
+run
 project householder
 run
 project householder
@@ -26,11 +17,11 @@ run
 project householder
 run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
 run
 project householder
@@ -62,7 +53,6 @@ run
 project householder
 run
 project householder
-compile
 run
 project householder
 compile
@@ -72,48 +62,64 @@ project householder
 compile
 project householder
 compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run 
 project householder
-compile
+run 
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run 
+run
 project householder
 compile
+run
+project householder
+run
+project householder
+run 
+run
+project householder
+run
+project householder
+run
+project householder
+run
+project householder
+run
 project householder
 compile
 project householder
@@ -132,24 +138,48 @@ project householder
 compile
 project householder
 compile
+run
+project householder
+run
+project householder
+run
+project householder
+run
+project householder
+run
 project householder
+run
+project householder
 compile
+run
 project householder
 compile
 project householder
 compile
 project householder
 compile
+run
 project householder
 compile
 project householder
 compile
 project householder
 compile
+project householder
+run
+project householder
+run
+project householder
+run
+project householder
+run
 project householder
+run
+project householder
 compile
 project householder
 compile
+run
 project householder
 compile
 project householder
@@ -175,11 +205,11 @@ project householder
 compile
 project householder
 compile
-run
 project householder
 compile
 project householder
 compile
+run
 project householder
 compile
 project householder
@@ -230,15 +260,7 @@ project householder
 run
 project householder
 run
-project householder
-compile
-project householder
-compile
-project householder
-compile
 project householder
-compile
-project householder
 run
 project householder
 run
@@ -247,13 +269,13 @@ run
 project householder
 run
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
 run
 project householder
@@ -272,31 +294,7 @@ project householder
 run
 project householder
 run
-project householder
-compile
 project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
-compile
-project householder
 run
 project householder
 run
@@ -324,8 +322,6 @@ project householder
 run
 project householder
 run
-project householder
-compile
 project householder
 run
 project householder
@@ -427,40 +423,41 @@ run
 project householder
 run
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
+compile
 run
 project householder
 run
@@ -489,12 +486,15 @@ run
 project householder
 run
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
+compile
+project householder
+compile
 run

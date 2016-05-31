@@ -7,7 +7,7 @@ import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
 import Schur._
-
+import scala.annotation.tailrec
 object matrixPow {
 
   implicit def enrichDenseMatrix(M: DenseMatrix[Complex]) =
@@ -65,32 +65,32 @@ object matrixPow {
     {
       import breeze.numerics._
       val res = r
-      debugPrint(res, "  Result res",  1)
+      debugPrint(res, "  Result res", 1)
       debugPrint(p, "  Result p", 1)
-      debugPrint(m_A, "  Result m_A",  1)
+      debugPrint(m_A, "  Result m_A", 1)
       res(0, 0) = pow(m_A(0, 0), p)
-      debugPrint(res(0, 0), "  Result res(0,0)",  1)
+      debugPrint(res(0, 0), "  Result res(0,0)", 1)
       var i = 1
       for (i <- 1 to m_A.cols - 1) {
-        debugPrint(p, "  p",  1)
-        debugPrint(res(i, i), "  res(i, i) ",  1)
-        debugPrint(m_A(i, i), "  m_A.coeff(i, i)",  1)
+        debugPrint(p, "  p", 1)
+        debugPrint(res(i, i), "  res(i, i) ", 1)
+        debugPrint(m_A(i, i), "  m_A.coeff(i, i)", 1)
 
         res(i, i) = pow(m_A(i, i), p)
 
         debugPrint(res(i, i), "  Result  loop 1", 1)
         if (m_A(i - 1, i - 1) == m_A(i, i)) {
           res(i - 1, i) = p * pow(m_A(i, i), p - 1)
-          debugPrint(res(i - 1, i), "  Result 1",  1)
+          debugPrint(res(i - 1, i), "  Result 1", 1)
         } else if (2 * abs(m_A(i - 1, i - 1)) < abs(m_A(i, i)) || 2 * abs(m_A(i, i)) < abs(m_A(i - 1, i - 1))) {
 
-          debugPrint(res(i - 1, i), "  res(i - 1, i)",  1)
+          debugPrint(res(i - 1, i), "  res(i - 1, i)", 1)
           debugPrint(res(i - 1, i - 1), "  res(i - 1, i-1)", 1)
-          debugPrint(m_A(i, i), "  m_A(i, i)",  1)
-          debugPrint(m_A(i - 1, i - 1), "  m_A(i-1, i-1)",  1)
+          debugPrint(m_A(i, i), "  m_A(i, i)", 1)
+          debugPrint(m_A(i - 1, i - 1), "  m_A(i-1, i-1)", 1)
           res(i - 1, i) = (res(i, i) - res(i - 1, i - 1)) / (m_A(i, i) - m_A(i - 1, i - 1))
 
-          debugPrint(res(i - 1, i), "  Result 2",  1)
+          debugPrint(res(i - 1, i), "  Result 2", 1)
         } else {
           res(i - 1, i) = computeSuperDiag(m_A(i, i), m_A(i - 1, i - 1), p)
           debugPrint(res(i - 1, i), "  Result 3", 1)
@@ -125,7 +125,7 @@ object matrixPow {
 
   def fract(pow: Double = 3.43, M: DenseMatrix[Complex] = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16)).mapValues(Complex(_, 0.0))): DenseMatrix[Complex] =
     {
-      debugPrint(M, "M", 1)
+
       val T = upperTriangular(M)
 
       val (m_T, m_U, m_P, m_H, hCoeffs) = M.copy.getSchur()
@@ -155,13 +155,7 @@ object matrixPow {
         else
           sum2x2(noOfSqRts - 1, upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T)), m_T)
       }
-    var res  = new Function3[Int, DenseMatrix[Complex], DenseMatrix[Complex], DenseMatrix[Complex]] {
-      def apply(noOfSqRts: Int, value: DenseMatrix[Complex], m_T: DenseMatrix[Complex]): DenseMatrix[Complex] =
-	if (noOfSqRts == 0) upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T))
-      else
-	apply(noOfSqRts - 1, upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T)), m_T)
-    }.apply(noOfSqRts, padePower(iminusT, frac_power), m_T)
-    debugPrint(res, "Starting Result", 2)
+
 
       /* if tail recursion is a problem */
       var res = padePower(iminusT, frac_power)
@@ -172,11 +166,20 @@ object matrixPow {
       }
 */
 
+      val res = (new ((Int, DenseMatrix[Complex], DenseMatrix[Complex]) => DenseMatrix[Complex]) {
+        @tailrec
+        def apply(noOfSqRts: Int, value: DenseMatrix[Complex], m_T: DenseMatrix[Complex]): DenseMatrix[Complex] =
+          if (noOfSqRts == 0) return upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T))
+          else
+            apply(noOfSqRts - 1, upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T)), m_T)
+      })(noOfSqRts, padePower(iminusT, frac_power), m_T)
+
+      /*
       val res = Y3[Int, DenseMatrix[Complex], DenseMatrix[Complex], DenseMatrix[Complex]](f => (noOfSqRts, value, m_T) =>
         if (noOfSqRts == 0) upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T))
         else
           f(noOfSqRts - 1, upperTriangular(compute2x2(value, frac_power * scala.math.pow(2, -noOfSqRts), m_T)), m_T))(noOfSqRts, padePower(iminusT, frac_power), m_T)
-
+*/
       debugPrint(res, "T", 1)
       debugPrint(m_U, "m_U", 1)
       val m_tmp = (res.revertSchur(m_U))
