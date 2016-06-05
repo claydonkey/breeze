@@ -1,39 +1,17 @@
+console
+clean
+console
 project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
-project householder
-run
+val  M = DenseMatrix((1,2,5),(32,23,4),(2,34,45)).mapValues(_.toDouble)
+console
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
 run
 project householder
@@ -47,13 +25,16 @@ run
 project householder
 run
 project householder
-run
+clean
+compile
+console
 project householder
 run
 project householder
-run
+clean
+compile
 project householder
-run
+compile
 project householder
 compile
 project householder
@@ -61,37 +42,39 @@ compile
 project householder
 compile
 project householder
+clean
 compile
-run
 project householder
-run
+clean
+compile
 project householder
+compile
 run
 project householder
+compile
 run
 project householder
 run
 project householder
+clean
+compile
 run
 project householder
 run
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
+compile
 run
 project householder
 run
-project householder
-run 
 project householder
-run 
-project householder
 run
 project householder
 run
@@ -100,25 +83,25 @@ run
 project householder
 run
 project householder
-run
+compile
 project householder
-run 
-run
+compile
 project householder
 compile
 run
 project householder
-run
+compile
 project householder
-run 
-run
+compile
 project householder
+compile
 run
 project householder
 run
 project householder
-run
+compile
 project householder
+compile
 run
 project householder
 compile
@@ -138,20 +121,15 @@ project householder
 compile
 project householder
 compile
-run
 project householder
-run
-project householder
-run
-project householder
-run
+compile
 project householder
-run
+compile
 project householder
+compile
 run
 project householder
 compile
-run
 project householder
 compile
 project householder
@@ -162,15 +140,12 @@ run
 project householder
 compile
 project householder
+clean
 compile
 project householder
 compile
-project householder
-run
-project householder
-run
 project householder
-run
+compile
 project householder
 run
 project householder
@@ -179,7 +154,6 @@ project householder
 compile
 project householder
 compile
-run
 project householder
 compile
 project householder
@@ -188,6 +162,7 @@ project householder
 compile
 project householder
 compile
+run
 project householder
 compile
 project householder
@@ -196,7 +171,6 @@ project householder
 compile
 project householder
 compile
-run
 project householder
 compile
 project householder
@@ -209,12 +183,12 @@ project householder
 compile
 project householder
 compile
-run
 project householder
 compile
-project householder
+3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~3~project householder
 compile
 project householder
+compile
 run
 project householder
 run
@@ -246,14 +220,19 @@ project householder
 run
 project householder
 run
+exit
 project householder
 run
 project householder
+compile
 run
 project householder
-run
+compile
 project householder
+compile
 run
+project householder
+compile
 project householder
 run
 project householder
@@ -269,11 +248,11 @@ run
 project householder
 run
 project householder
-compile
+run
 project householder
 compile
 project householder
-compile
+run
 project householder
 compile
 project householder
@@ -296,6 +275,7 @@ project householder
 run
 project householder
 run
+SMALL VAL
 project householder
 run
 project householder
@@ -359,26 +339,42 @@ run
 project householder
 run
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
+exit
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
 project householder
-run
+compile
+project householder
+compile
+project householder
+compile
+project householder
+compile
+project householder
+compile
+project householder
+compile
+project householder
+compile
+project householder
+compile
 project householder
+compile
 run
 project householder
 run
@@ -406,6 +402,16 @@ project householder
 run
 project householder
 run
+project householder
+compile
+project householder
+compile
+project householder
+compile
+project householder
+compile
+project householder
+compile
 project householder
 run
 project householder
@@ -423,19 +429,19 @@ run
 project householder
 run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
-compile
+run
 project householder
 compile
 project householder
@@ -458,9 +464,6 @@ project householder
 compile
 project householder
 compile
-run
-project householder
-run
 project householder
 run
 project householder
@@ -480,12 +483,6 @@ run
 project householder
 run
 project householder
-run
-project householder
-run
-project householder
-run
-project householder
 compile
 project householder
 compile
@@ -496,5 +493,8 @@ compile
 project householder
 compile
 project householder
-compile
+run
+project householder
+run
+project householder
 run

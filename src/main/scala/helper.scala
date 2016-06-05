@@ -20,15 +20,17 @@ object GlobalConsts {
     s.inc() // parentheses here to denote that method has side effects
     true
   }
+
+  var showHouseholder = false
   var matnum1 = MutableInt(0)
   var matnum2 = MutableInt(0)
   val showComplex = false
   val showTitles = true
   val showLines = false
   val fileOutput = true
-  //val formatter = new DecimalFormat("#0.###E0")
-  val formatter = new DecimalFormat("#0.#######")
-  val printEnabled = Array(true,true, false, false, false, false, false)
+  val formatter = new DecimalFormat("#0.####E0")
+  //val formatter = new DecimalFormat("#0.######")
+  val printEnabled = Array(true, true, true, true, true, false, showHouseholder, true) //0,1 for debugging last part
   val EPSILON: Double = 2.22045e-016
   val currentPrintType = printType.BOTH
 }
@@ -55,17 +57,16 @@ object Helper {
 
     function(matnum1)
     val count = matnum1.value
-    "************************************************************** "   + count + " *** " + name + "**************************************************************\n"
+    "************************************************************** " + count + " *** " + name + "**************************************************************\n"
   }
   implicit def enrichString2(stuff: String) =
-    new
-  {
-  def showTitle(name:String) = { if (showTitles)  printcount2(name)  +  stuff  else stuff }
-}
+    new {
+      def showTitle(name: String) = { if (showTitles) printcount2(name) + stuff else stuff }
+    }
 
   implicit def enrichString(stuff: String) =
     new {
-      def oneLiner = { if (showLines ) stuff.filter(_ >= ' ') else stuff }
+      def oneLiner = { if (showLines) stuff.filter(_ >= ' ') else stuff }
     }
 
   def output(str: String) = { if (fileOutput) Main.bw.get.write(str) else print(str) }
@@ -75,7 +76,8 @@ object Helper {
     typeTag[T].tpe match {
       case b if b =:= typeOf[DenseMatrix[Double]] => if (printEnabled(loglevel)) {
         currentPrintType match {
-          case _ => output(("" + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => formatter.format(x) }).oneLiner.showTitle(name)  + "\n")
+
+          case _ => output(("" + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => formatter.format(x) }).oneLiner.showTitle(name) + "\n")
         }
 
       }
@@ -89,55 +91,35 @@ object Helper {
       case b if b =:= typeOf[DenseVector[Complex]] => if (printEnabled(loglevel)) {
         currentPrintType match {
           case printType.REAL => output(("" + M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => formatter.format(x.real) }).oneLiner.showTitle(name) + "\n")
-          case printType.IMAG => output(("" +  M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => formatter.format(x.imag) }).oneLiner.showTitle(name) + "\n")
-          case _ => output(( "" +  M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => formatter.format(x.real) + "," + formatter.format(x.imag) }).oneLiner.showTitle(name) + "\n")
+          case printType.IMAG => output(("" + M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => formatter.format(x.imag) }).oneLiner.showTitle(name) + "\n")
+          case _ => output(("" + M.asInstanceOf[DenseVector[Complex]].mapValues { (x) => formatter.format(x.real) + "," + formatter.format(x.imag) }).oneLiner.showTitle(name) + "\n")
         }
       }
       case b if b =:= typeOf[DenseMatrix[Complex]] => if (printEnabled(loglevel)) {
         currentPrintType match {
           case printType.REAL => output(("" + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.real) }).oneLiner.showTitle(name) + "\n")
-          case printType.IMAG => output(("" +  M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.imag) }).oneLiner.showTitle(name) + "\n")
-          case _ => output(("" +  M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.real) + "," + formatter.format(x.imag) }).oneLiner.showTitle(name) + "\n")
+          case printType.IMAG => output(("" + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => formatter.format(x.imag) }).oneLiner.showTitle(name) + "\n")
+          case _ => output(("" + M.asInstanceOf[DenseMatrix[Complex]].mapValues { (x) => "(" + formatter.format(x.real) + "," + formatter.format(x.imag) + ")" }).oneLiner.showTitle(name) + "\n")
         }
       }
 
       case b if b =:= typeOf[Array[Double]] => if (printEnabled(loglevel)) {
         currentPrintType match {
-          case _ => output("" +  M.asInstanceOf[Array[Double]].deep.mkString("\n") + "\n")
+          case _ => output("" + M.asInstanceOf[Array[Double]].deep.mkString("\n").oneLiner.showTitle(name) + "\n")
+        }
+      }
+
+      case b if b =:= typeOf[Array[DenseVector[Complex]]] => if (printEnabled(loglevel)) {
+        currentPrintType match {
+          case _ => output("" + M.asInstanceOf[Array[DenseVector[Complex]]].deep.mkString("\n").oneLiner.showTitle(name) + "\n")
         }
       }
       case _ => if (printEnabled(loglevel)) {
         currentPrintType match {
-          case printType.REAL => output( M.toString.oneLiner.showTitle(name) + "\n")
-          case printType.IMAG => output(  M.toString.oneLiner.showTitle(name) + "\n")
-          case _ => output( M.toString.oneLiner.showTitle(name) + "\n")
+          case printType.REAL => output(M.toString.oneLiner.showTitle(name) + "\n")
+          case printType.IMAG => output(M.toString.oneLiner.showTitle(name) + "\n")
+          case _ => output(M.toString.oneLiner.showTitle(name) + "\n")
         }
-        //   printcount()
-
       }
-
     }
-  /*
-   *
-   *
-   *
-   *    case b :DenseMatrix[Double] => println(s"$name\n\n" + b.mapValues(x => "( " + formatter.format(x) + " )"))
-   case b: DenseMatrix[Complex] => println(s"$name\n\n" + b.mapValues(x => "( " + formatter.format(x.real) + ", " + formatter.format(x.imag) + " )"))
-   if (printEnabled(index)) {
-   function(matnum1)
-   val count = matnum1.value
-
-   }
-   *
-   *
-   (index: Int, m: T, name: String)
-
-   if (printEnabled(index)) {
-   function(matnum1)
-   val count = matnum1.value
-   println(s"************************************ $count ************************************")
-   m match {
-
-   */
-
 }

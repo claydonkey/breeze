@@ -6,8 +6,10 @@ import breeze.numerics._
 import scala.util.control._
 import breeze.math._
 import scala.util.control.Breaks._
+import Helper._
 
 object Hessenberg {
+
   //PHP^(H)=A,
   /*
 A Hessenberg decomposition is a matrix decomposition of a matrix A into a unitary matrix P and a Hessenberg matrix H such that
@@ -18,12 +20,12 @@ Hessenberg decomposition is the first step in Schur decomposition. Hessenberg de
 */
 
   implicit class IMPL_hessenbergDecomposition(M: DenseMatrix[Complex]) {
-val House= hessenbergDecomposition.reduceToHessenberg(M)
+    val House = hessenbergDecomposition.reduceToHessenberg(M)
 
-    val hCoeffs = House.coeffs
+    val tau = House.tau
     val matH = House.matrixH
 
-    def getHessenberg() =    this
+    def getHessenberg() = this
 
     /*  4 x 4 example of the form
      *  1    0    0     0   ^  ------- order
@@ -31,7 +33,7 @@ val House= hessenbergDecomposition.reduceToHessenberg(M)
      *   0    0     x    x
      *   0    0     x    x
      */
-    def MatrixP() = householder.householderSequence(matH.mapValues(_.real), hCoeffs.mapValues(_.real), 1)
+    def MatrixP() = householder.householderSequence(matH.mapValues(_.real), tau.mapValues(_.real), 1)
 
     /*  4 x 4 example
      *   x    x    x     x
@@ -43,31 +45,28 @@ val House= hessenbergDecomposition.reduceToHessenberg(M)
   }
 
   /**
-   * Computes the elementary reflector H such that:
-   * \f$ H *this = [ beta 0 ... 0]^T \f$
-   * where the transformation H is:
-   * \f$ H = I - tau v v^*\f$
-   * and the vector v is:
-   * \f$ v^T = [1 essential^T] \f$
-   *
-   * On output:
-   * \param essential the essential part of the vector \c v
-   * \param tau the scaling factor of the Householder transformation
-   * \param beta the result of H * \c *this
-   *
-   * sa MatrixBase::makeHouseholderInPlace(), MatrixBase::applyHouseholderOnTheLeft(),
-   *     MatrixBase::applyHouseholderOnTheRight()
-   */
+    * Computes the elementary reflector H such that:
+    * H * M = [ beta 0 ... 0]^T
+    * where the transformation H is:
+    * H = I - tau v v^*
+    * and the vector v is:
+    * v^T = [1 essential^T]
+    *
+    * Householder obj variables:
+    * \ essential the essential part of the vector  v
+    * \ tau the scaling factor of the Householder transformation
+    * \ beta the result of H * M
+    */
 
   object hessenbergDecomposition {
 
     def reduceToHessenberg(M: DenseMatrix[Complex]) = {
 
       val H: IMPL_householder = IMPL_householder(M.copy)
-      val M2 = M.copy
       val icnt = 0
       for (icnt <- 0 to M.rows - 2)
-        H.applyHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
+        H.makeHouseholder(icnt).applyHouseholderRight(icnt).applyHouseholderBottom(icnt)
+    
       H
 
     }

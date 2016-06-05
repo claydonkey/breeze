@@ -79,7 +79,7 @@ implicit class PivHouseholderQR(val QR: DenseMatrix[Complex]) {
       m_det_pq = (number_of_transpositions%2) ? -1 : 1;
       m_isInitialized = true;
 */
-    QR.applyHouseholder(1).applyHouseholderBottom(1)
+    QR.makeHouseholder(1).applyHouseholderBottom(1)
 
       }
     }

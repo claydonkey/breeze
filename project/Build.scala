@@ -33,6 +33,8 @@ object Build extends sbt.Build {
 	|import Math._
 	|import scala.util.Random
 	|import breeze.math._
+	|import org.netlib.util.intW
+	|import com.github.fommil.netlib.LAPACK.{ getInstance => lapack }
 	""".stripMargin
 
   )
@@ -56,6 +58,7 @@ object Dependencies {
     "org.scalanlp" %% "breeze-natives" % "0.13-SNAPSHOT",
     "org.scalanlp" %% "breeze-viz" % "0.13-SNAPSHOT",
     "com.quantifind" %% "wisp" % "0.0.4",
-  "org.spire-math" %% "spire" % "0.11.0"
+  "org.spire-math" %% "spire" % "0.11.0",
+    "com.github.fommil.netlib" % "core" % "1.1.2"
   )
 }

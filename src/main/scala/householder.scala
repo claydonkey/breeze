@@ -9,6 +9,7 @@ import Helper._
 import scala.annotation.tailrec
 
 object Householder {
+
   /*
    *  4 x 4 example
    *    x    x    x    x
@@ -20,39 +21,38 @@ object Householder {
 
     val size = matrixH.cols - 1
     val beta = Array.ofDim[Double](size)
-    val coeffs = DenseVector.zeros[Complex](size) //tau coeffs
+    val tau = DenseVector.zeros[Complex](size)
+    //tau coeffs
     val essential = Array.ofDim[DenseVector[Complex]](size)
 
-
-    def applyHouseholder(cnt: Int) =
-      {
-        debugPrint(matrixH, "applyHouseholder start matrixH", 6)
-        essential(cnt) = matrixH((cnt + 2) to matrixH.rows - 1, cnt)
-        val eNorm = if (essential(cnt).length == 0) 0.0 else sum(essential(cnt).map(x => scala.math.pow(x.real, 2) + scala.math.pow(x.imag, 2))) // Does Complex component need squaring?
-        val c0 = matrixH(cnt + 1, cnt);
-        (eNorm, c0.imag) match {
-          case (0, 0) =>
-            beta(cnt) = c0.real
-            coeffs(cnt) = Complex(0, 0)
-          case _ =>
-            val c0norm = scala.math.pow(c0.real, 2) + scala.math.pow(c0.imag, 2)
-            beta(cnt) = if (c0.real >= 0) -Math.sqrt(c0norm + eNorm) else Math.sqrt(c0norm + eNorm)
-            coeffs(cnt) = ((beta(cnt) - c0) / beta(cnt))
-            essential(cnt) = (essential(cnt) / (c0 - beta(cnt)))
-        }
-        matrixH((cnt + 1), cnt) = Complex(beta(cnt), 0)
-        matrixH((cnt + 2) to matrixH.rows - 1, cnt) := essential(cnt)
-        val matH2 = matrixH.mapValues(_.real)
-
-        debugPrint(essential, "applyHouseholder essential", 6)
-        debugPrint(beta, "applyHouseholder beta", 6)
-        debugPrint(coeffs, "applyHouseholder coeffs", 6)
-        debugPrint(matrixH, "applyHouseholder matrixH", 6)
-        debugPrint(matH2, "applyHouseholder matH2", 6)
-
-        this
-
+    def makeHouseholder(cnt: Int) = {
+      //     debugPrint(matrixH, "makeHouseholder start matrixH", 6)
+      essential(cnt) = matrixH((cnt + 2) to matrixH.rows - 1, cnt)
+      val eNorm = if (essential(cnt).length == 0) 0.0 else sum(essential(cnt).map(x => scala.math.pow(x.real, 2) + scala.math.pow(x.imag, 2))) // Does Complex component need squaring?
+      val c0 = matrixH(cnt + 1, cnt);
+      (eNorm, c0.imag) match {
+        case (0, 0) =>
+          beta(cnt) = c0.real
+          tau(cnt) = Complex(0, 0)
+        case _ =>
+          val c0norm = scala.math.pow(c0.real, 2) + scala.math.pow(c0.imag, 2)
+          beta(cnt) = if (c0.real >= 0) -Math.sqrt(c0norm + eNorm) else Math.sqrt(c0norm + eNorm)
+          tau(cnt) = ((beta(cnt) - c0) / beta(cnt))
+          essential(cnt) = (essential(cnt) / (c0 - beta(cnt)))
       }
+      matrixH((cnt + 1), cnt) = Complex(beta(cnt), 0)
+      matrixH((cnt + 2) to matrixH.rows - 1, cnt) := essential(cnt)
+      val matH2 = matrixH.mapValues(_.real)
+
+      debugPrint(beta(cnt), "makeHouseholder beta", 6)
+      debugPrint(tau(cnt), "makeHouseholder tau", 6)
+      debugPrint(essential(cnt), "makeHouseholder   essential", 6)
+
+ 
+
+      this
+
+    }
 
     /*
      *  4 x 4 example
@@ -64,18 +64,15 @@ object Householder {
     def applyHouseholderRight(cnt: Int) = {
 
       if (matrixH.cols == 1) {
-        matrixH *= 1 - coeffs(cnt)
+        matrixH *= 1 - tau(cnt)
         this
       } else {
         var c0 = matrixH(::, (cnt + 1) to (cnt + 1))
         var right = matrixH(::, (cnt + 2) to matrixH.cols - 1)
         val tmp = (right * (essential(cnt).toDenseMatrix.map(x => Complex(x.real, -x.imag))).t) + c0
-        c0 -= tmp * coeffs(cnt)
-        right -= tmp * coeffs(cnt) * essential(cnt).toDenseMatrix
-        val matH2 = matrixH.mapValues(_.real)
+        c0 -= tmp * tau(cnt)
+        right -= tmp * tau(cnt) * essential(cnt).toDenseMatrix
 
-        debugPrint(matrixH, "applyHouseholderRight matrixH", 6)
-        debugPrint(matH2, "applyHouseholderRight matH2", 6)
         this
       }
     }
@@ -89,17 +86,15 @@ object Householder {
     def applyHouseholderBottom(cnt: Int): IMPL_householder = {
 
       if (matrixH.cols == 1) {
-        matrixH *= 1 - coeffs(cnt)
+        matrixH *= 1 - tau(cnt)
         this
       } else {
         var r0 = matrixH((cnt + 1), (cnt + 1) to matrixH.cols - 1).t
         var bottom = matrixH((cnt + 2) to matrixH.rows - 1, (cnt + 1) to matrixH.cols - 1)
         val tmp = (bottom.t * essential(cnt).map(x => Complex(x.real, -x.imag))) + r0
-        r0 -= (tmp.toDenseMatrix * coeffs(cnt)).toDenseVector
-        bottom -= (essential(cnt).toDenseMatrix.t * tmp.toDenseMatrix) * coeffs(cnt)
-        val matH2 = matrixH.mapValues(_.real)
-        debugPrint(matrixH, "applyHouseholderBottom matrixH", 6)
-        debugPrint(matH2, "applyHouseholderBottom matH2", 6)
+        r0 -= (tmp.toDenseMatrix * tau(cnt)).toDenseVector
+        bottom -= (essential(cnt).toDenseMatrix.t * tmp.toDenseMatrix) * tau(cnt)
+
         this
       }
     }
@@ -117,7 +112,7 @@ object Householder {
 
     //def apply(m_matrix: DenseMatrix[Complex]): householder = new householder(m_matrix)
 
-    def householderSequence(hMatrix: DenseMatrix[Double], hCoeffs: DenseVector[Double], order: Int): DenseMatrix[Double] = {
+    def householderSequence(hMatrix: DenseMatrix[Double], tau: DenseVector[Double], order: Int): DenseMatrix[Double] = {
       //HouseholderSequence shifted 1 with size -1
       /*  4 x 4 example of the form
        *  1    0    0     0   ^  ------- order (wrapper)
@@ -126,7 +121,7 @@ object Householder {
        *   0    0     x    x
        */
 
-      if ((hMatrix.rows - order) != hCoeffs.length)
+      if ((hMatrix.rows - order) != tau.length)
         throw new MatrixNotSquareException // change to correct exception
 
       val matHS = hMatrix(order to (hMatrix.cols - 1), 0 to (hMatrix.rows - order - 1))
@@ -137,7 +132,8 @@ object Householder {
 
       val sum2 = (new ((Int, Int, DenseMatrix[Double]) => DenseMatrix[Double]) {
         @tailrec def apply(from: Int, to: Int, s: DenseMatrix[Double]): DenseMatrix[Double] = {
-          if (from == to) return s; apply(from + 1, to, s * -(hCoeffs(from) * hhMv(from, ::).t * hhMv(from, ::).t.toDenseMatrix - I))
+          if (from == to) return s;
+          apply(from + 1, to, s * -(tau(from) * hhMv(from, ::).t * hhMv(from, ::).t.toDenseMatrix - I))
         }
       })(0, matHS.cols - 1, I)
 
