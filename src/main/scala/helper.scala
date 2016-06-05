@@ -28,8 +28,8 @@ object GlobalConsts {
   val showTitles = true
   val showLines = false
   val fileOutput = true
-  val formatter = new DecimalFormat("#0.####E0")
-  //val formatter = new DecimalFormat("#0.######")
+ // val formatter = new DecimalFormat("#0.###E0")
+  val formatter = new DecimalFormat("#0.####")
   val printEnabled = Array(true, true, true, true, true, false, showHouseholder, true) //0,1 for debugging last part
   val EPSILON: Double = 2.22045e-016
   val currentPrintType = printType.BOTH

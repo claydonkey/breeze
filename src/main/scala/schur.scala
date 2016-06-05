@@ -19,6 +19,8 @@ import Hessenberg._
  * if \a computeU is false.*/
 
 object Schur {
+
+  //this is not used  ...  for inverting Upper Triangle form
     def invU(M: DenseMatrix[Complex]): DenseMatrix[Complex] =
   {      // All upper must be non zero
     // Ax = b -> LUx = b. Then y is defined to be Ux
@@ -116,11 +118,13 @@ for (i <- (j - 1) to  0 by - 1) {
 	  t = t / normt
 
 	  val b = t(0, 1) * t(1, 0)
-	  debugPrint(b, "b", 3)
+
 	  val c = t(0, 0) - t(1, 1)
 	  val disc = breeze.numerics.pow((c * c + 4.0 * b), 0.5)
 	  val det = (t(0, 0) * t(1, 1)) - b
+
 	  debugPrint(t(0, 0) * t(1, 1), "t(0, 0) * t(1, 1)", 3)
+	  debugPrint(b, "b", 3)
 	  debugPrint(det, "det", 3)
 
 	  val trace = t(0, 0) + t(1, 1)
@@ -201,11 +205,13 @@ for (i <- (j - 1) to  0 by - 1) {
 
 	      matT(il to il + 1, ::) rotateoL (rot)
 	      debugPrint(matT, "MatT A", 0)
-	      matT(0 to matT.cols - il - 2, il to il + 1) rotateoR (rot)
-
+	      matT(0 to (min(il + 2, iu)), il to il + 1) rotateoR (rot)
+     if (il + 2 > iu) debugPrint(iu, "lesser", 0);
 	      debugPrint(matT, "MatT B", 0)
-	      matQ(0 to (min(il + 2, iu) + 1), il to il + 1) rotateoR (rot)
-	      if (il + 2 > iu) debugPrint(iu, "lesser", 0);
+
+
+	      matQ(::, il to il + 1) rotateoR (rot)
+
 	      debugPrint(matQ, "MatQ A", 0)
 
 	      val idx: Int = 0

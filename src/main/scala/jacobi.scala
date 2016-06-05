@@ -28,7 +28,7 @@ object jacobi {
 
   }
 
-  import Helper._
+
 
   def getRotationLeft(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jRotation) = {
     val x1 = DenseVector.tabulate[Complex](_x.length) { (i) => j.m_c * _x(i) + conj(j.m_s) * _y(i) }
@@ -54,9 +54,6 @@ object jacobi {
 
     val res1 = DenseVector.horzcat(x1, y1)
 
-    //debugPrint(res, "res", 0)
-    //debugPrint(res1, "res1", 0)
-
     val i = 0
 
     for (i <- 0 to _x.length - 1) {
@@ -68,73 +65,65 @@ object jacobi {
 
   }
 
-  /*
-  def applyRotationinPlane(_xy: DenseMatrix[Complex], j: jacobiRotation) = {
+ 
 
-    if (j.m_c == 1 && j.m_s == 0)
-      DenseMatrix.zeros[Complex](_xy.rows, _xy.cols)
-    debugPrint(_xy, " _xy", 1)
 
-    DenseMatrix.tabulate[Complex](_xy.rows, _xy.cols) { case (0, y) => j.m_c * _xy(0, y) + conj(j.m_s) * _xy(1, y) case (1, y) => -j.m_s * _xy(0, y) + conj(j.m_c) * _xy(1, y) }
+/*This function implements the continuous Givens rotation
+ *generation algorithm found in Anderson (2000),
+ *Discontinuous Plane Rotations and the Symmetric Eigenvalue Problem.
+ *LAPACK Working Note 150, University of Tennessee, UT-CS-00-454, December 4, 2000. */
+def makeGivens(p: Complex, q: Complex) = {
+
+  (p, q) match {
+    case (_, Complex(0.0, 0.0)) =>
+      val m_c = if (p.real < 0) Complex(-1.0, 0.0) else Complex(1.0, 0.0)
+      val m_s = Complex(0.0, 0.0)
+      val r = m_c * p;
+
+      new jRotation(m_c, m_s, r)
+    case (Complex(0.0, 0.0), _) =>
+      val m_c = Complex(0.0, 0.0)
+      val m_s = -q / abs(q)
+      val r = Complex(abs(q), 0.0)
+
+      new jRotation(m_c, m_s, r)
+    case _ =>
+      val p1 = norm1(p)
+      val q1 = norm1(q)
+      if (p1 >= q1) {
+	val ps = p / p1
+	val p2 = abs2(ps)
+	val qs = q / p1
+	val q2 = abs2(qs)
+
+	var u = pow(1.0 + (q2 / p2), 0.5)
+	if (p.real < 0)
+	  u = -u
+
+	val m_c = Complex(1.0, 0) / u
+	val m_s = -qs * conj(ps) * (m_c / p2)
+	val r = p * u
+
+	new jRotation(m_c, m_s, r)
+      } else {
+
+	val p2 = abs2(p / q1)
+	val qs = q / q1
+	val q2 = abs2(qs);
+
+	var u = q1 * pow((p2 + q2), 0.5)
+
+	if (p.real < 0)
+	  u = -u
+
+	val p1 = abs(p)
+	val  ps2 = p / p1
+	val m_c = Complex(p1 / u, 0.0)
+	val m_s = -conj(ps2) * (q / u)
+	val r = ps2 * u
+	new jRotation(m_c, m_s, r)
+      }
   }
-*/
-
-  /*This function implements the continuous Givens rotation
-   *generation algorithm found in Anderson (2000),
-   *Discontinuous Plane Rotations and the Symmetric Eigenvalue Problem.
-   *LAPACK Working Note 150, University of Tennessee, UT-CS-00-454, December 4, 2000. */
-  def makeGivens(p: Complex, q: Complex) = {
-
-    (p, q) match {
-      case (_, Complex(0.0, 0.0)) =>
-        val m_c = if (p.real < 0) Complex(-1.0, 0.0) else Complex(1.0, 0.0)
-        val m_s = Complex(0.0, 0.0)
-        val r = m_c * p;
-
-        new jRotation(m_c, m_s, r)
-      case (Complex(0.0, 0.0), _) =>
-        val m_c = Complex(0.0, 0.0)
-        val m_s = -q / abs(q)
-        val r = Complex(abs(q), 0.0)
-
-        new jRotation(m_c, m_s, r)
-      case _ =>
-        val p1 = norm1(p)
-        val q1 = norm1(q)
-        if (p1 >= q1) {
-          val ps = p / p1
-          val p2 = abs2(ps)
-          val qs = q / p1
-          val q2 = abs2(qs)
-
-          var u = pow(1.0 + (q2 / p2), 0.5)
-          if (p.real < 0)
-            u = -u
-
-          val m_c = Complex(1.0, 0) / u
-          val m_s = -qs * conj(ps) * (m_c / p2)
-          val r = p * u
-
-          new jRotation(m_c, m_s, r)
-        } else {
-
-          val p2 = abs2(p / q1)
-          val qs = q / q1
-          val q2 = abs2(qs);
-
-          var u = q1 * pow((p2 + q2), 0.5)
-
-          if (p.real < 0)
-            u = -u
-
-          val p1 = abs(p)
-         val  ps2 = p / p1
-          val m_c = Complex(p1 / u, 0.0)
-          val m_s = -conj(ps2) * (q / u)
-          val r = ps2 * u
-          new jRotation(m_c, m_s, r)
-        }
-    }
-  }
+}
 
 }

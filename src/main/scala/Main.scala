@@ -21,13 +21,12 @@ object Main {
   val file = new File("schur.dat")
   val bw: Option[BufferedWriter] = if (fileOutput == true) { Some(new BufferedWriter(new FileWriter(file))) } else { None }
 
-
   def main(args: Array[String]): Unit = {
-   // promptEnterKey();
+    // promptEnterKey();
 
-    val M = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16))
-
-    debugPrint(M mPow 7.21 , "RESULT", 1)
+    val M1 = DenseMatrix((1, 2, 4, 4), (5, 6, 7, 9), (9, 10, 11, 12), (13, 14, 15, 16))
+    val M2 = DenseMatrix((1, 2, 4, 4, 5), (5, 6, 7, 9, 10), (9, 10, 11, 12, 12), (13, 14, 15, 16, 17), (18, 19, 20, 21, 22))
+    debugPrint(M2 mPow 2.321, "RESULT", 1)
 
     if (bw != None) {
       bw.get.close()
