@@ -8,6 +8,23 @@ import scala.util.control.Breaks._
 import Helper._
 import scala.annotation.tailrec
 
+/*
+ Copyright 2016 Anthony Campbelll
+
+ Licensed under the Apache License, Version 2.0 (the "License")
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
+
 object Householder {
 
   /*
@@ -18,14 +35,10 @@ object Householder {
    *    e    [   bott  ]
    */
    class Householder(val matrixH: DenseMatrix[Complex],  val tau :DenseVector[Complex]) {
-
-
     val size = matrixH.cols - 1
     val beta = Array.ofDim[Double](size)
  //   val tau = DenseVector.zeros[Complex](size)
     val essential = Array.ofDim[DenseVector[Complex]](size)
-
-
 
     def makeHouseholder(cnt: Int) = {
 
@@ -43,17 +56,13 @@ object Householder {
           tau(cnt) = ((beta(cnt) - c0) / beta(cnt))
           essential(cnt) = (essential(cnt) / (c0 - beta(cnt)))
       }
+
       matrixH((cnt + 1), cnt) = Complex(beta(cnt), 0)
       matrixH((cnt + 2) to matrixH.rows - 1, cnt) := essential(cnt)
+
       val matH2 = matrixH.mapValues(_.real)
-
-      debugPrint(beta(cnt), "makeHouseholder beta", 6)
-      debugPrint(tau(cnt), "makeHouseholder tau", 6)
-      debugPrint(essential(cnt), "makeHouseholder   essential", 6)
-
       this
 
-    
  }
 
 

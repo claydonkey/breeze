@@ -9,6 +9,45 @@ import Helper._
 import Schur._
 import scala.annotation.tailrec
 
+/*
+ Copyright 2016 Anthony Campbelll
+
+ Licensed under the Apache License, Version 2.0 (the "License")
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
+/*
+ * Based on:
+ *A SCHUR–PADÉ ALGORITHM FOR
+* FRACTIONAL POWERS OF A MATRIX*
+* NICHOLAS J. HIGHAM† AND LIJING LIN†
+
+ * The algorithm starts with a Schur decomposition, takes kk square roots of the triangular factor TT,  * evaluates
+ *  an [m/mm/m] Padé approximant of (1−x)p(1-x)p at I−T1/2kI-T1/2k, and squares the result
+ * kk times. The parameters kk and mm are chosen to minimize the cost subject to achieving double precision
+ * accuracy in the evaluation of the Padé approximant, making use of a result that bounds the error in the
+ *  matrix Padé approximant by the error in the scalar Padé approximant with argument the norm of the matrix.
+ * The Padé approximant is evaluated from the continued fraction representation in bottom-up fashion,
+ *  which is shown to be numerically stable. In the squaring phase the diagonal and first superdiagonal are
+ *  computed from explicit formulae for Tp/2jTp/2j, yielding increased accuracy. Since the basic algorithm is
+ * designed for p∈(−1,1)p∈(-1,1), a criterion for reducing an arbitrary real pp to this range is developed,
+ * making use of bounds for the condition number of the ApAp problem. How best to compute AkAk for a
+ * negative integer kk is also investigated. In numerical experiments the new algorithm is found to be
+ * superior in accuracy and stability to several alternatives, including the use of an eigendecomposition
+ * and approaches based on the formula Ap=exp(plog(A))Ap=exp(plog(A)).
+
+Read More: http://epubs.siam.org/doi/abs/10.1137/10081232X?journalCode=sjmael
+ */
+
 object matrixPow {
 
   implicit def IMPL_mpowD(M: DenseMatrix[Double]) =
@@ -27,6 +66,7 @@ object matrixPow {
     }
 
   def degree = (normIminusT: Double) => {
+
     val maxNormForPade = Array(2.8064004e-1f /* degree = 3 */ , 4.3386528e-1f)
     var degree = 3
     for (degree <- 3 to 4)
@@ -48,7 +88,6 @@ object matrixPow {
 
   }
 
-  /* no checks... */
   def sqrtTriangular(m_A: DenseMatrix[Complex]) = {
 
     val result = DenseMatrix.zeros[Complex](m_A.cols, m_A.rows)
@@ -64,17 +103,13 @@ object matrixPow {
     }
     result
   }
-
   val maxNormForPade: Double = 2.789358995219730e-1;
 
-  // double precision
-
   def getIMinusT(T: DenseMatrix[Complex], numSquareRoots: Int = 0, deg1: Double = 10.0, deg2: Double = 0.0): (DenseMatrix[Complex], Int) = {
+
     val IminusT = DenseMatrix.eye[Complex](T.rows) - T
     val normIminusT = norm1(sum(IminusT(::, *)).t.reduceLeft((x, y) => if (norm1(x) > norm1(y)) x else y))
-    debugPrint(IminusT, "IminusT", 5)
-    debugPrint(normIminusT, "normIminusT", 5)
-    debugPrint(numSquareRoots, "numSquareRoots", 5)
+
     if (normIminusT < maxNormForPade) {
       val rdeg1 = degree(normIminusT)
       val rdeg2 = degree(normIminusT / 2)
@@ -85,108 +120,32 @@ object matrixPow {
 
   def computeSuperDiag(curr: Complex, prev: Complex, p: Double): Complex = {
 
-    import breeze.numerics._
     val logCurr: Complex = log(curr)
-    debugPrint(logCurr, "  logCurr", 3)
     val logPrev: Complex = log(prev)
-    debugPrint(logPrev, "  logPrev", 3)
     val unwindingNumber = ceil(((logCurr - logPrev).imag - M_PI) / (2 * M_PI))
-    debugPrint(unwindingNumber, "  unwindingNumber", 3)
     val w = atan2h(curr - prev, curr + prev) + Complex(0.0, M_PI * unwindingNumber)
-    debugPrint(w, "  w", 3)
     val res = (2.0 * exp(0.5 * p * (logCurr + logPrev)) * sinh2(p * w) / (curr - prev))
-    debugPrint(res, "  res", 3)
     res
   }
 
   def compute2x2(r: DenseMatrix[Complex], m_A: DenseMatrix[Complex], p: Double) = {
-    import breeze.numerics._
-    val res = r
 
-    debugPrint(p, "  Result p", 3)
-    debugPrint(m_A, "  Result m_A", 3)
+    val res = r
     res(0, 0) = pow(m_A(0, 0), p)
-    debugPrint(res(0, 0), "  Result res(0,0)", 3)
     var i = 1
     for (i <- 1 until m_A.cols) {
-      debugPrint(p, "  p", 3)
-      debugPrint(res(i, i), "  res(i, i) ", 3)
-      debugPrint(m_A(i, i), "  m_A.coeff(i, i)", 3)
-
       res(i, i) = pow(m_A(i, i), p)
 
-      debugPrint(res(i, i), "  Result  loop 1", 3)
       if (m_A(i - 1, i - 1) == m_A(i, i)) {
         res(i - 1, i) = p * pow(m_A(i, i), p - 1)
-        debugPrint(res(i - 1, i), "  Result 1", 3)
       } else if (2 * abs(m_A(i - 1, i - 1)) < abs(m_A(i, i)) || 2 * abs(m_A(i, i)) < abs(m_A(i - 1, i - 1))) {
-
-        debugPrint(res(i, i), "  res(i , i)", 3)
-        debugPrint(res(i - 1, i), "  res(i - 1, i)", 3)
-        debugPrint(res(i - 1, i - 1), "  res(i - 1, i-1)", 3)
-        debugPrint(m_A(i, i), "  m_A(i, i)", 3)
-        debugPrint(m_A(i - 1, i - 1), "  m_A(i-1, i-1)", 3)
         res(i - 1, i) = (res(i, i) - res(i - 1, i - 1)) / (m_A(i, i) - m_A(i - 1, i - 1))
-
-        debugPrint(res(i - 1, i), "  Result 2", 3)
       } else {
         res(i - 1, i) = computeSuperDiag(m_A(i, i), m_A(i - 1, i - 1), p)
-        debugPrint(res(i - 1, i), "  Result 3", 3)
       }
       res(i - 1, i) *= m_A(i - 1, i)
     }
     res
-  }
-
-  def compute2x2b(pade: DenseMatrix[Complex], sT: DenseMatrix[Complex], p: Double) = {
-    import breeze.numerics._
-
-    val R = pade
-    R(0, 0) = pow(sT(0, 0), p)
-    var i = 1
-    for (i <- 1 until sT.cols) {
-      R(i, i) = pow(sT(i, i), p)
-
-      if (sT(i - 1, i - 1) == sT(i, i)) {
-        R(i - 1, i) = p * pow(sT(i, i), p - 1)
-
-      } else if (2 * abs(sT(i - 1, i - 1)) < abs(sT(i, i)) || 2 * abs(sT(i, i)) < abs(sT(i - 1, i - 1))) {
-        R(i - 1, i) = (pade(i, i) - pade(i - 1, i - 1)) / (sT(i, i) - sT(i - 1, i - 1))
-
-      } else {
-        R(i - 1, i) = computeSuperDiag(sT(i, i), sT(i - 1, i - 1), p)
-      }
-      R(i - 1, i) *= sT(i - 1, i)
-    }
-    R
-  }
-
-  def compute2x2c(pade: DenseMatrix[Complex], sT: DenseMatrix[Complex], p: Double) = {
-    import breeze.numerics._
-
-    val R = pade
-    R(0, 0) = pow(sT(0, 0), p)
-    var i = 1
-
-    for (i <- 1 until sT.cols) {
-
-      val prev = sT(i - 1, i - 1)
-      val curr = sT(i, i)
-      val pPade = pade(i - 1, i - 1)
-      val cPade = pade(i, i)
-
-      R(i, i) = pow(curr, p)
-
-      R(i - 1, i) = if (prev == curr) {
-        p * pow(curr, p - 1)
-      } else if (2 * abs(prev) < abs(curr) || 2 * abs(curr) < abs(prev)) {
-        (cPade - pPade) / (curr - prev)
-      } else {
-        computeSuperDiag(sT(i, i), sT(i - 1, i - 1), p)
-      } * sT(i - 1, i)
-
-    }
-    R
   }
 
   def computeIntPowerD(exp: Double, value: DenseMatrix[Double]): DenseMatrix[Double] = {
@@ -217,55 +176,29 @@ object matrixPow {
   def cFracPart(M: DenseMatrix[Complex], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
     {
       val (sT, sQ, tau, house) = M schurDecomp
-
-      debugPrint(sT, "schur T", 1)
-      debugPrint(sQ, "schur Q", 1)
-      debugPrint(house, "house Q", 1)
       val fpow = pow % 1
 
       if (abs(fpow) > 0) {
         val (iminusT, noOfSqRts) = getIMinusT(upperTriangular(M))
         val pP = padePower(iminusT, fpow)
-
-        debugPrint(iminusT, "iminusT", 1)
-        debugPrint(fpow, "frac_power", 1)
-        debugPrint(noOfSqRts, "  noOfSqRts", 1)
-        debugPrint(pP, "padePower", 1)
-
         val pT = computeFracPower(pP, sT, fpow, noOfSqRts)
-
-        debugPrint(sT, "schur T", 1)
-        debugPrint(sQ, "schur Q", 1)
-        debugPrint(pT, "pade T", 1)
         (Some(pT), sQ)
-      } else
+      } else {
         (None, sQ)
-
+      }
     }
 
   def dFracPart(MD: DenseMatrix[Double], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
     {
       val (sT, sQ, tau, house) = MD schurDecomp
       val M = MD.mapValues(Complex(_, 0.0))
-      debugPrint(sT, "schur T", 1)
-      debugPrint(sQ, "schur Q", 1)
-      debugPrint(house, "house Q", 1)
       val fpow = pow % 1
 
       if (abs(fpow) > 0) {
         val (iminusT, noOfSqRts) = getIMinusT(upperTriangular(M))
         val pP = padePower(iminusT, fpow)
-
-        debugPrint(iminusT, "iminusT", 1)
-        debugPrint(fpow, "frac_power", 1)
-        debugPrint(noOfSqRts, "  noOfSqRts", 1)
-        debugPrint(pP, "padePower", 1)
-
         val pT = computeFracPower(pP, sT, fpow, noOfSqRts)
 
-        debugPrint(sT, "schur T", 1)
-        debugPrint(sQ, "schur Q", 1)
-        debugPrint(pT, "pade T", 1)
         (Some(pT), sQ)
       } else
         (None, sQ)
@@ -274,6 +207,9 @@ object matrixPow {
 
   def fractC(pow: Double, M: DenseMatrix[Complex]): DenseMatrix[Complex] = {
     val ipower = abs(floor(pow))
+    val intPow = if (pow < 0.0)
+      throw new IllegalArgumentException("Cannot currently invert complex matrices.")
+
     return cFracPart(M, pow) match {
       case (None, _) => computeIntPowerC(ipower, M)
       case (pT, sQ) => if (ipower > 0) (pT.get revertSchur sQ) * computeIntPowerC(ipower, M) else (pT.get revertSchur sQ)
@@ -281,19 +217,13 @@ object matrixPow {
   }
 
   def fractI(pow: Double, M: DenseMatrix[Int]): DenseMatrix[Complex] = fractD(pow, M.mapValues(_.toDouble))
-
   def fractD(pow: Double, M: DenseMatrix[Double]): DenseMatrix[Complex] = {
 
-
-
     val ipower = abs(floor(pow))
-    val intPow = if (ipower < 0.0) inv(M) else M
+    val intPow = if (pow < 0.0) inv(M) else M
     return dFracPart(M, pow) match {
-          //return cFracPart(M.mapValues(Complex(_, 0.0)), pow) match {
       case (None, _) => computeIntPowerD(ipower, intPow).mapValues(Complex(_, 0.0))
       case (pT, sQ) => if (ipower > 0) (pT.get revertSchur sQ) * computeIntPowerD(ipower, intPow).mapValues(Complex(_, 0.0)) else (pT.get revertSchur sQ)
     }
-
   }
-
 }

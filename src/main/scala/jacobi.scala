@@ -7,6 +7,23 @@ import breeze.math._
 import scala.util.control.Breaks._
 import Helper._
 
+/*
+ Copyright 2016 Anthony Campbelll
+
+ Licensed under the Apache License, Version 2.0 (the "License")
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
+
 /* This class represents a Jacobi or Givens rotation.
  * This is a 2D rotation in the plane \c J of angle \f$ \theta \f$ defined by
  * its cosine \c c and sine \c s as follow:
@@ -15,7 +32,7 @@ import Helper._
  * You can apply the respective counter-clockwise rotation to a column vector \c v by
  * applying its adjoint on the left: \f$ v = J^* v \f$
  */
-class jRotation(val m_c: Complex, val m_s: Complex, val rot: Complex) {}
+
 object jacobi {
   implicit class IMPL_Jacobi(val M: DenseMatrix[Complex]) {
 
@@ -25,10 +42,7 @@ object jacobi {
     //Need to fix these...
     def rotateL(jrot: jRotation) =  jacobi.getRotationLeft(M(0, ::).t, M(1, ::).t, new jRotation(conj(jrot.m_c), -(jrot.m_s), jrot.rot))
     def rotateR(jrot: jRotation) = jacobi.getRotationRight(M(::, 0), M(::, 1), new jRotation((jrot.m_c), -conj(jrot.m_s), jrot.rot))
-
   }
-
-
 
   def getRotationLeft(_x: DenseVector[Complex], _y: DenseVector[Complex], j: jRotation) = {
     val x1 = DenseVector.tabulate[Complex](_x.length) { (i) => j.m_c * _x(i) + conj(j.m_s) * _y(i) }
@@ -49,9 +63,7 @@ object jacobi {
 
     val x1 = DenseVector.tabulate[Complex](_x.length) { (i) => j.m_c * _x(i) + conj(j.m_s) * _y(i) }
     val y1 = DenseVector.tabulate[Complex](_y.length) { (i) => -j.m_s * _x(i) + conj(j.m_c) * _y(i) }
-
     val res = DenseMatrix.vertcat(x1.t, y1.t)
-
     val res1 = DenseVector.horzcat(x1, y1)
 
     val i = 0
@@ -62,16 +74,13 @@ object jacobi {
       _x(i) = j.m_c * xi + conj(j.m_s) * yi
       _y(i) = -j.m_s * xi + conj(j.m_c) * yi
     }
-
   }
-
- 
-
 
 /*This function implements the continuous Givens rotation
  *generation algorithm found in Anderson (2000),
  *Discontinuous Plane Rotations and the Symmetric Eigenvalue Problem.
  *LAPACK Working Note 150, University of Tennessee, UT-CS-00-454, December 4, 2000. */
+
 def makeGivens(p: Complex, q: Complex) = {
 
   (p, q) match {
@@ -126,4 +135,5 @@ def makeGivens(p: Complex, q: Complex) = {
   }
 }
 
+  class jRotation(val m_c: Complex, val m_s: Complex, val rot: Complex) {}
 }

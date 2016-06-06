@@ -8,7 +8,7 @@ import com.typesafe.sbt.SbtScalariform.ScalariformKeys
  */
 object Build extends sbt.Build {
 
-  lazy val root = Project("householder", file("."))
+  lazy val root = Project("padeSchurPower", file("."))
     .settings(basicSettings: _*)
     .settings(libraryDependencies ++= Dependencies.basic)
 

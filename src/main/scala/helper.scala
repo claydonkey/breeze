@@ -8,6 +8,23 @@ import breeze.math._
 import reflect.runtime.universe._
 import scala.util.control.Breaks._
 
+/*
+ Copyright 2016 Anthony Campbelll
+
+ Licensed under the Apache License, Version 2.0 (the "License")
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
+
 object GlobalConsts {
   implicit class MutableInt(var value: Int) {
     def inc() = { value += 1 }
@@ -28,7 +45,7 @@ object GlobalConsts {
   val showComplex = false
   val showTitles = true
   val showLines = false
-  val fileOutput = true
+  val fileOutput = false
   // val formatter = new DecimalFormat("#0.###E0")
   val formatter = new DecimalFormat("#0.####")
   val printEnabled = Array(schur, true, true, showCompute2x2, true, false, showHouseholder, true) //0,1 for debugging last part
@@ -98,7 +115,7 @@ object Helper {
       case b if b =:= typeOf[DenseMatrix[Double]] => if (printEnabled(loglevel)) {
         currentPrintType match {
 
-          case _ => output(("" + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => formatter.format(x) }).oneLiner.showTitle(name) + "\n")
+          case _ => output(("[" + M.asInstanceOf[DenseMatrix[Double]].mapValues { (x) => formatter.format(x) }).oneLiner.showTitle(name) + " ]\n")
         }
 
       }
