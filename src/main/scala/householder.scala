@@ -17,17 +17,20 @@ object Householder {
    *    e    [  bott   ]
    *    e    [   bott  ]
    */
-  implicit class IMPL_householder(val matrixH: DenseMatrix[Complex]) {
+   class Householder(val matrixH: DenseMatrix[Complex],  val tau :DenseVector[Complex]) {
+
 
     val size = matrixH.cols - 1
     val beta = Array.ofDim[Double](size)
-    val tau = DenseVector.zeros[Complex](size)
-    //tau coeffs
+ //   val tau = DenseVector.zeros[Complex](size)
     val essential = Array.ofDim[DenseVector[Complex]](size)
 
+
+
     def makeHouseholder(cnt: Int) = {
-      //     debugPrint(matrixH, "makeHouseholder start matrixH", 6)
+
       essential(cnt) = matrixH((cnt + 2) to matrixH.rows - 1, cnt)
+
       val eNorm = if (essential(cnt).length == 0) 0.0 else sum(essential(cnt).map(x => scala.math.pow(x.real, 2) + scala.math.pow(x.imag, 2))) // Does Complex component need squaring?
       val c0 = matrixH(cnt + 1, cnt);
       (eNorm, c0.imag) match {
@@ -48,11 +51,11 @@ object Householder {
       debugPrint(tau(cnt), "makeHouseholder tau", 6)
       debugPrint(essential(cnt), "makeHouseholder   essential", 6)
 
- 
-
       this
 
-    }
+    
+ }
+
 
     /*
      *  4 x 4 example
@@ -83,7 +86,7 @@ object Householder {
      *    e     Bottom
      *    e     Bottom
      */
-    def applyHouseholderBottom(cnt: Int): IMPL_householder = {
+    def applyHouseholderBottom(cnt: Int) = {
 
       if (matrixH.cols == 1) {
         matrixH *= 1 - tau(cnt)
@@ -112,8 +115,8 @@ object Householder {
 
     //def apply(m_matrix: DenseMatrix[Complex]): householder = new householder(m_matrix)
 
-    def householderSequence(hMatrix: DenseMatrix[Double], tau: DenseVector[Double], order: Int): DenseMatrix[Double] = {
-      //HouseholderSequence shifted 1 with size -1
+    def householderTransformation(hMatrix: DenseMatrix[Double], tau: DenseVector[Double], order: Int): DenseMatrix[Double] = {
+      //householderTransformation shifted 1 with size -1
       /*  4 x 4 example of the form
        *  1    0    0     0   ^  ------- order (wrapper)
        *   0    1    0    0   v

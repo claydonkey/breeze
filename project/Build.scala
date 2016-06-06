@@ -35,6 +35,12 @@ object Build extends sbt.Build {
 	|import breeze.math._
 	|import org.netlib.util.intW
 	|import com.github.fommil.netlib.LAPACK.{ getInstance => lapack }
+	|import Helper._
+	|import GlobalConsts._
+	|import Householder._
+	|import Hessenberg._
+	|import Schur._
+	|import matrixPow._
 	""".stripMargin
 
   )

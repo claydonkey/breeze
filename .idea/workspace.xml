@@ -2,100 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="072b6c67-dfc2-417a-a89e-60a708ce5390" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sbt.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/detC.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/pade.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$33.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixH$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixP$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixP$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$hessenbergDecomposition$$anonfun$reduceToHessenberg$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$hessenbergDecomposition$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$anonfun$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator2$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$householder$$anonfun$householderSequence$1.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$typecreator1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$typecreator2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$typecreator3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator7$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/complexSchur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator18$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/complexSchur$$anonfun$reduceToTriangularForm$1$$typecreator15$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/detC$$anon$1$$anonfun$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/detC$$anon$1$$anonfun$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/detC$$anon$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/detC$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/detC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/fullPivHouseholder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/jacobiRotation$$typecreator10$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/jacobiRotation$$typecreator11$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/jacobiRotation$$typecreator12$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/jacobiRotation$$typecreator8$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/jacobiRotation$$typecreator9$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anon$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator18$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fract$1$$typecreator20$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fract$default$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator27$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator28$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator29$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator30$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator31$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator8$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$anonfun$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$anonfun$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$anonfun$apply$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$anonfun$apply$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$anonfun$apply$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$anonfun$degree$1$$anonfun$apply$mcID$sp$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$anonfun$degree$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$typecreator14$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$$typecreator15$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/padePower.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$typecreator4$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator2$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator3$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$2$$anonfun$luEvaluate$1$$anonfun$apply$mcVI$sp$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$2$$anonfun$luEvaluate$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$2$$anonfun$luEvaluate$2$$anonfun$apply$mcVI$sp$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$2$$anonfun$luEvaluate$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$1$$typecreator7$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator20$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator21$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator22$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator17$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator18$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator19$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator1$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator13$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator14$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator15$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator2$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator3$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator4$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator7$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator8$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator9$1.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/streams/compile/console/$global/streams/export" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/streams/compile/fullClasspath/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/default/target_2.10/0.1-SNAPSHOT/resolved.xml.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/default/target_2.10/0.1-SNAPSHOT/resolved.xml.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-compile-internal.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-compile.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-docs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-optional.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-plugin.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-provided.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-runtime-internal.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-runtime.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-scala-tool.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-sources.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-test-internal.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/default-target_2.10-test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/ivy-report.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/resolution-cache/reports/ivy-report.xsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/$global/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/console/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/input_dsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/ivySbt/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/projectDescriptors/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/update/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/$global/updateSbtClassifiers/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/$global/$global/discoveredMainClasses/data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/compile/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/compileIncremental/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/compileIncremental/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/console/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/console/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/copyResources/$global/streams/copy-resources" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/copyResources/$global/streams/out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/dependencyClasspath/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/exportedProducts/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/fullClasspath/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/internalDependencyClasspath/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/managedClasspath/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/unmanagedClasspath/$global/streams/export" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/target/streams/compile/unmanagedJars/$global/streams/export" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/Build$$anonfun$1.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/Build$$anonfun$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/Build$$anonfun$basicSettings$7.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/Build$$anonfun$basicSettings$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/Build$.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/Build$.class" />
@@ -103,6 +53,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/output" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/output" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/copy-resources" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/copy-resources" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/GlobalConsts$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/GlobalConsts$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/GlobalConsts.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/GlobalConsts.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anon$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anon$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anon$2$$anonfun$oneLiner$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anon$2$$anonfun$oneLiner$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anon$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anon$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$Y$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$Y$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$Y3$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$Y3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$adj$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$adj$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$adj$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$adj$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$adj$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$adj$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$biggest$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$biggest$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$3.class" />
@@ -111,89 +71,76 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$anonfun$debugPrint$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator1$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator2$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator2$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator3$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator3$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator4$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator4$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator5$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator6$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$$typecreator6$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Helper$.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixH$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixH$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixP$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixP$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixP$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition$$anonfun$MatrixP$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$IMPL_hessenbergDecomposition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$hessenbergDecomposition$$anonfun$reduceToHessenberg$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$hessenbergDecomposition$$anonfun$reduceToHessenberg$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$hessenbergDecomposition$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg$hessenbergDecomposition$.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Hessenberg.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator10$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator10$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator2$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator6$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator6$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator7$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator7$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator8$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator8$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator9$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder$$typecreator9$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$IMPL_householder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$householder$$anon$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$householder$$anon$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$householder$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Householder$householder$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$typecreator10$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$typecreator10$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator7$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator7$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator8$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator8$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator9$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1$$typecreator9$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anon$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$Tadj$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$Tadj$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$adj$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$adj$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$invU$1$$anonfun$apply$mcVI$sp$1$$anonfun$apply$mcVI$sp$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$invU$1$$anonfun$apply$mcVI$sp$1$$anonfun$apply$mcVI$sp$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$invU$1$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$invU$1$$anonfun$apply$mcVI$sp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$invU$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$$anonfun$invU$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$computeShift$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$computeShift$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$1$$typecreator4$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$1$$typecreator4$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator8$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator8$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator17$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator17$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator18$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator18$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator19$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2$$typecreator19$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$anonfun$apply$mcV$sp$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator4$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator4$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator5$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator5$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator6$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator6$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator13$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator13$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator14$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator14$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator15$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator15$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator16$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1$$typecreator16$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$anonfun$reduceToTriangularForm$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator10$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator10$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator11$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator11$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator12$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator12$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator2$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator3$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator5$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator6$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator6$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator7$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator7$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator8$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator8$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator9$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur$$typecreator9$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur$IMPL_Schur.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Schur.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Schur.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/householder$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/householder$.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/householder.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/householder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anon$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anon$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator10$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator10$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator11$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator11$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator12$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator12$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator13$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator13$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator14$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator14$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator15$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator15$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator16$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator16$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator17$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator17$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator9$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1$$typecreator9$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$compute2x2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$sqrtTriangular$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$sqrtTriangular$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$sqrtTriangular$2$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$sqrtTriangular$2$$anonfun$apply$mcVI$sp$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$sqrtTriangular$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$sqrtTriangular$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator19$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator19$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator2$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator20$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator20$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fractD$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fractD$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fractD$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fractD$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fractI$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$anonfun$fractI$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator21$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator21$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator22$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator22$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator23$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator23$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator24$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator24$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator25$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator25$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator26$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator26$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator3$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator3$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator4$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator4$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator5$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator5$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator6$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator6$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator7$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$$typecreator7$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow$.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/matrixPow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/inputs" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/inputs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/output" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/output" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/householder.iml" afterPath="$PROJECT_DIR$/.idea/modules/householder.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sbt.xml" afterPath="$PROJECT_DIR$/.idea/sbt.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/Build.scala" afterPath="$PROJECT_DIR$/project/Build.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/householder-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/householder-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/householder-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/householder-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/project_2.10/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/project_2.10/0.1-SNAPSHOT/resolved.xml.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/project_2.10/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/project_2.10/0.1-SNAPSHOT/resolved.xml.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-compile-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-compile-internal.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-compile.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-compile.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-docs.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-docs.xml" />
@@ -207,24 +154,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-sources.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-sources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-test-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-test-internal.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-test.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-householder-build-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-compile-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-compile-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-compile.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-compile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-docs.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-docs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-optional.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-optional.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-plugin.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-pom.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-provided.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-provided.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-runtime-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-runtime-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-runtime.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-runtime.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-scala-tool.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-scala-tool.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-sources.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-sources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-test-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-test-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-test.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project_2.10-test.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/compile/$global/streams/out" afterPath="$PROJECT_DIR$/project/target/streams/compile/compile/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.10" afterPath="$PROJECT_DIR$/project/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.10" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schur.dat" afterPath="$PROJECT_DIR$/schur.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" />
@@ -249,11 +180,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/resolution-cache/reports/claydonkey.com-householder_2.11-sources.xml" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/claydonkey.com-householder_2.11-sources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/resolution-cache/reports/claydonkey.com-householder_2.11-test-internal.xml" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/claydonkey.com-householder_2.11-test-internal.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/resolution-cache/reports/claydonkey.com-householder_2.11-test.xml" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/claydonkey.com-householder_2.11-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/$global/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/$global/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/export" afterPath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/export" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/run/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/run/$global/streams/out" />
     </list>
     <ignored path="householder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -291,11 +224,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="matrixpow.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="matrixpow.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/matrixpow.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+            <state relative-caret-position="2822">
+              <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -306,8 +239,8 @@
       <file leaf-file-name="hessenberg.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/hessenberg.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="57" column="32" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="32" />
+            <state relative-caret-position="340">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -316,8 +249,8 @@
       <file leaf-file-name="householder.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/householder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="131" column="40" selection-start-line="131" selection-start-column="40" selection-end-line="131" selection-end-column="40" />
+            <state relative-caret-position="2006">
+              <caret line="126" column="40" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -326,9 +259,21 @@
       <file leaf-file-name="plugins.sbt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schur.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/schur.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+              <folding>
+                <element signature="e#23#45#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -336,8 +281,8 @@
       <file leaf-file-name="Build.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/Build.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="204">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -356,8 +301,8 @@
       <file leaf-file-name="helper.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/helper.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+            <state relative-caret-position="1343">
+              <caret line="108" column="9" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -377,9 +322,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/scala/helper.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/hessenberg.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/householder.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/matrixpow.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/hessenberg.scala" />
+        <option value="$PROJECT_DIR$/project/plugins.sbt" />
+        <option value="$PROJECT_DIR$/src/main/scala/schur.scala" />
       </list>
     </option>
   </component>
@@ -392,7 +339,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
+    <option name="width" value="1612" />
     <option name="height" value="1155" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -420,7 +367,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -474,6 +422,10 @@
               <option name="myItemId" value="scala" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schur.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -499,6 +451,28 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="matrixpow.scala" />
               <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="householder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="householder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -631,8 +605,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1114,7 +1087,7 @@
     </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1465020383079" />
+    <option name="lastUpdateTimestamp" value="1465205493011" />
     <option name="availableProjects">
       <map>
         <entry>
@@ -1139,6 +1112,11 @@
         </entry>
       </map>
     </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1465152714004" />
+      </map>
+    </option>
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
@@ -1158,44 +1136,45 @@
       <updated>1465018133305</updated>
       <workItem from="1465018135577" duration="40000" />
       <workItem from="1465018194678" duration="507000" />
-      <workItem from="1465018730394" duration="4300000" />
+      <workItem from="1465018730394" duration="5711000" />
+      <workItem from="1465206955395" duration="939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4847000" />
+    <option name="totallyTimeSpent" value="7197000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="1155" extended-state="6" />
+    <frame x="-8" y="-8" width="1612" height="1155" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28038278" sideWeight="0.491875" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28038278" sideWeight="0.508125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28038278" sideWeight="0.510625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19360903" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038278" sideWeight="0.489375" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1212,7 +1191,33 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/hessenberg.scala</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/hessenberg.scala</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/hessenberg.scala</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/hessenberg.scala</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1221,6 +1226,64 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/matrixpow.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2839">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/hessenberg.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/householder.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="126" column="40" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/Build.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/helper.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="87" column="23" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/matrixpow.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
@@ -1249,18 +1312,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/Build.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="204">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1277,40 +1332,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/hessenberg.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="57" column="32" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/householder.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="131" column="40" selection-start-line="131" selection-start-column="40" selection-end-line="131" selection-end-column="40" />
+        <state relative-caret-position="2006">
+          <caret line="126" column="40" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/helper.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+        <state relative-caret-position="1343">
+          <caret line="108" column="9" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/matrixpow.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        <state relative-caret-position="2822">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/hessenberg.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/schur.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+          <folding>
+            <element signature="e#23#45#0" expanded="false" />
           </folding>
         </state>
       </provider>

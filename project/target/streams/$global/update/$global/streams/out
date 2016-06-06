@@ -5,11 +5,7 @@
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving default#global-plugins;0.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: default#global-plugins;0.0 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m	found default#global-plugins;0.0 in inter-project[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.netbeans.nbsbt#nbsbt-plugin;1.1.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.netbeans.nbsbt#nbsbt-plugin;1.1.4 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.netbeans.nbsbt#nbsbt-plugin;1.1.4[0m
@@ -61,258 +57,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->com.typesafe.sbt#sbt-scalariform;1.2.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.eed3si9n#sbt-assembly;0.14.3 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.eed3si9n#sbt-assembly;0.14.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.eed3si9n#sbt-assembly;0.14.3 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.eed3si9n#sbt-assembly;0.14.3[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: com.eed3si9n#sbt-assembly;0.14.3[0m
-[0m[[0mdebug[0m] [0m	found com.eed3si9n#sbt-assembly;0.14.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.scalactic#scalactic_2.10;2.2.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scalactic#scalactic_2.10;2.2.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scalactic#scalactic_2.10;2.2.1[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scalactic#scalactic_2.10;2.2.1[0m
-[0m[[0mdebug[0m] [0m	found org.scalactic#scalactic_2.10;2.2.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.10.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-lang#scala-library;2.10.4[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.4 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m	[2.10.4] org.scala-lang#scala-library;2.10.4[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.4[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-lang#scala-reflect;2.10.4[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.4 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m	[2.10.4] org.scala-lang#scala-reflect;2.10.4[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.pantsbuild#jarjar;1.6.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.pantsbuild#jarjar;1.6.0 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.pantsbuild#jarjar;1.6.0[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.pantsbuild#jarjar;1.6.0[0m
-[0m[[0mdebug[0m] [0m	found org.pantsbuild#jarjar;1.6.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.apache.ant#ant;1.9.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.ant#ant;1.9.6 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.ant#ant;1.9.6[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.apache.ant#ant;1.9.6[0m
-[0m[[0mdebug[0m] [0m	found org.apache.ant#ant;1.9.6 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.apache.ant#ant-launcher;1.9.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.ant#ant-launcher;1.9.6 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.ant#ant-launcher;1.9.6[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.apache.ant#ant-launcher;1.9.6[0m
-[0m[[0mdebug[0m] [0m	found org.apache.ant#ant-launcher;1.9.6 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.ow2.asm#asm;5.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.ow2.asm#asm;5.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.ow2.asm#asm;5.0.4[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.ow2.asm#asm;5.0.4[0m
-[0m[[0mdebug[0m] [0m	found org.ow2.asm#asm;5.0.4 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.ow2.asm#asm-commons;5.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.ow2.asm#asm-commons;5.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.ow2.asm#asm-commons;5.0.4[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.ow2.asm#asm-commons;5.0.4[0m
-[0m[[0mdebug[0m] [0m	found org.ow2.asm#asm-commons;5.0.4 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.ow2.asm#asm-tree;5.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.ow2.asm#asm-tree;5.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.ow2.asm#asm-tree;5.0.4[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.ow2.asm#asm-tree;5.0.4[0m
-[0m[[0mdebug[0m] [0m	found org.ow2.asm#asm-tree;5.0.4 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.apache.maven#maven-plugin-api;3.3.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.maven#maven-plugin-api;3.3.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.maven#maven-plugin-api;3.3.3[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.apache.maven#maven-plugin-api;3.3.3[0m
-[0m[[0mdebug[0m] [0m	found org.apache.maven#maven-plugin-api;3.3.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.apache.maven#maven-model;3.3.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.maven#maven-model;3.3.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.maven#maven-model;3.3.3[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.apache.maven#maven-model;3.3.3[0m
-[0m[[0mdebug[0m] [0m	found org.apache.maven#maven-model;3.3.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.codehaus.plexus#plexus-utils;3.0.20 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.codehaus.plexus#plexus-utils;3.0.20[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.codehaus.plexus#plexus-utils;3.0.20[0m
-[0m[[0mdebug[0m] [0m	found org.codehaus.plexus#plexus-utils;3.0.20 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.apache.maven#maven-artifact;3.3.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.maven#maven-artifact;3.3.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.maven#maven-artifact;3.3.3[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.apache.maven#maven-artifact;3.3.3[0m
-[0m[[0mdebug[0m] [0m	found org.apache.maven#maven-artifact;3.3.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0[0m
-[0m[[0mdebug[0m] [0m	found org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving javax.enterprise#cdi-api;1.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: javax.enterprise#cdi-api;1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: javax.enterprise#cdi-api;1.0[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: javax.enterprise#cdi-api;1.0[0m
-[0m[[0mdebug[0m] [0m	found javax.enterprise#cdi-api;1.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving javax.annotation#jsr250-api;1.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: javax.annotation#jsr250-api;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: javax.annotation#jsr250-api;1.0[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: javax.annotation#jsr250-api;1.0[0m
-[0m[[0mdebug[0m] [0m	found javax.annotation#jsr250-api;1.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving javax.inject#javax.inject;1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: javax.inject#javax.inject;1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: javax.inject#javax.inject;1[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: javax.inject#javax.inject;1[0m
-[0m[[0mdebug[0m] [0m	found javax.inject#javax.inject;1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0[0m
-[0m[[0mdebug[0m] [0m	found org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving org.codehaus.plexus#plexus-component-annotations;1.5.5 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus.plexus#plexus-component-annotations;1.5.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.codehaus.plexus#plexus-component-annotations;1.5.5[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.codehaus.plexus#plexus-component-annotations;1.5.5[0m
-[0m[[0mdebug[0m] [0m	found org.codehaus.plexus#plexus-component-annotations;1.5.5 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving org.codehaus.plexus#plexus-classworlds;2.5.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus.plexus#plexus-classworlds;2.5.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.codehaus.plexus#plexus-classworlds;2.5.2[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.codehaus.plexus#plexus-classworlds;2.5.2[0m
-[0m[[0mdebug[0m] [0m	found org.codehaus.plexus#plexus-classworlds;2.5.2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-scalariform;1.3.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.sbt#sbt-scalariform;1.3.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.sbt#sbt-scalariform;1.3.0 {compile=[default(compile)]}[0m
@@ -327,19 +71,18 @@
 [0m[[0mdebug[0m] [0m	found org.scalariform#scalariform_2.10;0.1.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-plugin;1.1.4->org.netbeans.nbsbt#nbsbt-core;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -366,154 +109,20 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.eed3si9n#sbt-assembly;0.14.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-scalariform;1.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-plugin;1.1.4->org.netbeans.nbsbt#nbsbt-core;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -540,151 +149,24 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.eed3si9n#sbt-assembly;0.14.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-scalariform;1.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@28da27[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-lang#scala-library;2.10.4[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.4] org.scala-lang#scala-library;2.10.4[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
@@ -734,16 +216,26 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-compiler;2.10.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.4[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-lang#scala-reflect;2.10.4[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.4] org.scala-lang#scala-reflect;2.10.4[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-compiler;2.10.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
@@ -1228,8 +720,7 @@
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [compile-internal][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-plugin;1.1.4->org.netbeans.nbsbt#nbsbt-core;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -1262,148 +753,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.eed3si9n#sbt-assembly;0.14.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-scalariform;1.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [provided][0m
@@ -1434,10 +792,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-compiler;2.10.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
@@ -1731,8 +1093,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [runtime-internal][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-plugin;1.1.4->org.netbeans.nbsbt#nbsbt-core;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -1759,147 +1120,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.eed3si9n#sbt-assembly;0.14.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-scalariform;1.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
@@ -1907,8 +1135,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-plugin;1.1.4->org.netbeans.nbsbt#nbsbt-core;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.netbeans.nbsbt#nbsbt-core;1.1.4->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -1941,148 +1168,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalariform#scalariform_2.10;0.1.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-scalariform;1.3.0->org.scalariform#scalariform_2.10;0.1.4 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.eed3si9n#sbt-assembly;0.14.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalactic#scalactic_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.scalactic#scalactic_2.10;2.2.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.ant#ant;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.ant#ant;1.9.6->org.apache.ant#ant-launcher;1.9.6 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.ow2.asm#asm-commons;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-commons;5.0.4->org.ow2.asm#asm-tree;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.ow2.asm#asm-tree;5.0.4->org.ow2.asm#asm;5.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.pantsbuild#jarjar;1.6.0->org.apache.maven#maven-plugin-api;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-model;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-model;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.apache.maven#maven-artifact;3.3.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-artifact;3.3.3->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.maven#maven-plugin-api;3.3.3->org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.codehaus.plexus#plexus-utils;3.0.17 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.plexus#plexus-utils;3.0.20 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->javax.enterprise#cdi-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0mexcluding dependency: org.jboss.interceptor#jboss-interceptor-api;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.annotation#jsr250-api;1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies javax.enterprise#cdi-api;1.0->javax.inject#javax.inject;1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-component-annotations;1.5.5 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-classworlds;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0->org.codehaus.plexus#plexus-utils;3.0.20 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.eed3si9n#sbt-assembly;0.14.3->org.pantsbuild#jarjar;1.6.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->org.netbeans.nbsbt#nbsbt-plugin;1.1.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#householder-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-scalariform;1.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#householder-build;0.1-SNAPSHOT [provided][0m
@@ -2113,10 +1207,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-compiler;2.10.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#classpath;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
@@ -2461,35 +1559,16 @@
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.netbeans.nbsbt#nbsbt-plugin;1.1.4!nbsbt-plugin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.sbt#sbt-scalariform;1.3.0!sbt-scalariform.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.eed3si9n#sbt-assembly;0.14.3!sbt-assembly.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.netbeans.nbsbt#nbsbt-core;1.1.4!nbsbt-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaz#scalaz-core_2.10;7.0.2!scalaz-core_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaz#scalaz-effect_2.10;7.0.2!scalaz-effect_2.10.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalactic#scalactic_2.10;2.2.1!scalactic_2.10.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.pantsbuild#jarjar;1.6.0!jarjar.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.4!scala-library.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.4!scala-reflect.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.ant#ant;1.9.6!ant.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.ow2.asm#asm;5.0.4!asm.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.ow2.asm#asm-commons;5.0.4!asm-commons.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.maven#maven-plugin-api;3.3.3!maven-plugin-api.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.ant#ant-launcher;1.9.6!ant-launcher.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.ow2.asm#asm-tree;5.0.4!asm-tree.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.maven#maven-model;3.3.3!maven-model.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.maven#maven-artifact;3.3.3!maven-artifact.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.plexus;0.3.0!org.eclipse.sisu.plexus.jar(eclipse-plugin)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.codehaus.plexus#plexus-utils;3.0.20!plexus-utils.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.enterprise#cdi-api;1.0!cdi-api.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(eclipse-plugin)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.annotation#jsr250-api;1.0!jsr250-api.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.inject#javax.inject;1!javax.inject.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.1!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalariform#scalariform_2.10;0.1.4!scalariform_2.10.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.4!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#sbt;0.13.5!sbt.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#main;0.13.5!main.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.5!compiler-interface-bin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.5!compiler-interface-src.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.5!compiler-interface-bin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.5!compiler-interface-bin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.5!compiler-interface-bin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.5!compiler-interface-bin.jar[0m
@@ -2515,6 +1594,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#tracking;0.13.5!tracking.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#testing;0.13.5!testing.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.4!scala-compiler.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.4!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#control;0.13.5!control.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#collections;0.13.5!collections.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
@@ -2532,7 +1612,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1261ms :: artifacts dl 57ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 664ms :: artifacts dl 25ms[0m
 [0m[[0mdebug[0m] [0m	report for default#householder-build;0.1-SNAPSHOT compile produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\project\target\resolution-cache\reports\default-householder-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#householder-build;0.1-SNAPSHOT runtime produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\project\target\resolution-cache\reports\default-householder-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#householder-build;0.1-SNAPSHOT test produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\project\target\resolution-cache\reports\default-householder-build-test.xml[0m
@@ -2546,5 +1626,5 @@
 [0m[[0mdebug[0m] [0m	report for default#householder-build;0.1-SNAPSHOT docs produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\project\target\resolution-cache\reports\default-householder-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#householder-build;0.1-SNAPSHOT pom produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\project\target\resolution-cache\reports\default-householder-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#householder-build;0.1-SNAPSHOT scala-tool produced in D:\Users\anthony\Documents\Minnow\Source\Scala\householder\project\target\resolution-cache\reports\default-householder-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1261ms resolve - 57ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (664ms resolve - 25ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

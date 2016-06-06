@@ -87,15 +87,15 @@ object matrixPow {
 
     import breeze.numerics._
     val logCurr: Complex = log(curr)
-    debugPrint(logCurr, "  logCurr", 2)
+    debugPrint(logCurr, "  logCurr", 3)
     val logPrev: Complex = log(prev)
-    debugPrint(logPrev, "  logPrev", 2)
+    debugPrint(logPrev, "  logPrev", 3)
     val unwindingNumber = ceil(((logCurr - logPrev).imag - M_PI) / (2 * M_PI))
-    debugPrint(unwindingNumber, "  unwindingNumber", 2)
+    debugPrint(unwindingNumber, "  unwindingNumber", 3)
     val w = atan2h(curr - prev, curr + prev) + Complex(0.0, M_PI * unwindingNumber)
-    debugPrint(w, "  w", 2)
+    debugPrint(w, "  w", 3)
     val res = (2.0 * exp(0.5 * p * (logCurr + logPrev)) * sinh2(p * w) / (curr - prev))
-    debugPrint(res, "  res", 2)
+    debugPrint(res, "  res", 3)
     res
   }
 
@@ -103,35 +103,35 @@ object matrixPow {
     import breeze.numerics._
     val res = r
 
-    debugPrint(p, "  Result p", 1)
-    debugPrint(m_A, "  Result m_A", 1)
+    debugPrint(p, "  Result p", 3)
+    debugPrint(m_A, "  Result m_A", 3)
     res(0, 0) = pow(m_A(0, 0), p)
-    debugPrint(res(0, 0), "  Result res(0,0)", 1)
+    debugPrint(res(0, 0), "  Result res(0,0)", 3)
     var i = 1
     for (i <- 1 until m_A.cols) {
-      debugPrint(p, "  p", 1)
-      debugPrint(res(i, i), "  res(i, i) ", 1)
-      debugPrint(m_A(i, i), "  m_A.coeff(i, i)", 1)
+      debugPrint(p, "  p", 3)
+      debugPrint(res(i, i), "  res(i, i) ", 3)
+      debugPrint(m_A(i, i), "  m_A.coeff(i, i)", 3)
 
       res(i, i) = pow(m_A(i, i), p)
 
-      debugPrint(res(i, i), "  Result  loop 1", 1)
+      debugPrint(res(i, i), "  Result  loop 1", 3)
       if (m_A(i - 1, i - 1) == m_A(i, i)) {
         res(i - 1, i) = p * pow(m_A(i, i), p - 1)
-        debugPrint(res(i - 1, i), "  Result 1", 1)
+        debugPrint(res(i - 1, i), "  Result 1", 3)
       } else if (2 * abs(m_A(i - 1, i - 1)) < abs(m_A(i, i)) || 2 * abs(m_A(i, i)) < abs(m_A(i - 1, i - 1))) {
 
-        debugPrint(res(i, i), "  res(i , i)", 1)
-        debugPrint(res(i - 1, i), "  res(i - 1, i)", 1)
-        debugPrint(res(i - 1, i - 1), "  res(i - 1, i-1)", 1)
-        debugPrint(m_A(i, i), "  m_A(i, i)", 1)
-        debugPrint(m_A(i - 1, i - 1), "  m_A(i-1, i-1)", 1)
+        debugPrint(res(i, i), "  res(i , i)", 3)
+        debugPrint(res(i - 1, i), "  res(i - 1, i)", 3)
+        debugPrint(res(i - 1, i - 1), "  res(i - 1, i-1)", 3)
+        debugPrint(m_A(i, i), "  m_A(i, i)", 3)
+        debugPrint(m_A(i - 1, i - 1), "  m_A(i-1, i-1)", 3)
         res(i - 1, i) = (res(i, i) - res(i - 1, i - 1)) / (m_A(i, i) - m_A(i - 1, i - 1))
 
-        debugPrint(res(i - 1, i), "  Result 2", 1)
+        debugPrint(res(i - 1, i), "  Result 2", 3)
       } else {
         res(i - 1, i) = computeSuperDiag(m_A(i, i), m_A(i - 1, i - 1), p)
-        debugPrint(res(i - 1, i), "  Result 3", 1)
+        debugPrint(res(i - 1, i), "  Result 3", 3)
       }
       res(i - 1, i) *= m_A(i - 1, i)
     }
@@ -216,11 +216,40 @@ object matrixPow {
 
   def cFracPart(M: DenseMatrix[Complex], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
     {
-      val (sT, sQ, tau) = schurDecomposition(M)
+      val (sT, sQ, tau, house) = M schurDecomp
 
       debugPrint(sT, "schur T", 1)
       debugPrint(sQ, "schur Q", 1)
+      debugPrint(house, "house Q", 1)
+      val fpow = pow % 1
 
+      if (abs(fpow) > 0) {
+        val (iminusT, noOfSqRts) = getIMinusT(upperTriangular(M))
+        val pP = padePower(iminusT, fpow)
+
+        debugPrint(iminusT, "iminusT", 1)
+        debugPrint(fpow, "frac_power", 1)
+        debugPrint(noOfSqRts, "  noOfSqRts", 1)
+        debugPrint(pP, "padePower", 1)
+
+        val pT = computeFracPower(pP, sT, fpow, noOfSqRts)
+
+        debugPrint(sT, "schur T", 1)
+        debugPrint(sQ, "schur Q", 1)
+        debugPrint(pT, "pade T", 1)
+        (Some(pT), sQ)
+      } else
+        (None, sQ)
+
+    }
+
+  def dFracPart(MD: DenseMatrix[Double], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
+    {
+      val (sT, sQ, tau, house) = MD schurDecomp
+      val M = MD.mapValues(Complex(_, 0.0))
+      debugPrint(sT, "schur T", 1)
+      debugPrint(sQ, "schur Q", 1)
+      debugPrint(house, "house Q", 1)
       val fpow = pow % 1
 
       if (abs(fpow) > 0) {
@@ -255,9 +284,12 @@ object matrixPow {
 
   def fractD(pow: Double, M: DenseMatrix[Double]): DenseMatrix[Complex] = {
 
+
+
     val ipower = abs(floor(pow))
     val intPow = if (ipower < 0.0) inv(M) else M
-    return cFracPart(M.mapValues(Complex(_, 0.0)), pow) match {
+    return dFracPart(M, pow) match {
+          //return cFracPart(M.mapValues(Complex(_, 0.0)), pow) match {
       case (None, _) => computeIntPowerD(ipower, intPow).mapValues(Complex(_, 0.0))
       case (pT, sQ) => if (ipower > 0) (pT.get revertSchur sQ) * computeIntPowerD(ipower, intPow).mapValues(Complex(_, 0.0)) else (pT.get revertSchur sQ)
     }

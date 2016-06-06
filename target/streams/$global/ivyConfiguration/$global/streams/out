@@ -1,14 +1,12 @@
 [0m[[0mdebug[0m] [0mOther repositories:[0m
-[0m[[0mdebug[0m] [0m	FileRepository(publish-m2-local,FileConfiguration(true,None),Patterns(ivyPatterns=List(), artifactPatterns=List(C:/Users/anthony/.m2/repository/[organisation]/[module](_[scalaVersion])(_[sbtVersion])/[revision]/[artifact]-[revision](-[classifier]).[ext]), isMavenCompatible=true, descriptorOptional=false, skipConsistencyCheck=false))[0m
+[0m[[0mdebug[0m] [0m	FileRepository(publish-m2-local,FileConfiguration(true,None),Patterns(ivyPatterns=List(), artifactPatterns=List(D:/Users/anthony/.m2/repository/[organisation]/[module](_[scalaVersion])(_[sbtVersion])/[revision]/[artifact]-[revision](-[classifier]).[ext]), isMavenCompatible=true, descriptorOptional=false, skipConsistencyCheck=false))[0m
 [0m[[0mdebug[0m] [0mDefault repositories:[0m
 [0m[[0mdebug[0m] [0m	Raw(ProjectResolver(inter-project, mapped: ))[0m
 [0m[[0mdebug[0m] [0m	FileRepository(local,FileConfiguration(true,None),Patterns(ivyPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))[0m
-[0m[[0mdebug[0m] [0m	URLRepository(ivy-proxy-releases,Patterns(ivyPatterns=List(http://localhost:8081/nexus/content/groups/public/[organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(http://localhost:8081/nexus/content/groups/public/[organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))[0m
-[0m[[0mdebug[0m] [0m	maven-proxy-releases: http://localhost:8081/nexus/content/repositories/central/[0m
-[0m[[0mdebug[0m] [0m	URLRepository(my-ivy-proxy-releases,Patterns(ivyPatterns=List(http://think-station:8081/nexus/content/repositories/snapshots/[organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(http://think-station:8081/nexus/content/repositories/snapshots/[organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))[0m
+[0m[[0mdebug[0m] [0m	public: http://repo1.maven.org/maven2/[0m
 [0m[[0mdebug[0m] [0m	My Scala Repo: http://think-station:8081/nexus/content/groups/public/[0m
 [0m[[0mdebug[0m] [0m	My Scala Snapshots: http://think-station:8081/nexus/content/repositories/snapshots/[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: file:/C:/Users/anthony/.m2/repository/[0m
+[0m[[0mdebug[0m] [0m	Maven2 Local: file:/D:/Users/anthony/.m2/repository[0m
 [0m[[0mdebug[0m] [0m	sonatype-snapshots: https://oss.sonatype.org/content/repositories/snapshots[0m
 [0m[[0mdebug[0m] [0m	sonatype-releases: https://oss.sonatype.org/content/repositories/releases[0m
 [0m[[0mdebug[0m] [0m	typesafe-releases: http://repo.typesafe.com/typesafe/releases[0m

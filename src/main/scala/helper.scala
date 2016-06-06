@@ -20,17 +20,18 @@ object GlobalConsts {
     s.inc() // parentheses here to denote that method has side effects
     true
   }
-
+  var schur = false
   var showHouseholder = false
+  var showCompute2x2 = false
   var matnum1 = MutableInt(0)
   var matnum2 = MutableInt(0)
   val showComplex = false
   val showTitles = true
   val showLines = false
   val fileOutput = true
- // val formatter = new DecimalFormat("#0.###E0")
+  // val formatter = new DecimalFormat("#0.###E0")
   val formatter = new DecimalFormat("#0.####")
-  val printEnabled = Array(true, true, true, true, true, false, showHouseholder, true) //0,1 for debugging last part
+  val printEnabled = Array(schur, true, true, showCompute2x2, true, false, showHouseholder, true) //0,1 for debugging last part
   val EPSILON: Double = 2.22045e-016
   val currentPrintType = printType.BOTH
 }
@@ -52,7 +53,27 @@ object Helper {
   def Y[A, B](f: (A => B) => (A => B)): A => B = f(Y(f))(_)
   def atan2h(x: Complex, y: Complex): Complex = { val z = x / y; if ((y == 0) || (abs2(z) > pow(GlobalConsts.EPSILON, 0.5))) (0.5) * log((y + x) / (y - x)) else z + z * z * z / 3 }
   //implicit def Y1[Int, DenseMatrix[Complex] ,  DenseMatrix[Complex]](f: (fType[DenseMatrix[Complex]]) => ((Int, DenseMatrix[Complex]) => A)): (Int, DenseMatrix[Complex]) => A = f(Y1(f))(_, _)
-
+  //this is not used  ...  for inverting Upper Triangle form
+  def invU(M: DenseMatrix[Complex]): DenseMatrix[Complex] =
+    { // All upper must be non zero
+      // Ax = b -> LUx = b. Then y is defined to be Ux
+      val n = M.cols
+      val U = DenseMatrix.zeros[Complex](n, n)
+      // Backward solve Ux = y
+      var k = 0
+      var j = 0
+      var i = 0
+      for (j <- (n - 1) to 0 by -1) {
+        U(j, j) = 1.0 / M(j, j)
+        for (i <- (j - 1) to 0 by -1) {
+          for (k <- (i + 1) to j)
+            U(i, j) -= 1 / M(i, i) * M(i, k) * U(k, j)
+        }
+      }
+      U
+    }
+  def UTadj(A: DenseMatrix[Complex]) = invU(A) * diag(A).reduce(_ * _)
+  def Tadj(A: DenseMatrix[Complex]) = A.t.mapValues(i => Complex(i.real, -i.imag))
   def printcount2(name: String) = {
 
     function(matnum1)
