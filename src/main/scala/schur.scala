@@ -23,7 +23,7 @@ import Householder._
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
-*/
+ */
 
 /* Schur decomposition  -computed by first reducing the
  * matrix to Hessenberg form using the class
@@ -37,13 +37,13 @@ import Householder._
 
 object Schur {
   /*
-     *  Hessenberg decomposition of given matrix.
-     *
-     * The Hessenberg decomposition is computed by bringing the columns of the
-     * matrix successively in the required form using Householder reflections
-     * (see, e.g., Algorithm 7.4.2 in Golub \& Van Loan, <i>%Matrix
-     * Computations</i>).
-     */
+   *  Hessenberg decomposition of given matrix.
+   *
+   * The Hessenberg decomposition is computed by bringing the columns of the
+   * matrix successively in the required form using Householder reflections
+   * (see, e.g., Algorithm 7.4.2 in Golub \& Van Loan, <i>%Matrix
+   * Computations</i>).
+   */
   abstract class Schur[T](val M: DenseMatrix[T]) {
     if (M.rows != M.cols)
       throw new MatrixNotSquareException
@@ -83,7 +83,7 @@ object Schur {
      * compared to matT(i,i) and matT(j,j), then set it to zero and
      * return true, else return false.
      */
-    def subdiagonalEntryIsNeglegible(i: Int) =
+    private def subdiagonalEntryIsNeglegible(i: Int) =
       {
         val d = norm1(matT(i, i)) + norm1(matT(i + 1, i + 1))
         val sd = norm1(matT(i + 1, i))
@@ -95,7 +95,7 @@ object Schur {
       }
 
     /** Compute the shift in the current QR iteration. */
-    def computeShift(iu: Int, iter: Int) = {
+    private def computeShift(iu: Int, iter: Int) = {
       if (iter == 10 || iter == 20) {
         // exceptional shift, taken from http://www.netlib.org/eispack/comqr.f
         abs(matT(iu, iu - 1).real) + abs(matT(iu - 1, iu - 2).real)
@@ -133,7 +133,7 @@ object Schur {
     // Rows 0,...,il-1 are decoupled from the rest because matT(il,il-1) is zero.
     // Rows il,...,iu is the part we are working on (the active submatrix).
     // Rows iu+1,...,end are already brought in triangular form.
-    def reduceToTriangularForm() = {
+    private def reduceToTriangularForm() = {
 
       var matnum = 0
       var matnum2 = 0
@@ -178,21 +178,26 @@ object Schur {
 	   */
 
           val shift = computeShift(iu, iter)
-
-          val rot = makeGivens(matT(il, il) - shift, matT(il + 1, il))
-          matT(il to il + 1, ::) rotateoL (rot)
-          matT(0 to (min(il + 2, iu)), il to il + 1) rotateoR (rot)
-          matQ(::, il to il + 1) rotateoR (rot)
+          debugPrint(shift, "shift", 1)
+          val givens1 = makeGivens(matT(il, il) - shift, matT(il + 1, il))
+          debugPrint(givens1.c, "rot c", 1)
+          debugPrint(givens1.s, "rot s", 1)
+          debugPrint(givens1.rotation, "rot s", 1)
+          debugPrint(matT, "matT", 1)
+          matT(il to il + 1, ::) rotateL (givens1)
+          debugPrint(matT, "matT", 1)
+          matT(0 to (min(il + 2, iu)), il to il + 1) rotateR (givens1)
+          matQ(::, il to il + 1) rotateR (givens1)
 
           val idx: Int = 0
 
           for (idx <- ((il + 1) to iu - 1)) {
-            val rot2 = makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
-            matT(idx, idx - 1) = rot2.rot
+            val givens2 = makeGivens(matT(idx, idx - 1), matT(idx + 1, idx - 1))
+            matT(idx, idx - 1) = givens2.rotation
             matT(idx + 1, idx - 1) = Complex(0.0, 0.0)
-            matT(idx to idx + 1, idx to matT.cols - 1) rotateoL (rot2)
-            matT(0 to (min(idx + 2, iu)), idx to idx + 1) rotateoR (rot2)
-            matQ(::, idx to idx + 1) rotateoR (rot2)
+            matT(idx to idx + 1, idx to matT.cols - 1) rotateL (givens2)
+            matT(0 to (min(idx + 2, iu)), idx to idx + 1) rotateR (givens2)
+            matQ(::, idx to idx + 1) rotateR (givens2)
           }
         }
       }

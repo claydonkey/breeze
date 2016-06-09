@@ -37,7 +37,6 @@ object Householder {
    class Householder(val matrixH: DenseMatrix[Complex],  val tau :DenseVector[Complex]) {
     val size = matrixH.cols - 1
     val beta = Array.ofDim[Double](size)
- //   val tau = DenseVector.zeros[Complex](size)
     val essential = Array.ofDim[DenseVector[Complex]](size)
 
     def makeHouseholder(cnt: Int) = {
@@ -121,8 +120,6 @@ object Householder {
    */
 
   object householder {
-
-    //def apply(m_matrix: DenseMatrix[Complex]): householder = new householder(m_matrix)
 
     def householderTransformation(hMatrix: DenseMatrix[Double], tau: DenseVector[Double], order: Int): DenseMatrix[Double] = {
       //householderTransformation shifted 1 with size -1

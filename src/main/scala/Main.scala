@@ -59,16 +59,25 @@ object Main {
     val M5 = DenseMatrix((1, 2, 4, 4, 5), (5, 6, 7, 9, 10), (9, 10, 11, 12, 12), (13, 14, 15, 16, 17), (18, 19, 20, 21, 22))
     val M3 = DenseMatrix((1, 4, 3), (4, 5, 6), (4, 3, 2))
     val M6 = DenseMatrix.rand(6, 6)
+
+    val R = DenseMatrix((4, 1, -2, 2), (1, 2, 0, 1), (-2, 0, 3, -2), (2, 1, -2, -1))
+    val I = DenseMatrix((1, 2, -3, 4), (1, 5, 0, 1), (-2, 6, 3, -2), (5, 1, -2, -1))
+
+    val RtoC = DenseMatrix((4, 1, -2, 2), (1, 2, 0, 1), (-2, 0, 3, -2), (2, 1, -2, -1)).mapValues(Complex(_, 0.0))
+    val C = DenseMatrix.tabulate[Complex](R.cols, R.rows)((i, j) => Complex(R(i, j), I(i, j)))
+
     //   getHessenberg(M3)
-    debugPrint(M6, "MATRIX  1", 1)
-    debugPrint(M6.mapActiveValues(Complex(_, 0.0)) mPow 3.21, "RESULT 1", 1)
+    debugPrint(M4, "MATRIX  1", 1)
+    debugPrint(M4.mapActiveValues(Complex(_, 0.0)) mPow 3.21, "RESULT 1", 1)
+    debugPrint(M5, "MATRIX 2", 1)
+    debugPrint(M5 mPow 3.21, "RESULT 2", 1)
 
+    debugPrint(C, "  C", 2)
+    debugPrint(C mPow 2.321, "RESULT C", 2)
 
-    debugPrint(M6 mPow 3.21, "RESULT 2", 1)
+    debugPrint(RtoC, "  Check", 2)
+    debugPrint(RtoC mPow 2.321, "RESULT RtoC", 2)
 
-    debugPrint(M3, "MATRIX 2", 1)
-
-    debugPrint(M3 mPow -2.43, "RESULT 3", 1)
     if (bw != None) {
       bw.get.close()
     }

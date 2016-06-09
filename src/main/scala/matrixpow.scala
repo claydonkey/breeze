@@ -65,7 +65,7 @@ object matrixPow {
       def mPow(pow: Double) = fractC(pow, M)
     }
 
-  def degree = (normIminusT: Double) => {
+  private def degree = (normIminusT: Double) => {
 
     val maxNormForPade = Array(2.8064004e-1f /* degree = 3 */ , 4.3386528e-1f)
     var degree = 3
@@ -75,25 +75,21 @@ object matrixPow {
     degree
   }
 
-  def padePower(IminusT: DenseMatrix[Complex], m_p: Double) = {
+  private def padePower(IminusT: DenseMatrix[Complex], m_p: Double) = {
 
     val _degree = degree(m_p)
-    val i = _degree << 1
-    val res = IminusT.map(_ * (m_p - _degree.toDouble) / ((i - 1) << 1))
-    val index = 0
-    val M: DenseMatrix[Complex] = DenseMatrix.tabulate[Complex](res.rows, res.cols) { (x, y) => if (x == y) Complex(1.0, 0) else res(x, y) }
-    val T1 = -1.0 * Complex(m_p, 0)
-    val T = IminusT * T1
-    (M.mapValues(_.real) \ T.mapValues(_.real)).mapValues(Complex(_, 0.0)) :+ DenseMatrix.eye[Complex](IminusT.rows) // BIG PROBLEMMMO
+    val res = IminusT.map(_ * (m_p - _degree.toDouble) / (((_degree << 1) - 1) << 1))
+    val M = DenseMatrix.tabulate[Complex](res.rows, res.cols) { (x, y) => if (x == y) Complex(1.0, 0) else res(x, y) }
+    debugPrint(M, "Before padePower", 2)
 
+  val R =   (M.mapValues(_.real) \ (IminusT * (-1.0 * Complex(m_p, 0))).mapValues(_.real)).mapValues(Complex(_, 0.0)) :+ DenseMatrix.eye[Complex](IminusT.rows) // BIG PROBLEMMMO
+    debugPrint(M, "After  padePower", 2)
+    M
   }
 
-  def sqrtTriangular(m_A: DenseMatrix[Complex]) = {
+  private def sqrtTriangular(m_A: DenseMatrix[Complex]) = {
 
-    val result = DenseMatrix.zeros[Complex](m_A.cols, m_A.rows)
-    var i = 0
-    for (i <- 0 to m_A.cols - 1)
-      result(i, i) = breeze.numerics.pow(m_A(i, i), 0.5)
+    val result = DenseMatrix.tabulate[Complex](m_A.cols, m_A.rows) { (i, j) => if (i == j) breeze.numerics.pow(m_A(i, i), 0.5) else Complex(0.0, 0.0) }
     var j = 1
     for (j <- 1 until m_A.cols) {
       for (i <- (j - 1) to 0 by -1) {
@@ -103,9 +99,10 @@ object matrixPow {
     }
     result
   }
+
   val maxNormForPade: Double = 2.789358995219730e-1;
 
-  def getIMinusT(T: DenseMatrix[Complex], numSquareRoots: Int = 0, deg1: Double = 10.0, deg2: Double = 0.0): (DenseMatrix[Complex], Int) = {
+  private def getIMinusT(T: DenseMatrix[Complex], numSquareRoots: Int = 0, deg1: Double = 10.0, deg2: Double = 0.0): (DenseMatrix[Complex], Int) = {
 
     val IminusT = DenseMatrix.eye[Complex](T.rows) - T
     val normIminusT = norm1(sum(IminusT(::, *)).t.reduceLeft((x, y) => if (norm1(x) > norm1(y)) x else y))
@@ -115,10 +112,10 @@ object matrixPow {
       val rdeg2 = degree(normIminusT / 2)
       if (rdeg1 - rdeg2 <= 1.0) return (IminusT, numSquareRoots) else getIMinusT(upperTriangular(sqrtTriangular(T)), numSquareRoots + 1, rdeg1, rdeg2)
     }
-    getIMinusT(upperTriangular(sqrtTriangular(T)), numSquareRoots + 1, deg1, deg2)
+    getIMinusT(breeze.linalg.upperTriangular(sqrtTriangular(T)), numSquareRoots + 1, deg1, deg2)
   }
 
-  def computeSuperDiag(curr: Complex, prev: Complex, p: Double): Complex = {
+  private def computeSuperDiag(curr: Complex, prev: Complex, p: Double): Complex = {
 
     val logCurr: Complex = log(curr)
     val logPrev: Complex = log(prev)
@@ -128,7 +125,7 @@ object matrixPow {
     res
   }
 
-  def compute2x2(r: DenseMatrix[Complex], m_A: DenseMatrix[Complex], p: Double) = {
+  private def compute2x2(r: DenseMatrix[Complex], m_A: DenseMatrix[Complex], p: Double) = {
 
     val res = r
     res(0, 0) = pow(m_A(0, 0), p)
@@ -148,7 +145,7 @@ object matrixPow {
     res
   }
 
-  def computeIntPowerD(exp: Double, value: DenseMatrix[Double]): DenseMatrix[Double] = {
+  private def computeIntPowerD(exp: Double, value: DenseMatrix[Double]): DenseMatrix[Double] = {
     if (exp == 1) value
     else if (exp % 2 == 1) value * (computeIntPowerD(exp - 1, value))
     else {
@@ -157,7 +154,7 @@ object matrixPow {
     }
   }
 
-  def computeIntPowerC(exp: Double, value: DenseMatrix[Complex]): DenseMatrix[Complex] = {
+  private def computeIntPowerC(exp: Double, value: DenseMatrix[Complex]): DenseMatrix[Complex] = {
     if (exp == 1) value
     else if (exp % 2 == 1) value * (computeIntPowerC(exp - 1, value))
     else {
@@ -167,13 +164,13 @@ object matrixPow {
   }
 
   @tailrec
-  def computeFracPower(value: DenseMatrix[Complex], sT: DenseMatrix[Complex], frac_power: Double, noOfSqRts: Int): DenseMatrix[Complex] = {
+  private def computeFracPower(value: DenseMatrix[Complex], sT: DenseMatrix[Complex], frac_power: Double, noOfSqRts: Int): DenseMatrix[Complex] = {
     if (noOfSqRts == 0) return upperTriangular(compute2x2(value, sT, frac_power * scala.math.pow(2, -noOfSqRts)))
     else
       computeFracPower(upperTriangular(compute2x2(value, sT, frac_power * scala.math.pow(2, -noOfSqRts))), sT, frac_power, noOfSqRts - 1)
   }
 
-  def cFracPart(M: DenseMatrix[Complex], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
+  private def cFracPart(M: DenseMatrix[Complex], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
     {
       val (sT, sQ, tau, house) = M schurDecomp
       val fpow = pow % 1
@@ -188,7 +185,7 @@ object matrixPow {
       }
     }
 
-  def dFracPart(MD: DenseMatrix[Double], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
+  private def dFracPart(MD: DenseMatrix[Double], pow: Double): (Option[DenseMatrix[Complex]], DenseMatrix[Complex]) =
     {
       val (sT, sQ, tau, house) = MD schurDecomp
       val M = MD.mapValues(Complex(_, 0.0))
@@ -205,7 +202,7 @@ object matrixPow {
 
     }
 
-  def fractC(pow: Double, M: DenseMatrix[Complex]): DenseMatrix[Complex] = {
+  private def fractC(pow: Double, M: DenseMatrix[Complex]): DenseMatrix[Complex] = {
     val ipower = abs(floor(pow))
     val intPow = if (pow < 0.0)
       throw new IllegalArgumentException("Cannot currently invert complex matrices.")
@@ -216,8 +213,8 @@ object matrixPow {
     }
   }
 
-  def fractI(pow: Double, M: DenseMatrix[Int]): DenseMatrix[Complex] = fractD(pow, M.mapValues(_.toDouble))
-  def fractD(pow: Double, M: DenseMatrix[Double]): DenseMatrix[Complex] = {
+  private def fractI(pow: Double, M: DenseMatrix[Int]): DenseMatrix[Complex] = fractD(pow, M.mapValues(_.toDouble))
+  private def fractD(pow: Double, M: DenseMatrix[Double]): DenseMatrix[Complex] = {
 
     val ipower = abs(floor(pow))
     val intPow = if (pow < 0.0) inv(M) else M

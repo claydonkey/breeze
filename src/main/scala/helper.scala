@@ -8,21 +8,6 @@ import breeze.math._
 import reflect.runtime.universe._
 import scala.util.control.Breaks._
 
-/*
- Copyright 2016 Anthony Campbelll
-
- Licensed under the Apache License, Version 2.0 (the "License")
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
-*/
 
 
 object GlobalConsts {
@@ -37,9 +22,11 @@ object GlobalConsts {
     s.inc() // parentheses here to denote that method has side effects
     true
   }
-  var schur = false
+  var showSchur = false
   var showHouseholder = false
   var showCompute2x2 = false
+    var showGivens = false
+    var showCalculator = true
   var matnum1 = MutableInt(0)
   var matnum2 = MutableInt(0)
   val showComplex = false
@@ -48,7 +35,7 @@ object GlobalConsts {
   val fileOutput = false
   // val formatter = new DecimalFormat("#0.###E0")
   val formatter = new DecimalFormat("#0.####")
-  val printEnabled = Array(schur, true, true, showCompute2x2, true, false, showHouseholder, true) //0,1 for debugging last part
+  val printEnabled = Array(showSchur, showGivens, showCalculator, showCompute2x2, false, false, showHouseholder, false) //0,1 for debugging last part
   val EPSILON: Double = 2.22045e-016
   val currentPrintType = printType.BOTH
 }
@@ -59,7 +46,10 @@ object Helper {
   def adj(M: DenseMatrix[Complex]): DenseMatrix[Complex] = { (det(M.mapValues(_.real)) * inv(M.mapValues(_.real))).mapValues(Complex(_, 0.0)) } //  adjoint of vector is vector itself??
   //def adj(M: DenseMatrix[Complex]) = { inv(M) * det(M) }  //  adjoint of vector is vector itself??
   def abs2(n: Complex): Double = { (n.real * n.real) + (n.imag * n.imag) }
+    def abs2(n: Double): Double = { (n * n)  }
+
   def conj(n: Complex) = { Complex(n.real, -n.imag) }
+    def conj(n: Double) = { n }
   def norm1(n: Complex): Double = { abs(n.real) + abs(n.imag) }
   def biggest(M: DenseMatrix[Complex]) = norm1(sum(M(::, *)).t.reduceLeft((x, y) => if (norm1(x) > norm1(y)) x else y))
   val M_PI = 3.14159265358979323846

@@ -1,9 +1,11 @@
 <classpath name="padeSchurPower" id="padeSchurPower">
+  <classpathentry kind="src" path="src\main\scala-2.11" output="target\scala-2.11\classes" scope="compile" managed="false"/>
   <classpathentry kind="src" path="src\main\scala" output="target\scala-2.11\classes" scope="compile" managed="false"/>
   <classpathentry kind="src" path="src\main\java" output="target\scala-2.11\classes" scope="compile" managed="false"/>
   <classpathentry kind="src" path="target\scala-2.11\src_managed\main" output="target\scala-2.11\classes" scope="compile" managed="true"/>
   <classpathentry kind="src" path="src\main\resources" output="target\scala-2.11\classes" scope="compile" managed="false"/>
   <classpathentry kind="src" path="target\scala-2.11\resource_managed\main" output="target\scala-2.11\classes" scope="compile" managed="true"/>
+  <classpathentry kind="src" path="src\test\scala-2.11" output="target\scala-2.11\test-classes" scope="test" managed="false"/>
   <classpathentry kind="src" path="src\test\scala" output="target\scala-2.11\test-classes" scope="test" managed="false"/>
   <classpathentry kind="src" path="src\test\java" output="target\scala-2.11\test-classes" scope="test" managed="false"/>
   <classpathentry kind="src" path="target\scala-2.11\src_managed\test" output="target\scala-2.11\test-classes" scope="test" managed="true"/>
